@@ -43,8 +43,9 @@ def login(request):
     error_message = ''
     print(request.method)
     if request.method == 'POST':
-        r_phone = request.POST.get('phone', '')
-        r_password = request.POST.get('password', '')
+        req = json.loads(request.body)
+        r_phone = req['phone']
+        r_password = req['password']
         print r_phone, r_password,
         if r_phone == '':
             error_message = 'name is empty'
