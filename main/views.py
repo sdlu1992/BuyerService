@@ -32,6 +32,7 @@ def register(request):
             else:
                 error_message = 'phone has registered'
     response['error_msg'] = error_message
+    json.dumps(response)
     j = json.dumps(response)
     print j
     return HttpResponse(j)
@@ -51,13 +52,13 @@ def login(request):
         elif r_password == '':
             error_message = 'token is empty, please relogin'
         else:
-            buyers = get_buyer_by_phone(r_phone)
-            if len(buyers) == 1:
-                if r_password == buyers[0].password:
+            buyer = get_buyer_by_phone(r_phone)
+            if len(buyer) == 1:
+                if r_password == buyer[0].password:
                     token = get_token(r_password)
-                    buyers[0].token = token
-                    buyers[0].save()
-                    info = {'name': buyers[0].name, 'phone': buyers[0].phone, 'email': buyers[0].email}
+                    buyer[0].token = token
+                    buyer[0].save()
+                    info = {'name': buyer[0].name, 'phone': buyer[0].phone, 'email': buyer[0].email}
                     response['response'] = 1
                     response['token'] = token
                     response['info'] = info
@@ -66,25 +67,9 @@ def login(request):
             else:
                 error_message = 'phone has not registered'
     response['error_msg'] = error_message
+    json.dumps(response)
     j = json.dumps(response)
     print j
-    return HttpResponse(j)
-
-
-def get_info(request):
-    response = {'response': '2'}
-    error_message = ''
-    print(request.method)
-    if request.method == 'POST':
-        buyer = get_buyer_by_token(request)
-        if buyer != 3:
-            info = {'name': buyer.name, 'phone': buyer.phone, 'email': buyer.email}
-            response['response'] = 1
-            response['info'] = info
-        else:
-            error_message = '没有这个用户'
-    response['error_msg'] = error_message
-    j = json.dumps(response)
     return HttpResponse(j)
 
 
@@ -92,16 +77,6 @@ def get_buyer_by_phone(phone_number):
     buyer = Buyer.objects.filter(phone=phone_number)
     print buyer
     return buyer
-
-
-def get_buyer_by_token(request):
-    req = json.loads(request.body)
-    token = req['token']
-    buyers = Buyer.objects.filter(token=token)
-    if len(buyers) == 1:
-        return buyers[0]
-    else:
-        return 3
 
 
 def get_token(r_password):
