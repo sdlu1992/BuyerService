@@ -62,9 +62,8 @@ class Appraise(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=20)
-    belong_to = models.IntegerField()
-
+    category = models.CharField(max_length=2000)
+    root_category = models.CharField(max_length=100)
     def __unicode__(self):
         return self.id
 

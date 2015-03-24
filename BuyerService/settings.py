@@ -49,7 +49,6 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'BuyerService.urls'
-
 WSGI_APPLICATION = 'BuyerService.wsgi.application'
 
 
@@ -58,15 +57,19 @@ WSGI_APPLICATION = 'BuyerService.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'buyerdata',
+        'USER': 'root',
+        'PASSWORD': 'guohaibing',
+        'HOST': '',
+        'PORT': '3306',
     }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ysynh-cn'
 
 TIME_ZONE = 'UTC'
 

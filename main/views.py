@@ -1,6 +1,7 @@
+#coding=utf-8
 from django.shortcuts import HttpResponse
 import json, hashlib, time
-from main.models import Buyer
+from main.models import Buyer, Category
 # Create your views here.
 
 
@@ -70,6 +71,43 @@ def login(request):
     json.dumps(response)
     j = json.dumps(response)
     print j
+    return HttpResponse(j)
+
+
+def info(request):
+    response = {'response': '2'}
+    error_message = ''
+    print(request.method)
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        buyer = Buyer.objects.filter(token=req['token'])
+        if len(buyer) == 1:
+            info = {'name': buyer[0].name, 'phone': buyer[0].phone, 'email': buyer[0].email}
+            response['response'] = 1
+            response['info'] = info
+    json.dumps(response)
+    j = json.dumps(response)
+    return HttpResponse(j)
+
+
+def category(request):
+    response = {'response': '2'}
+    error_message = ''
+    print(request.method)
+    c1 = {'10': '手机', '11': '手机配件', '12':'数码相机'}
+    c2 = {'20': '板鞋', '21': '跑鞋', '22': '皮鞋'}
+    c0 = {'1': c1, '2': c2}
+    c_root = {'1': '手机数码', '2': '鞋类'}
+    cc = Category(category=c0, root_category=c_root)
+    cc.save()
+    if request.method == 'GET':
+        ca = Category.objects.all()
+        # response['category'] = ca.last().category
+        response['category'] = c0
+        # response['root'] = str(ca.last().root_category).replace('\\', '%')
+        response['root'] = c_root
+    j = json.dumps(response)
+    # j = json.JSONEncoder().encode(response)
     return HttpResponse(j)
 
 
