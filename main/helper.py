@@ -7,6 +7,7 @@ from django.shortcuts import render, HttpResponse, render_to_response, HttpRespo
 def get_login_info(request):
     try:
         req = json.loads(request.body)
+        print req
         r_phone = req['phone']
         r_password = req['password']
         r_platform = req['platform']

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/helper.py" afterPath="$PROJECT_DIR$/main/helper.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BuyerService.iws" />
@@ -80,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="26" selection-start="2255" selection-end="2255" vertical-scroll-proportion="0.38243628" vertical-offset="615" max-vertical-offset="3375">
+            <state line="54" column="49" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.0" vertical-offset="584" max-vertical-offset="3375">
               <folding />
             </state>
           </provider>
@@ -98,10 +98,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="helper.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="helper.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="37" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="555">
+            <state line="11" column="19" selection-start="326" selection-end="326" vertical-scroll-proportion="0.19121814" vertical-offset="0" max-vertical-offset="706">
               <folding />
             </state>
           </provider>
@@ -138,7 +138,6 @@
         <option value="$PROJECT_DIR$/templates/new_goods.html" />
         <option value="$PROJECT_DIR$/templates/personal.html" />
         <option value="$PROJECT_DIR$/templates/register.html" />
-        <option value="$PROJECT_DIR$/main/helper.py" />
         <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/templates/goods_list.html" />
         <option value="$PROJECT_DIR$/BuyerService/urls.py" />
@@ -146,6 +145,7 @@
         <option value="$PROJECT_DIR$/main/models.py" />
         <option value="$PROJECT_DIR$/BuyerService/settings.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
+        <option value="$PROJECT_DIR$/main/helper.py" />
       </list>
     </option>
   </component>
@@ -530,7 +530,11 @@
       <created>1428807822201</created>
       <updated>1428807822201</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix bugs">
+      <created>1428815499222</created>
+      <updated>1428815499222</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -645,13 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="37" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="525">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/goods_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="20" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="1125">
@@ -696,7 +693,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="26" selection-start="2255" selection-end="2255" vertical-scroll-proportion="0.38243628" vertical-offset="615" max-vertical-offset="3375">
+        <state line="54" column="49" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.0" vertical-offset="584" max-vertical-offset="3375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="19" selection-start="326" selection-end="326" vertical-scroll-proportion="0.19121814" vertical-offset="0" max-vertical-offset="706">
           <folding />
         </state>
       </provider>
