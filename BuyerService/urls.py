@@ -16,4 +16,5 @@ urlpatterns = patterns('',
     url(r'^newGoods/', 'main.views.new_goods'),
     url(r'^report/', 'main.views.report'),
     url(r'^category/', 'main.views.category'),
+    url(r'^getGoodsByCategory/', 'main.views.get_goods_by_category'),
 )

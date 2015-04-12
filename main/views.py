@@ -193,6 +193,24 @@ def category(request):
     return HttpResponse(j)
 
 
+def get_goods_by_category(request):
+    response = {'response': '2'}
+    error_message = ''
+    print(request.method)
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        cate = req['category']
+        goods = Goods.objects.filter(category=cate)
+        response['len'] = len(goods)
+        response['goods'] = goods
+        response['response'] = '1'
+
+    response['error_msg'] = error_message
+    j = json.dumps(response)
+    print 'goods_category' + j
+    return HttpResponse(j)
+
+
 def report(request):
 
     return render_to_response('goods_list.html', locals())
