@@ -60,6 +60,7 @@ def login(request):
             error_message = 'token is empty, please relogin'
         else:
             buyer = get_buyer_by_phone(r_phone)
+            print len(buyer)
             if len(buyer) == 1:
                 if r_password == buyer[0].password:
                     token = get_token(r_password)
@@ -186,7 +187,7 @@ def category(request):
         # response['category'] = ca.last().category
         response['category'] = cc.category
         # response['root'] = str(ca.last().root_category).replace('\\', '%')
-        response['root'] = cc.root
+        response['root'] = cc.root_category
     j = json.dumps(response)
     # j = json.JSONEncoder().encode(response)
     return HttpResponse(j)
