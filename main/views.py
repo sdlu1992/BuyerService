@@ -206,8 +206,11 @@ def get_goods_by_category(request):
         response['goods'] = goods
         response['response'] = '1'
 
+    print response
     response['error_msg'] = error_message
+    print response
     j = json.dumps(response)
+    print response
     return HttpResponse(j)
 
 
