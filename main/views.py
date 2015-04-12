@@ -199,10 +199,14 @@ def get_goods_by_category(request):
     print(request.method)
     if request.method == 'POST':
         req = json.loads(request.body)
+        print req
         cate = req['category']
         goods = Goods.objects.filter(category=cate)
+        print len(goods)
         response['len'] = len(goods)
+        print len(goods)
         response['goods'] = goods
+        print len(goods)
         response['response'] = '1'
 
     response['error_msg'] = error_message

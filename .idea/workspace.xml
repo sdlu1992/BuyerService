@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BuyerService/urls.py" afterPath="$PROJECT_DIR$/BuyerService/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -27,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="12" selection-start="360" selection-end="360" vertical-scroll-proportion="0.20576131" vertical-offset="0" max-vertical-offset="729">
+            <state line="19" column="0" selection-start="697" selection-end="697" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
@@ -63,10 +62,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="198" column="23" selection-start="6808" selection-end="6808" vertical-scroll-proportion="0.0" vertical-offset="2556" max-vertical-offset="3645">
+            <state line="208" column="8" selection-start="7113" selection-end="7113" vertical-scroll-proportion="0.6707819" vertical-offset="2586" max-vertical-offset="3705">
               <folding />
             </state>
           </provider>
@@ -521,7 +520,11 @@
       <created>1428815663625</created>
       <updated>1428815663625</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="get goods list by category">
+      <created>1428851033683</created>
+      <updated>1428851033683</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -580,7 +583,8 @@
     <MESSAGE value="change database to mysql&#10;API: category" />
     <MESSAGE value="web: login logout new_goods goods_list" />
     <MESSAGE value="fix bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
+    <MESSAGE value="get goods list by category" />
+    <option name="LAST_COMMIT_MESSAGE" value="get goods list by category" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -678,16 +682,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/views.py">
+    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="23" selection-start="6808" selection-end="6808" vertical-scroll-proportion="0.0" vertical-offset="2556" max-vertical-offset="3645">
+        <state line="19" column="0" selection-start="697" selection-end="697" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
+    <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="12" selection-start="360" selection-end="360" vertical-scroll-proportion="0.20576131" vertical-offset="0" max-vertical-offset="729">
+        <state line="208" column="8" selection-start="7113" selection-end="7113" vertical-scroll-proportion="0.6707819" vertical-offset="2586" max-vertical-offset="3705">
           <folding />
         </state>
       </provider>
