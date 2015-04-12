@@ -65,7 +65,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="206" column="0" selection-start="7055" selection-end="7055" vertical-scroll-proportion="0.6296296" vertical-offset="2586" max-vertical-offset="3660">
+            <state line="210" column="0" selection-start="7162" selection-end="7162" vertical-scroll-proportion="0.71193415" vertical-offset="2586" max-vertical-offset="3645">
               <folding />
             </state>
           </provider>
@@ -528,7 +528,11 @@
       <created>1428851619787</created>
       <updated>1428851619787</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix bugs">
+      <created>1428851704294</created>
+      <updated>1428851704294</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -586,9 +590,9 @@
     <MESSAGE value="Login" />
     <MESSAGE value="change database to mysql&#10;API: category" />
     <MESSAGE value="web: login logout new_goods goods_list" />
-    <MESSAGE value="fix bugs" />
     <MESSAGE value="get goods list by category" />
-    <option name="LAST_COMMIT_MESSAGE" value="get goods list by category" />
+    <MESSAGE value="fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -695,7 +699,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="0" selection-start="7055" selection-end="7055" vertical-scroll-proportion="0.6296296" vertical-offset="2586" max-vertical-offset="3660">
+        <state line="210" column="0" selection-start="7162" selection-end="7162" vertical-scroll-proportion="0.71193415" vertical-offset="2586" max-vertical-offset="3645">
           <folding />
         </state>
       </provider>
