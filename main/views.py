@@ -7,6 +7,9 @@ from helper import get_login_info, get_register_info
 
 import sys
 print sys.getdefaultencoding()
+reload(sys)
+sys.setdefaultencoding('utf-8')
+print sys.getdefaultencoding()
 
 
 def register(request):
