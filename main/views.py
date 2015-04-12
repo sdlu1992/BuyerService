@@ -202,16 +202,13 @@ def get_goods_by_category(request):
         print req
         cate = req['category']
         goods = Goods.objects.filter(category=cate)
-        print len(goods)
         response['len'] = len(goods)
-        print len(goods)
         response['goods'] = goods
-        print len(goods)
         response['response'] = '1'
 
     response['error_msg'] = error_message
     j = json.dumps(response)
-    print 'goods_category' + j
+    print 'goods_category' + str(j)
     return HttpResponse(j)
 
 
