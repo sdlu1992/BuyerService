@@ -5,6 +5,9 @@ from django.shortcuts import render, HttpResponse, render_to_response, HttpRespo
 from helper import get_login_info, get_register_info
 # Create your views here.
 
+import sys
+print sys.getdefaultencoding()
+
 
 def register(request):
     response = {'response': '2'}
@@ -134,7 +137,7 @@ def change_to_solder(request):
         buyer[0].type = 2
         buyer[0].save()
         user = buyer[0]
-        store = Store(name=str(user.name)+str("\'s Store"), owner=user, address='', credit=0)
+        store = Store(name=str(user.name+"\'s Store").encode('utf-8'), owner=user, address='', credit=0)
         store.save()
         error_message = "成功！"
     else:

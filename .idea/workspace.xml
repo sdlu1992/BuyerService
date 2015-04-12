@@ -69,7 +69,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="30" selection-start="463" selection-end="463" vertical-scroll-proportion="0.28066528" vertical-offset="30" max-vertical-offset="3735">
+            <state line="139" column="65" selection-start="4838" selection-end="4838" vertical-scroll-proportion="0.6237006" vertical-offset="1740" max-vertical-offset="3780">
               <folding />
             </state>
           </provider>
@@ -583,7 +583,11 @@
       <created>1428853388047</created>
       <updated>1428853388047</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix bugs: chinese?">
+      <created>1428855269217</created>
+      <updated>1428855269217</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -644,7 +648,8 @@
     <MESSAGE value="get goods list by category" />
     <MESSAGE value="fix bugs" />
     <MESSAGE value="fix bugs:templenotexist" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs:templenotexist" />
+    <MESSAGE value="fix bugs: chinese?" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs: chinese?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -751,7 +756,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="30" selection-start="463" selection-end="463" vertical-scroll-proportion="0.28066528" vertical-offset="30" max-vertical-offset="3735">
+        <state line="139" column="65" selection-start="4838" selection-end="4838" vertical-scroll-proportion="0.6237006" vertical-offset="1740" max-vertical-offset="3780">
           <folding />
         </state>
       </provider>
