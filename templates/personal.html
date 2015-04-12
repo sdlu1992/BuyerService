@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}
+    Personal-{{ user.name }}
+{% endblock %}
+{% block content %}
+<script>
+    function displayChange(){
+        var edit_combo = document.getElementById("edit_combo");
+        var form = document.getElementById("formChange")
+        if(edit_combo.innerHTML == "Edit"){
+            edit_combo.innerHTML = "Hide"
+            form.style.display = "block"
+        } else {
+            edit_combo.innerHTML = "Edit"
+            form.style.display = "none"
+        }
+    }
+
+    function changeToSolder(){
+         window.location.href='/changeToSolder'
+    }
+</script>
+<div class="body">
+<p><h3>Infomation</h3></p>
+<p class="error">{{ error_message }}</p>
+<table id="personal" cellpadding="10px">
+    <tr>
+        <td>手机号:</td>
+        <td>{{ user.phone }}</td>
+    </tr>
+    <tr>
+        <td>姓名:</td>
+        <td>{{ user.name }}</td>
+    </tr>
+    <tr>
+        <td>用户类型:</td>
+        {% ifequal user.type 1 %}
+            <td>买家</td>
+        {% endifequal %}
+        {% ifequal user.type 2 %}
+            <td>卖家</td>
+        {% endifequal %}
+    </tr>
+    {% ifequal user.type 1 %}
+    <tr>
+        <td>剩余资金:</td>
+        <td>{{ user.rest }}</td>
+    </tr>
+    <tr>
+        <td>信用:</td>
+        <td>{{ user.credit}}</td>
+    </tr>
+    <tr>
+        <td>申请成为卖家:</td>
+        <td>
+            <input type="button" value="确定" onclick="changeToSolder()"/>
+        </td>
+    </tr>
+    {% endifequal %}
+
+</table>
+</div>
+
+{% endblock %}

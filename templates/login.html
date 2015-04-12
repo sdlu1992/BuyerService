@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+    MyDatabase-{{ title }}
+{% endblock %}
+
+{% block content %}
+    <div class="body">
+        <form action="." method="post">
+            <p class="error">{{ error_message }}</p>
+            <p>Phone: <input type="text" name="phone" value="{{ r_phone }}"/></p>
+            <p>Password: <input type="password" name="password" value="{{ r_password }}"/></p>
+            <p><input style="visibility: hidden" type="platform" name="platform" value="web"/></p>
+            <p><input type="submit" value="Login"/></p>
+        </form>
+    </div>
+{% endblock %}

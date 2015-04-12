@@ -35,6 +35,7 @@ class Goods(models.Model):
     price = models.FloatField()
     store = models.ForeignKey(Store)
     category = models.IntegerField()
+    des = models.CharField(max_length=2000)
 
     def __unicode__(self):
         return self.name

@@ -12,5 +12,8 @@ urlpatterns = patterns('',
     url(r'^register/', 'main.views.register'),
     url(r'^login/', 'main.views.login'),
     url(r'^info/', 'main.views.info'),
+    url(r'^changeToSolder/', 'main.views.change_to_solder'),
+    url(r'^newGoods/', 'main.views.new_goods'),
+    url(r'^report/', 'main.views.report'),
     url(r'^category/', 'main.views.category'),
 )

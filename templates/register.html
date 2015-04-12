@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+    MyDatabase - {{ title }}
+{% endblock %}
+{% block content %}
+<body>
+<div class="body">
+    <h1>注册</h1>
+    <p class="error">{{ error_message }}</p>
+    <form action="." method="post">
+        <p><label>Name: </label>    <input type="text" name="name" value=""></p>
+        <p><label>Password:</label> <input type="password" name="password" value=""></p>
+        <p><label>Phone:</label>    <input type="text" name="phone" value=""></p>
+        <p><label>Email:</label>    <input type="text" name="email" value=""></p>
+        <p><input style="visibility: hidden" type="platform" name="platform" value="web"/></p>
+        </select></p>
+        <p><input type="submit" value="注册"></p>
+    </form>
+</div>
+</body>
+
+{% endblock %}

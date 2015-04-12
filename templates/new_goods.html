@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}
+    增加新的商品
+{% endblock %}
+{% block content %}
+
+<script type="text/javascript">
+    function onSelectRootType(){
+        var root = document.getElementById("root_category");
+        var cate = document.getElementById("category");
+        var value = getRootValue();
+        cate.length = 0;
+        {% for key, value in cMerge.items%}
+            if("{{ key}}".charAt(0)== value){
+                cate.add(new Option("{{ value}}","{{ key}}"));
+            }
+        {% endfor %}
+    }
+
+    function getRootValue(){
+        var root = document.getElementById("root_category");
+        return root.options[root.selectedIndex].value;
+    }
+</script>
+<div class="body">
+    <h1>增加新的商品</h1>
+    <p class="error">{{ error_message }}</p>
+    <form action="." method="post">
+        <p><label>商品名称:</label><input type="text" name="goods_name" maxlength="200" value=""></p>
+        <p><label>商品价格:</label> <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" name="price" maxlength="9" value=""></p>
+        <p><label>商品类别:</label>
+            <select name="root_category" id="root_category" onchange="onSelectRootType()">
+            {% for key, value in cc.root_category.items%}
+                <option value="{{ key}}">{{ value}}</option>
+            {% endfor %}
+            </select>
+        </p>
+        <p>
+            <select name="category" id="category" >
+                {% for key, value in cMerge.items%}
+                    <script>
+                        if("{{ key}}".charAt(0)== getRootValue()){
+                            document.getElementById("category").add(new Option("{{ value}}","{{ key}}"));
+                        }
+                    </script>
+                {% endfor %}
+            </select>
+        </p>
+        <input type="Submit" value="提交">
+    </form>
+</div>
+{% endblock %}
