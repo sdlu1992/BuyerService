@@ -135,7 +135,7 @@ def change_to_solder(request):
         buyer[0].type = 2
         buyer[0].save()
         user = buyer[0]
-        store = Store(name=str(user.name)+"的商店", owner=user, address='', credit=0)
+        store = Store(name=str(user.name)+str("的商店"), owner=user, address='', credit=0)
         store.save()
         error_message = "成功！"
     else:
