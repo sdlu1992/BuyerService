@@ -69,7 +69,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="55" selection-start="4836" selection-end="4836" vertical-scroll-proportion="0.5925156" vertical-offset="1725" max-vertical-offset="3750">
+            <state line="14" column="30" selection-start="463" selection-end="463" vertical-scroll-proportion="0.28066528" vertical-offset="30" max-vertical-offset="3735">
               <folding />
             </state>
           </provider>
@@ -579,7 +579,11 @@
       <created>1428853345795</created>
       <updated>1428853345795</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix bugs:templenotexist">
+      <created>1428853388047</created>
+      <updated>1428853388047</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -747,7 +751,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="55" selection-start="4836" selection-end="4836" vertical-scroll-proportion="0.5925156" vertical-offset="1725" max-vertical-offset="3750">
+        <state line="14" column="30" selection-start="463" selection-end="463" vertical-scroll-proportion="0.28066528" vertical-offset="30" max-vertical-offset="3735">
           <folding />
         </state>
       </provider>

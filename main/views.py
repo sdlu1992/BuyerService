@@ -13,7 +13,6 @@ def register(request):
     print(request.method)
     if request.method == 'POST':
         r_phone, r_password, r_platform, r_email, r_name = get_register_info(request)
-        print r_name, r_password, r_phone, r_email
         if r_name == '':
             error_message = 'name is empty'
         elif r_password == '':
