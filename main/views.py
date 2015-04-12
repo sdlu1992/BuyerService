@@ -203,7 +203,8 @@ def get_goods_by_category(request):
         cate = req['category']
         goods = Goods.objects.filter(category=cate)
         response['len'] = len(goods)
-        response['goods'] = goods
+        if len(goods) != 0:
+            response['goods'] = goods
         response['response'] = '1'
 
     print response
