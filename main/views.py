@@ -204,6 +204,9 @@ def get_goods_by_category(request):
         goods = Goods.objects.filter(category=cate)
         response['len'] = len(goods)
         if len(goods) != 0:
+            r_goods = []
+            for foo in goods:
+                print foo
             response['goods'] = goods
         response['response'] = '1'
 
