@@ -87,7 +87,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="228" column="10" selection-start="7871" selection-end="7871" vertical-scroll-proportion="0.720524" vertical-offset="3090" max-vertical-offset="4095">
+            <state line="241" column="14" selection-start="8132" selection-end="8132" vertical-scroll-proportion="0.44323143" vertical-offset="3412" max-vertical-offset="4095">
               <folding>
                 <element signature="e#14#40#0" expanded="true" />
               </folding>
@@ -670,7 +670,11 @@
       <created>1428897051464</created>
       <updated>1428897051464</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="fix bugs:  get_goods_by_catgory">
+      <created>1428897192208</created>
+      <updated>1428897192208</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -842,7 +846,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="228" column="10" selection-start="7871" selection-end="7871" vertical-scroll-proportion="0.720524" vertical-offset="3090" max-vertical-offset="4095">
+        <state line="241" column="14" selection-start="8132" selection-end="8132" vertical-scroll-proportion="0.44323143" vertical-offset="3412" max-vertical-offset="4095">
           <folding>
             <element signature="e#14#40#0" expanded="true" />
           </folding>

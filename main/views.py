@@ -239,7 +239,7 @@ def test(request):
     if request.method == 'GET':
         return render_to_response('test.html')
     elif request.method == 'POST':
-        get_goods_by_category(request)
+        return get_goods_by_category(request)
 
 
 def get_buyer_by_phone(phone_number):
