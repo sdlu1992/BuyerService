@@ -1,6 +1,7 @@
 #coding=utf-8
 import json, hashlib, time
-from main.models import Buyer, Category, Store, Goods
+from main.models import Buyer, Category, Store, Goods, BuyHistory
+from django.forms.models import model_to_dict
 from django.shortcuts import render, HttpResponse, render_to_response, HttpResponseRedirect
 from helper import get_login_info, get_register_info
 # Create your views here.
@@ -211,13 +212,16 @@ def get_goods_by_category(request):
         if len(goods) != 0:
             r_goods = []
             for foo in goods:
-                print foo
-            response['goods'] = goods
+                dic = {'title': foo.name, 'price': foo.price, 'des': foo.des, 'category': foo.category,
+                       'store': foo.store, 'count': len(BuyHistory.objects.filter(goods=foo)),
+                       'store_name': foo.store.name}
+                # dic = model_to_dict(foo)
+                r_goods.append(dic)
+                print dic
+            response['goods'] = r_goods
         response['response'] = '1'
 
-    print response
     response['error_msg'] = error_message
-    print response
     j = json.dumps(response)
     print response
     return HttpResponse(j)
