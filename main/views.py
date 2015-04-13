@@ -234,6 +234,13 @@ def report(request):
     return render_to_response('goods_list.html', locals())
 
 
+def test(request):
+    if request.method == 'GET':
+        return render_to_response('test.html')
+    elif request.method == 'POST':
+        get_goods_by_category(request)
+
+
 def get_buyer_by_phone(phone_number):
     buyer = Buyer.objects.filter(phone=phone_number)
     print buyer
