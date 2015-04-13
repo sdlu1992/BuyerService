@@ -220,6 +220,7 @@ def get_goods_by_category(request):
                 print dic
             response['goods'] = r_goods
             print r_goods
+            print response
         response['response'] = '1'
 
     response['error_msg'] = error_message
