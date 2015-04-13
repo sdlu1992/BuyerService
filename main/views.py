@@ -219,6 +219,7 @@ def get_goods_by_category(request):
                 r_goods.append(dic)
                 print dic
             response['goods'] = r_goods
+            print r_goods
         response['response'] = '1'
 
     response['error_msg'] = error_message
