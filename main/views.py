@@ -212,7 +212,7 @@ def get_goods_by_category(request):
         if len(goods) != 0:
             r_goods = []
             for foo in goods:
-                dic = {'title': foo.name, 'price': foo.price, 'des': foo.des, 'category': foo.category,
+                dic = {'id': foo.id, 'title': foo.name, 'price': foo.price, 'des': foo.des, 'category': foo.category,
                        'store': foo.store.id, 'count': len(BuyHistory.objects.filter(goods=foo)),
                        'store_name': foo.store.name}
                 # dic = model_to_dict(foo)
