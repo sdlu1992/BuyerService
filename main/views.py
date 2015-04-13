@@ -204,10 +204,9 @@ def get_goods_by_category(request):
     error_message = ''
     print(request.method)
     if request.method == 'POST':
-        # req = json.loads(request.body)
-        # print req
-        # cate = req['category']
-        cate = request.POST.get('category')
+        req = json.loads(request.body)
+        print req
+        cate = req['category']
         goods = Goods.objects.filter(category=cate)
         response['len'] = len(goods)
         if len(goods) != 0:
@@ -218,10 +217,7 @@ def get_goods_by_category(request):
                        'store_name': foo.store.name}
                 # dic = model_to_dict(foo)
                 r_goods.append(dic)
-                print dic
             response['goods'] = r_goods
-            print r_goods
-            print response
         response['response'] = '1'
 
     response['error_msg'] = error_message
