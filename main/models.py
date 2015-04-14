@@ -57,6 +57,7 @@ class Appraise(models.Model):
     type = models.IntegerField()
     buy_history = models.OneToOneField(BuyHistory)
     content = models.CharField(max_length=500)
+    data = models.CharField(max_length=100)
 
     def __unicode__(self):
         return self.id
@@ -65,6 +66,7 @@ class Appraise(models.Model):
 class Category(models.Model):
     category = models.CharField(max_length=2000)
     root_category = models.CharField(max_length=100)
+
     def __unicode__(self):
         return self.id
 
@@ -74,6 +76,14 @@ class WishList(models.Model):
     buyer = models.ForeignKey(Buyer)
     amount = models.IntegerField()
     date = models.CharField(max_length=30)
+
+    def __unicode__(self):
+        return self.id
+
+
+class Collect(models.Model):
+    goods = models.ForeignKey(Goods)
+    buyer = models.ForeignKey(Buyer)
 
     def __unicode__(self):
         return self.id

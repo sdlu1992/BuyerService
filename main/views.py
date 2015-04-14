@@ -63,7 +63,7 @@ def login(request):
         if r_phone == '':
             error_message = 'name is empty'
         elif r_password == '':
-            error_message = 'token is empty, please relogin'
+            error_message = 'password is empty'
         else:
             buyer = get_buyer_by_phone(r_phone)
             print len(buyer)
@@ -153,12 +153,15 @@ def new_goods(request):
     user = None
     error_message = ''
     token = request.session.get('token', '')
+    print token
     r_platform = 'web'
     buyer = Buyer.objects.filter(token=request.session.get('token', ''))
     cc, cMerge = get_category()
     if token == '':
         return HttpResponseRedirect('/login')
     if request.method == 'GET':
+        if len(buyer) == 1:
+            user = buyer[0]
         return render_to_response('new_goods.html', locals())
     elif request.method == 'POST':
         g_name = request.POST.get('goods_name', '')
@@ -177,8 +180,6 @@ def new_goods(request):
             error_message = '成功！'
     else:
         return HttpResponseRedirect('/login')
-    # root = json.dumps(c_root)
-    # cate = json.dumps(cate)
     return render_to_response('new_goods.html', locals())
 
 
@@ -231,11 +232,40 @@ def report(request):
     return render_to_response('goods_list.html', locals())
 
 
+def get_good(request):
+    response = {'response': '2'}
+    error_message = ''
+    print(request.method)
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        print req
+        good_id = req['good_id']
+        # good_id = request.POST.get('test')
+        goods = Goods.objects.filter(id=good_id)
+        if len(goods) != 0:
+            good = goods[0]
+            dic_good = model_to_dict(good)
+            dic_good['count'] = len(BuyHistory.objects.filter(goods=good))
+            store = good.store
+            solder = store.owner
+            response['good'] = dic_good
+            response['response'] = '1'
+            response['store'] = model_to_dict(store)
+            response['solder'] = model_to_dict(solder)
+            response['solder']['token'] = ''
+            response['solder']['password'] = ''
+
+    response['error_msg'] = error_message
+    j = json.dumps(response)
+    print j
+    return HttpResponse(j)
+
+
 def test(request):
     if request.method == 'GET':
         return render_to_response('test.html')
     elif request.method == 'POST':
-        return get_goods_by_category(request)
+        return get_good(request)
 
 
 def get_buyer_by_phone(phone_number):
