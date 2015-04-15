@@ -36,6 +36,8 @@ class Goods(models.Model):
     store = models.ForeignKey(Store)
     category = models.IntegerField()
     des = models.CharField(max_length=2000)
+    image_url_title = models.CharField(max_length=200)
+    image_url_other = models.CharField(max_length=1000)
 
     def __unicode__(self):
         return self.name

@@ -1,12 +1,13 @@
 #coding=utf-8
-import json, hashlib, time
-from main.models import Buyer, Category, Store, Goods, BuyHistory
+import json, hashlib, time, datetime
+from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList
 from django.forms.models import model_to_dict
 from django.shortcuts import render, HttpResponse, render_to_response, HttpResponseRedirect
 from helper import get_login_info, get_register_info
 # Create your views here.
 
 import sys
+
 print sys.getdefaultencoding()
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -141,7 +142,7 @@ def change_to_solder(request):
         buyer[0].type = 2
         buyer[0].save()
         user = buyer[0]
-        store = Store(name=str(user.name+"\'s Store").encode('utf-8'), owner=user, address='', credit=0)
+        store = Store(name=str(user.name + "\'s Store").encode('utf-8'), owner=user, address='', credit=0)
         store.save()
         error_message = "成功！"
     else:
@@ -228,7 +229,6 @@ def get_goods_by_category(request):
 
 
 def report(request):
-
     return render_to_response('goods_list.html', locals())
 
 
@@ -261,6 +261,47 @@ def get_good(request):
     return HttpResponse(j)
 
 
+def add_wish_list(request):
+    count = ''
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    goods = None
+    print(request.method)
+
+    if request.method == 'GET':
+        token = request.session.get('token', '')
+        r_platform = 'web'
+        if token == '':
+            return HttpResponseRedirect('/login')
+        else:
+            buyer = Buyer.objects.filter(token=request.session.get('token', ''))
+    elif request.method == 'POST':
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        good_id = req['good_id']
+        count = req['count']
+        buyer = Buyer.objects.filter(token=req['token'])
+        goods = Goods.objects.filter(id=good_id)
+    if len(buyer) == 1 and len(goods) == 1:
+        user = buyer[0]
+        good = goods[0]
+        wish = WishList(amount=count, goods=good, buyer=user, date=datetime.datetime.now())
+        wish.save()
+        response['response'] = 1
+    else:
+        error_message = 'error'
+    if r_platform == 'web':
+        return render_to_response('personal.html', locals())
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
+    pass
+
+
 def test(request):
     if request.method == 'GET':
         return render_to_response('test.html')
@@ -278,12 +319,12 @@ def get_token(r_password):
     m = hashlib.md5()
     print r_password
     print time.time()
-    m.update(r_password+str(time.time()))
+    m.update(r_password + str(time.time()))
     return m.hexdigest()
 
 
 def get_category():
-    c1 = {'10': '手机', '11': '手机配件', '12':'数码相机'}
+    c1 = {'10': '手机', '11': '手机配件', '12': '数码相机'}
     c2 = {'20': '板鞋', '21': '跑鞋', '22': '皮鞋'}
     c0 = {'1': c1, '2': c2}
     c_root = {'1': '手机数码', '2': '鞋类'}
