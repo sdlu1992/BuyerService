@@ -336,7 +336,8 @@ def get_wish_list(request):
                 dic = {'good': model_to_dict(foo.goods),
                        'store': model_to_dict(foo.goods.store),
                        'count': foo.amount,
-                       'date': foo.date}
+                       'date': foo.date,
+                       'id': foo.id}
                 wishes.append(dic)
             response['wish_list'] = wishes
         else:
