@@ -288,7 +288,13 @@ def add_wish_list(request):
     if len(buyer) == 1 and len(goods) == 1:
         user = buyer[0]
         good = goods[0]
-        wish = WishList(amount=count, goods=good, buyer=user, date=datetime.datetime.now())
+        wish_exist = WishList.objects.filter(goods=good, buyer=user)
+        if len(wish_exist) == 1:
+            wish = wish_exist[0]
+            wish.amount += int(count)
+            wish.date = datetime.datetime.now()
+        else:
+            wish = WishList(amount=count, goods=good, buyer=user, date=datetime.datetime.now())
         wish.save()
         response['response'] = 1
     else:
