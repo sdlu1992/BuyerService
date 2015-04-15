@@ -42,7 +42,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="211" column="40" selection-start="7145" selection-end="7145" vertical-scroll-proportion="0.4979424" vertical-offset="2802" max-vertical-offset="5115">
+            <state line="211" column="23" selection-start="7128" selection-end="7128" vertical-scroll-proportion="0.23045267" vertical-offset="2997" max-vertical-offset="5115">
               <folding>
                 <element signature="e#14#50#0" expanded="true" />
               </folding>
@@ -54,15 +54,6 @@
         <entry file="file://$PROJECT_DIR$/templates/test.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="9" column="47" selection-start="270" selection-end="270" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="315">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="helper.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/helper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="17" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="570">
               <folding />
             </state>
           </provider>
@@ -651,7 +642,11 @@
       <created>1429078315861</created>
       <updated>1429078315861</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="fix bugs:  add_wish_list">
+      <created>1429078365296</created>
+      <updated>1429078365296</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -753,13 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/goods_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="20" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.50672644" vertical-offset="456" max-vertical-offset="1125" />
@@ -812,6 +800,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="4" selection-start="185" selection-end="185" vertical-scroll-proportion="0.08230453" vertical-offset="0" max-vertical-offset="729">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="47" selection-start="270" selection-end="270" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="315">
@@ -821,7 +816,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="211" column="40" selection-start="7145" selection-end="7145" vertical-scroll-proportion="0.4979424" vertical-offset="2802" max-vertical-offset="5115">
+        <state line="211" column="23" selection-start="7128" selection-end="7128" vertical-scroll-proportion="0.23045267" vertical-offset="2997" max-vertical-offset="5115">
           <folding>
             <element signature="e#14#50#0" expanded="true" />
           </folding>

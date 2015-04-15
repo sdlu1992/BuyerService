@@ -209,7 +209,7 @@ def get_goods_by_category(request):
         # req = json.loads(request.body)
         # print req
         # cate = req['category']
-        cate = request.POST.get['category']
+        cate = request.POST.get('category')
         goods = Goods.objects.filter(category=cate)
         response['len'] = len(goods)
         if len(goods) != 0:
