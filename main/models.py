@@ -15,6 +15,7 @@ class Buyer(models.Model):
     email = models.CharField(max_length=30)
     name = models.CharField(max_length=20)
     token = models.CharField(max_length=50)
+    token_web = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.phone

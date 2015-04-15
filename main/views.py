@@ -71,7 +71,10 @@ def login(request):
             if len(buyer) == 1:
                 if r_password == buyer[0].password:
                     token = get_token(r_password)
-                    buyer[0].token = token
+                    if r_platform == 'android':
+                        buyer[0].token = token
+                    elif r_password == 'web':
+                        buyer[0].token_web = token
                     buyer[0].save()
                     info = {'name': buyer[0].name, 'phone': buyer[0].phone, 'email': buyer[0].email}
                     response['response'] = 1
@@ -108,7 +111,7 @@ def info(request):
         if token == '':
             return HttpResponseRedirect('/login')
         else:
-            buyer = Buyer.objects.filter(token=request.session.get('token', ''))
+            buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
     elif request.method == 'POST':
         req = json.loads(request.body)
         buyer = Buyer.objects.filter(token=req['token'])
@@ -137,7 +140,7 @@ def change_to_solder(request):
         if token == '':
             return HttpResponseRedirect('/login')
         else:
-            buyer = Buyer.objects.filter(token=request.session.get('token', ''))
+            buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
     if len(buyer) == 1:
         buyer[0].type = 2
         buyer[0].save()
@@ -156,7 +159,7 @@ def new_goods(request):
     token = request.session.get('token', '')
     print token
     r_platform = 'web'
-    buyer = Buyer.objects.filter(token=request.session.get('token', ''))
+    buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
     cc, cMerge = get_category()
     if token == '':
         return HttpResponseRedirect('/login')
@@ -277,7 +280,7 @@ def add_wish_list(request):
         if token == '':
             return HttpResponseRedirect('/login')
         else:
-            buyer = Buyer.objects.filter(token=request.session.get('token', ''))
+            buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
     elif request.method == 'POST':
         req = json.loads(request.body)
         r_platform = req['platform']
@@ -317,12 +320,12 @@ def get_wish_list(request):
     print(request.method)
 
     if request.method == 'POST':
-        # req = json.loads(request.body)
-        # r_platform = req['platform']
-        # buyer = Buyer.objects.filter(token=req['token'])
-        r_platform = request.POST.get('platform')
-        token = request.session.get('token')
-        buyer = Buyer.objects.filter(token=token)
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        buyer = Buyer.objects.filter(token=req['token'])
+        # r_platform = request.POST.get('platform')
+        # token = request.session.get('token')
+        # buyer = Buyer.objects.filter(token_web=token)
     if len(buyer) == 1:
         user = buyer[0]
         wish_list = WishList.objects.filter(buyer=user)
@@ -341,6 +344,7 @@ def get_wish_list(request):
         response['response'] = 1
         print response
     else:
+        response['response'] = 2
         error_message = 'error'
     if r_platform == 'web':
         return render_to_response('personal.html', locals())
