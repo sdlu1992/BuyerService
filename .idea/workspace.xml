@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/test.html" afterPath="$PROJECT_DIR$/templates/test.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -43,7 +42,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="308" column="24" selection-start="10264" selection-end="10264" vertical-scroll-proportion="0.48559672" vertical-offset="4266" max-vertical-offset="5100">
+            <state line="211" column="40" selection-start="7145" selection-end="7145" vertical-scroll-proportion="0.4979424" vertical-offset="2802" max-vertical-offset="5115">
               <folding>
                 <element signature="e#14#50#0" expanded="true" />
               </folding>
@@ -108,8 +107,8 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/main/models.py" />
         <option value="$PROJECT_DIR$/BuyerService/urls.py" />
-        <option value="$PROJECT_DIR$/main/views.py" />
         <option value="$PROJECT_DIR$/templates/test.html" />
+        <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
   </component>
@@ -648,7 +647,11 @@
       <created>1429078026649</created>
       <updated>1429078026649</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="fix bugs:  add_wish_list">
+      <created>1429078315861</created>
+      <updated>1429078315861</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -818,7 +821,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="308" column="24" selection-start="10264" selection-end="10264" vertical-scroll-proportion="0.48559672" vertical-offset="4266" max-vertical-offset="5100">
+        <state line="211" column="40" selection-start="7145" selection-end="7145" vertical-scroll-proportion="0.4979424" vertical-offset="2802" max-vertical-offset="5115">
           <folding>
             <element signature="e#14#50#0" expanded="true" />
           </folding>
