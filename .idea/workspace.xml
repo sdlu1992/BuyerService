@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BuyerService/urls.py" afterPath="$PROJECT_DIR$/BuyerService/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -33,7 +34,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="21" selection-start="761" selection-end="761" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+            <state line="21" column="50" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
               <folding />
             </state>
           </provider>
@@ -42,7 +43,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="282" column="31" selection-start="9427" selection-end="9427" vertical-scroll-proportion="0.4107884" vertical-offset="4032" max-vertical-offset="5190">
+            <state line="324" column="28" selection-start="10818" selection-end="10818" vertical-scroll-proportion="0.533195" vertical-offset="4603" max-vertical-offset="5820">
               <folding>
                 <element signature="e#14#50#0" expanded="true" />
               </folding>
@@ -97,8 +98,8 @@
         <option value="$PROJECT_DIR$/BuyerService/settings.py" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/main/models.py" />
-        <option value="$PROJECT_DIR$/BuyerService/urls.py" />
         <option value="$PROJECT_DIR$/templates/test.html" />
+        <option value="$PROJECT_DIR$/BuyerService/urls.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
@@ -654,7 +655,11 @@
       <created>1429078738860</created>
       <updated>1429078738860</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fix bugs:  add_wish_list: now when goods has exist in wishlist, it will add the amount">
+      <created>1429079714239</created>
+      <updated>1429079714239</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -691,7 +696,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3989432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32628798" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32628798" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -719,7 +724,8 @@
     <MESSAGE value="fix bugs:  get_goods_by_catgory" />
     <MESSAGE value="fix bugs:  get_good_by_id" />
     <MESSAGE value="fix bugs:  add_wish_list" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs:  add_wish_list" />
+    <MESSAGE value="fix bugs:  add_wish_list: now when goods has exist in wishlist, it will add the amount" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs:  add_wish_list: now when goods has exist in wishlist, it will add the amount" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -819,14 +825,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="21" selection-start="761" selection-end="761" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+        <state line="21" column="50" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="282" column="31" selection-start="9427" selection-end="9427" vertical-scroll-proportion="0.4107884" vertical-offset="4032" max-vertical-offset="5190">
+        <state line="324" column="28" selection-start="10818" selection-end="10818" vertical-scroll-proportion="0.533195" vertical-offset="4603" max-vertical-offset="5820">
           <folding>
             <element signature="e#14#50#0" expanded="true" />
           </folding>

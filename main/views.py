@@ -305,14 +305,56 @@ def add_wish_list(request):
         json.dumps(response)
         j = json.dumps(response)
         return HttpResponse(j)
-    pass
+
+
+def get_wish_list(request):
+    count = ''
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    print(request.method)
+
+    if request.method == 'POST':
+        # req = json.loads(request.body)
+        # r_platform = req['platform']
+        # buyer = Buyer.objects.filter(token=req['token'])
+        r_platform = request.POST.get('platform')
+        token = request.session.get('token')
+        buyer = Buyer.objects.filter(token=token)
+    if len(buyer) == 1:
+        user = buyer[0]
+        wish_list = WishList.objects.filter(buyer=user)
+        response['len'] = len(wish_list)
+        if len(wish_list) != 0:
+            wishes = []
+            for foo in wish_list:
+                dic = {'good': model_to_dict(foo.goods),
+                       'store': model_to_dict(foo.goods.store),
+                       'count': foo.amount,
+                       'date': foo.date}
+                wishes.append(dic)
+            response['wish_list'] = wishes
+        else:
+            pass
+        response['response'] = 1
+        print response
+    else:
+        error_message = 'error'
+    if r_platform == 'web':
+        return render_to_response('personal.html', locals())
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
 
 
 def test(request):
     if request.method == 'GET':
         return render_to_response('test.html')
     elif request.method == 'POST':
-        return get_goods_by_category(request)
+        return get_wish_list(request)
 
 
 def get_buyer_by_phone(phone_number):
