@@ -333,11 +333,9 @@ def get_wish_list(request):
         if len(wish_list) != 0:
             wishes = []
             for foo in wish_list:
-                dic = {'good': model_to_dict(foo.goods),
-                       'store': model_to_dict(foo.goods.store),
-                       'count': foo.amount,
-                       'date': foo.date,
-                       'id': foo.id}
+                dic = model_to_dict(foo)
+                dic['good'] = model_to_dict(foo.goods)
+                dic['store'] = model_to_dict(foo.goods.store)
                 wishes.append(dic)
             response['wish_list'] = wishes
         else:

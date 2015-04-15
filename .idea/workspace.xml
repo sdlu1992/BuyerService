@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models.py" afterPath="$PROJECT_DIR$/main/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -52,7 +51,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="327" column="29" selection-start="10982" selection-end="10982" vertical-scroll-proportion="0.373444" vertical-offset="4725" max-vertical-offset="5880">
+            <state line="335" column="26" selection-start="11270" selection-end="11270" vertical-scroll-proportion="0.4979253" vertical-offset="4785" max-vertical-offset="5865">
               <folding>
                 <element signature="e#14#50#0" expanded="true" />
               </folding>
@@ -672,7 +671,15 @@
       <created>1429089090053</created>
       <updated>1429089090053</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="new feature: token has a brother: token_web, then they will not confilct between web and android&#10;">
+      <created>1429089729056</created>
+      <updated>1429089729056</updated>
+    </task>
+    <task id="LOCAL-00041" summary="new feature: token has a brother: token_web, then they will not confilct between web and android&#10;">
+      <created>1429092120225</created>
+      <updated>1429092120225</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -739,7 +746,8 @@
     <MESSAGE value="fix bugs:  add_wish_list" />
     <MESSAGE value="fix bugs:  add_wish_list: now when goods has exist in wishlist, it will add the amount" />
     <MESSAGE value="new feature: get_wish_list&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="new feature: get_wish_list&#10;" />
+    <MESSAGE value="new feature: token has a brother: token_web, then they will not confilct between web and android&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="new feature: token has a brother: token_web, then they will not confilct between web and android&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -830,13 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="50" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
@@ -844,9 +845,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="50" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="327" column="29" selection-start="10982" selection-end="10982" vertical-scroll-proportion="0.373444" vertical-offset="4725" max-vertical-offset="5880">
+        <state line="335" column="26" selection-start="11270" selection-end="11270" vertical-scroll-proportion="0.4979253" vertical-offset="4785" max-vertical-offset="5865">
           <folding>
             <element signature="e#14#50#0" expanded="true" />
           </folding>
