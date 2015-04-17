@@ -405,6 +405,46 @@ def add_order(request):
         return HttpResponse(j)
 
 
+def get_buy_history(request):
+    count = ''
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    print(request.method)
+
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        buyer = Buyer.objects.filter(token=req['token'])
+    if len(buyer) == 1:
+        user = buyer[0]
+        histories = BuyHistory.objects.filter(buyer=user)
+        response['len'] = len(histories)
+        if len(histories) != 0:
+            his_dic = []
+            for foo in histories:
+                dic = model_to_dict(foo)
+                dic['good'] = model_to_dict(foo.goods)
+                dic['store'] = model_to_dict(foo.goods.store)
+                his_dic.append(dic)
+            response['history_list'] = his_dic
+        else:
+            pass
+        response['response'] = 1
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'error'
+    if r_platform == 'web':
+        return render_to_response('personal.html', locals())
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
 def test(request):
     if request.method == 'GET':
         return render_to_response('test.html')

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BuyerService/urls.py" afterPath="$PROJECT_DIR$/BuyerService/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -33,7 +34,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="14" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1845">
+            <state line="75" column="14" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1845">
               <folding>
                 <element signature="e#14#42#0" expanded="true" />
               </folding>
@@ -41,13 +42,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="379" column="18" selection-start="12453" selection-end="12664" vertical-scroll-proportion="0.46680498" vertical-offset="5460" max-vertical-offset="6645">
+            <state line="423" column="30" selection-start="14228" selection-end="14228" vertical-scroll-proportion="0.0" vertical-offset="6075" max-vertical-offset="7245">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="14" selection-start="909" selection-end="909" vertical-scroll-proportion="0.65352696" vertical-offset="0" max-vertical-offset="482">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,9 +108,9 @@
         <option value="$PROJECT_DIR$/main/helper.py" />
         <option value="$PROJECT_DIR$/BuyerService/settings.py" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/BuyerService/urls.py" />
         <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/main/models.py" />
+        <option value="$PROJECT_DIR$/BuyerService/urls.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
@@ -804,7 +814,11 @@
       <created>1429274393929</created>
       <updated>1429274393929</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="fix bugs addOrder&#10;">
+      <created>1429274512484</created>
+      <updated>1429274512484</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -969,13 +983,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="40" selection-start="890" selection-end="890" vertical-scroll-proportion="0.62240666" vertical-offset="0" max-vertical-offset="482">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="75" column="14" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1845">
@@ -987,10 +994,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="379" column="18" selection-start="12453" selection-end="12664" vertical-scroll-proportion="0.46680498" vertical-offset="5460" max-vertical-offset="6645">
+        <state line="423" column="30" selection-start="14228" selection-end="14228" vertical-scroll-proportion="0.0" vertical-offset="6075" max-vertical-offset="7245">
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="14" selection-start="909" selection-end="909" vertical-scroll-proportion="0.65352696" vertical-offset="0" max-vertical-offset="482">
+          <folding />
         </state>
       </provider>
     </entry>

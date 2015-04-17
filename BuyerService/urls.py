@@ -21,5 +21,6 @@ urlpatterns = patterns('',
     url(r'^addWishList/', 'main.views.add_wish_list'),
     url(r'^getWishList/', 'main.views.get_wish_list'),
     url(r'^order/', 'main.views.add_order'),
+    url(r'^getBuyHistory/', 'main.views.get_buy_history'),
     url(r'^test/', 'main.views.test'),
 )
