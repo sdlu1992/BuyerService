@@ -371,7 +371,7 @@ def add_order(request):
         req = json.loads(request.body)
         print req
         r_platform = req['platform']
-        r_goods = req['goods']
+        r_goods = json.loads(req['goods'])
         buyer = Buyer.objects.filter(token=req['token'])
         # r_platform = request.POST.get('platform')
         # r_goods = json.loads(request.POST.get('test'))
