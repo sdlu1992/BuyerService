@@ -389,6 +389,7 @@ def add_order(request):
         user = buyer[0]
         order = Order(goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0, price=price_total)
         order.save()
+
         response['response'] = 1
         response['order_id'] = order.id
     elif len(goods) == 0:

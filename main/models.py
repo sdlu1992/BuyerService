@@ -76,6 +76,7 @@ class BuyHistory(models.Model):
     price = models.FloatField()
     amount = models.IntegerField()
     order = models.ForeignKey(Order)
+    state = models.IntegerField()
 
     def __unicode__(self):
         return self.goods.name
