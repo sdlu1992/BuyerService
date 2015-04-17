@@ -384,6 +384,7 @@ def add_order(request):
             goods.append(goods)
             price_total += good.price * string.atoi(foo['count'])
             print goods
+    print len(buyer)
     if len(buyer) == 1 and len(goods) != 0:
         user = buyer[0]
         order = Order(goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0, price=price_total)
