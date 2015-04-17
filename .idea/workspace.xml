@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models.py" afterPath="$PROJECT_DIR$/main/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BuyerService/urls.py" afterPath="$PROJECT_DIR$/BuyerService/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -55,7 +53,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="372" column="26" selection-start="12300" selection-end="12300" vertical-scroll-proportion="0.5643154" vertical-offset="5308" max-vertical-offset="6465">
+            <state line="376" column="26" selection-start="12443" selection-end="12443" vertical-scroll-proportion="0.533195" vertical-offset="5383" max-vertical-offset="6465">
               <folding>
                 <element signature="e#14#50#0" expanded="true" />
               </folding>
@@ -111,8 +109,8 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/BuyerService/urls.py" />
-        <option value="$PROJECT_DIR$/main/views.py" />
         <option value="$PROJECT_DIR$/main/models.py" />
+        <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
   </component>
@@ -687,7 +685,15 @@
       <created>1429093061439</created>
       <updated>1429093061439</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="new feature: order&#10;&#10; &#10;">
+      <created>1429265412140</created>
+      <updated>1429265412140</updated>
+    </task>
+    <task id="LOCAL-00044" summary="new feature: order&#10;&#10; &#10;">
+      <created>1429265740434</created>
+      <updated>1429265740434</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -756,7 +762,8 @@
     <MESSAGE value="new feature: get_wish_list&#10;" />
     <MESSAGE value="new feature: token has a brother: token_web, then they will not confilct between web and android&#10;" />
     <MESSAGE value="new feature: getWishList&#10; &#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="new feature: getWishList&#10; &#10;" />
+    <MESSAGE value="new feature: order&#10;&#10; &#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="new feature: order&#10;&#10; &#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -865,7 +872,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="372" column="26" selection-start="12300" selection-end="12300" vertical-scroll-proportion="0.5643154" vertical-offset="5308" max-vertical-offset="6465">
+        <state line="376" column="26" selection-start="12443" selection-end="12443" vertical-scroll-proportion="0.533195" vertical-offset="5383" max-vertical-offset="6465">
           <folding>
             <element signature="e#14#50#0" expanded="true" />
           </folding>

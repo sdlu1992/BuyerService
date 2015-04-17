@@ -373,7 +373,6 @@ def add_order(request):
         print req
         r_platform = req['platform']
         r_goods = req['goods']
-        count = req['count']
         buyer = Buyer.objects.filter(token=req['token'])
         for foo in r_goods:
             good = Goods.objects.get(id=foo['id'])
