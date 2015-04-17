@@ -60,11 +60,21 @@ class Goods(models.Model):
 # state=-1 已关闭
 class BuyHistory(models.Model):
     buyer = models.ForeignKey(Buyer)
+    goods = models.ForeignKey(Goods)
+    date = models.CharField(max_length=30)
+    price = models.FloatField()
+    amount = models.IntegerField()
+    order = models.ForeignKey(Order)
+
+    def __unicode__(self):
+        return self.goods.name
+
+
+class Order(models.Model):
+    buyer = models.ForeignKey(Buyer)
     goods = models.CharField(max_length=1000)
     date = models.CharField(max_length=30)
     state = models.IntegerField()
-    price = models.FloatField()
-    amount = models.IntegerField()
 
     def __unicode__(self):
         return self.goods.name

@@ -171,7 +171,6 @@ def new_goods(request):
         g_name = request.POST.get('goods_name', '')
         g_price = request.POST.get('price', 0)
         g_category = request.POST.get('category', '')
-        print g_name, g_price, g_category
 
     if len(buyer) == 1:
         buyer[0].type = 2
