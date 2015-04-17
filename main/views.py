@@ -382,14 +382,14 @@ def add_order(request):
             print foo
             good = Goods.objects.get(id=foo['id'])
             goods.append(goods)
-        print goods
     if len(buyer) == 1 and len(goods) != 0:
         user = buyer[0]
         order = BuyHistory(amount=count, goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0)
         order.save()
         response['response'] = 1
-    else:
+    elif len(goods) == 0:
         error_message = 'No this goods'
+    response['error_msg'] = error_message
     if r_platform == 'web':
         return render_to_response('personal.html', locals())
     elif r_platform == 'android':
