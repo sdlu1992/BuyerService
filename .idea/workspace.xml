@@ -30,10 +30,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="19" selection-start="1569" selection-end="1569" vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1830">
+              <folding>
+                <element signature="e#14#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="373" column="41" selection-start="12378" selection-end="12378" vertical-scroll-proportion="0.39419088" vertical-offset="5405" max-vertical-offset="6585">
+            <state line="407" column="24" selection-start="13627" selection-end="13627" vertical-scroll-proportion="1.120332" vertical-offset="5565" max-vertical-offset="6585">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
@@ -749,7 +760,11 @@
       <created>1429270195162</created>
       <updated>1429270195162</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="fix bugs addOrder&#10;">
+      <created>1429270311658</created>
+      <updated>1429270311658</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -822,7 +837,8 @@
     <MESSAGE value="fix bugs&#10;" />
     <MESSAGE value="fix bugs test&#10;" />
     <MESSAGE value="fix bugs login&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs login&#10;" />
+    <MESSAGE value="fix bugs addOrder&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs addOrder&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -913,15 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="19" selection-start="1258" selection-end="1258" vertical-scroll-proportion="0.25311205" vertical-offset="538" max-vertical-offset="1830">
-          <folding>
-            <element signature="e#14#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="40" selection-start="890" selection-end="890" vertical-scroll-proportion="0.62240666" vertical-offset="0" max-vertical-offset="482">
@@ -929,9 +936,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="19" selection-start="1569" selection-end="1569" vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1830">
+          <folding>
+            <element signature="e#14#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="373" column="41" selection-start="12378" selection-end="12378" vertical-scroll-proportion="0.39419088" vertical-offset="5405" max-vertical-offset="6585">
+        <state line="407" column="24" selection-start="13627" selection-end="13627" vertical-scroll-proportion="1.120332" vertical-offset="5565" max-vertical-offset="6585">
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>

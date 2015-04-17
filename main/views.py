@@ -371,10 +371,10 @@ def add_order(request):
         req = json.loads(request.body)
         print req
         r_platform = req['platform']
-        r_goods = json.loads(req['goods'])
-        buyer = Buyer.objects.filter(token=req['token'])
-        # r_platform = request.POST.get('platform')
-        # r_goods = json.loads(request.POST.get('test'))
+        # r_goods = json.loads(req['goods'])
+        # buyer = Buyer.objects.filter(token=req['token'])
+        r_platform = request.POST.get('platform')
+        r_goods = json.loads(request.POST.get('test'))
         print r_goods
         buyer = Buyer.objects.filter(token_web=request.POST.get('token'))
         for foo in r_goods:
@@ -405,7 +405,7 @@ def test(request):
     if request.method == 'GET':
         return render_to_response('test.html')
     elif request.method == 'POST':
-        return get_goods_by_category(request)
+        return add_order(request)
 
 
 def get_buyer_by_phone(phone_number):
