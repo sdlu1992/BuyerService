@@ -376,6 +376,7 @@ def add_order(request):
         # buyer = Buyer.objects.filter(token=req['token'])
         r_platform = request.POST.get('platform')
         r_goods = json.loads(request.POST.get('test'))
+        count = 0
         print r_goods
         buyer = Buyer.objects.filter(token_web=request.POST.get('token'))
         for foo in r_goods:
