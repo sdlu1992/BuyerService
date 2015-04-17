@@ -382,6 +382,7 @@ def add_order(request):
             print foo
             good = Goods.objects.get(id=foo['id'])
             goods.append(goods)
+            print goods
     if len(buyer) == 1 and len(goods) != 0:
         user = buyer[0]
         order = BuyHistory(amount=count, goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0)
