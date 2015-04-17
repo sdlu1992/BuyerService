@@ -368,9 +368,9 @@ def add_order(request):
         else:
             buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
     elif request.method == 'POST':
-        req = json.loads(request.body)
-        print req
-        r_platform = req['platform']
+        # req = json.loads(request.body)
+        # print req
+        # r_platform = req['platform']
         # r_goods = json.loads(req['goods'])
         # buyer = Buyer.objects.filter(token=req['token'])
         r_platform = request.POST.get('platform')
