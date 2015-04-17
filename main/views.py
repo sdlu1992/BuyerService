@@ -1,6 +1,6 @@
 #coding=utf-8
 import json, hashlib, time, datetime, string
-from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList
+from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order
 from django.forms.models import model_to_dict
 from django.shortcuts import render, HttpResponse, render_to_response, HttpResponseRedirect
 from helper import get_login_info, get_register_info
@@ -208,10 +208,10 @@ def get_goods_by_category(request):
     error_message = ''
     print(request.method)
     if request.method == 'POST':
-        # req = json.loads(request.body)
-        # print req
-        # cate = req['category']
-        cate = request.POST.get('test')
+        req = json.loads(request.body)
+        print req
+        cate = req['category']
+        # cate = request.POST.get('test')
         goods = Goods.objects.filter(category=cate)
         response['len'] = len(goods)
         if len(goods) != 0:
@@ -358,6 +358,7 @@ def add_order(request):
     buyer = None
     r_goods = ''
     goods = []
+    price_total = 0
     print(request.method)
 
     if request.method == 'GET':
@@ -383,10 +384,11 @@ def add_order(request):
             good = Goods.objects.get(id=foo['id'])
             print good
             goods.append(goods)
+            price_total += good.price * foo['count']
             print goods
     if len(buyer) == 1 and len(goods) != 0:
         user = buyer[0]
-        order = BuyHistory(amount=count, goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0, price=0)
+        order = Order(goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0, price=price_total)
         order.save()
         response['response'] = 1
     elif len(goods) == 0:

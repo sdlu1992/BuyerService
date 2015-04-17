@@ -56,6 +56,7 @@ class Order(models.Model):
     goods = models.CharField(max_length=1000)
     date = models.CharField(max_length=30)
     state = models.IntegerField()
+    price = models.FloatField()
 
     def __unicode__(self):
         return self.goods.name
