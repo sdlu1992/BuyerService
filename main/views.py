@@ -387,7 +387,7 @@ def add_order(request):
             print goods
     if len(buyer) == 1 and len(goods) != 0:
         user = buyer[0]
-        order = BuyHistory(amount=count, goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0)
+        order = BuyHistory(amount=count, goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0, price=0)
         order.save()
         response['response'] = 1
     elif len(goods) == 0:
