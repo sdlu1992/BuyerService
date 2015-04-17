@@ -53,7 +53,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="377" column="38" selection-start="12515" selection-end="12515" vertical-scroll-proportion="0.373444" vertical-offset="5475" max-vertical-offset="6510">
+            <state line="378" column="45" selection-start="12565" selection-end="12565" vertical-scroll-proportion="0.40456432" vertical-offset="5475" max-vertical-offset="6510">
               <folding>
                 <element signature="e#14#50#0" expanded="true" />
               </folding>
@@ -697,7 +697,11 @@
       <created>1429265852877</created>
       <updated>1429265852877</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="fix bugs test&#10;">
+      <created>1429266239372</created>
+      <updated>1429266239372</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -768,7 +772,8 @@
     <MESSAGE value="new feature: getWishList&#10; &#10;" />
     <MESSAGE value="new feature: order&#10;&#10; &#10;" />
     <MESSAGE value="fix bugs&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs&#10;" />
+    <MESSAGE value="fix bugs test&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs test&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -877,7 +882,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="377" column="38" selection-start="12515" selection-end="12515" vertical-scroll-proportion="0.373444" vertical-offset="5475" max-vertical-offset="6510">
+        <state line="378" column="45" selection-start="12565" selection-end="12565" vertical-scroll-proportion="0.40456432" vertical-offset="5475" max-vertical-offset="6510">
           <folding>
             <element signature="e#14#50#0" expanded="true" />
           </folding>
