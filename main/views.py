@@ -369,15 +369,15 @@ def add_order(request):
         else:
             buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
     elif request.method == 'POST':
-        # req = json.loads(request.body)
-        # print req
-        # r_platform = req['platform']
-        # r_goods = json.loads(req['goods'])
-        # buyer = Buyer.objects.filter(token=req['token'])
-        r_platform = request.POST.get('platform')
-        r_goods = json.loads(request.POST.get('test'))
-        print r_goods
-        buyer = Buyer.objects.filter(token_web=request.session.get('token'))
+        req = json.loads(request.body)
+        print req
+        r_platform = req['platform']
+        r_goods = json.loads(req['goods'])
+        buyer = Buyer.objects.filter(token=req['token'])
+        # r_platform = request.POST.get('platform')
+        # r_goods = json.loads(request.POST.get('test'))
+        # print r_goods
+        # buyer = Buyer.objects.filter(token_web=request.session.get('token'))
         for foo in r_goods:
             good = Goods.objects.get(id=foo['id'])
             goods.append(goods)
@@ -389,7 +389,7 @@ def add_order(request):
         order = Order(goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0, price=price_total)
         order.save()
         for index, foo in enumerate(goods):
-            history = BuyHistory(user=buyer, goods=good, price=good.price, amount=counts[index],
+            history = BuyHistory(buyer=user, goods=good, price=good.price, amount=counts[index],
                                  order=order, state=0, date=order.date)
             history.save()
         response['response'] = 1
