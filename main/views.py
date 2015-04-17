@@ -323,9 +323,6 @@ def get_wish_list(request):
         req = json.loads(request.body)
         r_platform = req['platform']
         buyer = Buyer.objects.filter(token=req['token'])
-        # r_platform = request.POST.get('platform')
-        # token = request.session.get('token')
-        # buyer = Buyer.objects.filter(token_web=token)
     if len(buyer) == 1:
         user = buyer[0]
         wish_list = WishList.objects.filter(buyer=user)
@@ -345,6 +342,49 @@ def get_wish_list(request):
     else:
         response['response'] = 2
         error_message = 'error'
+    if r_platform == 'web':
+        return render_to_response('personal.html', locals())
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
+def add_order(request):
+    count = ''
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    r_goods = ''
+    goods = []
+    print(request.method)
+
+    if request.method == 'GET':
+        token = request.session.get('token', '')
+        r_platform = 'web'
+        if token == '':
+            return HttpResponseRedirect('/login')
+        else:
+            buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
+    elif request.method == 'POST':
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        r_goods = req['goods']
+        count = req['count']
+        buyer = Buyer.objects.filter(token=req['token'])
+        for foo in r_goods:
+            good = Goods.objects.get(id=foo['id'])
+            goods.append(goods)
+        print goods
+    if len(buyer) == 1 and len(goods) != 0:
+        user = buyer[0]
+        order = BuyHistory(amount=count, goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0)
+        order.save()
+        response['response'] = 1
+    else:
+        error_message = 'No this goods'
     if r_platform == 'web':
         return render_to_response('personal.html', locals())
     elif r_platform == 'android':

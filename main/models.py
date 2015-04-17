@@ -1,7 +1,13 @@
+#coding=utf-8
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
+import sys
+
+print sys.getdefaultencoding()
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 class Buyer(models.Model):
     # user = models.OneToOneField(User)
@@ -16,6 +22,7 @@ class Buyer(models.Model):
     name = models.CharField(max_length=20)
     token = models.CharField(max_length=50)
     token_web = models.CharField(max_length=50)
+    address = models.CharField(max_length=500)
 
     def __unicode__(self):
         return self.phone
@@ -44,9 +51,16 @@ class Goods(models.Model):
         return self.name
 
 
+# state=0 未付款
+# state=1 已付款
+# state=2 已发货
+# state=3 确认收货
+# state=4 申请退款
+# state=5 已退款
+# state=-1 已关闭
 class BuyHistory(models.Model):
     buyer = models.ForeignKey(Buyer)
-    goods = models.ForeignKey(Goods)
+    goods = models.CharField(max_length=1000)
     date = models.CharField(max_length=30)
     state = models.IntegerField()
     price = models.FloatField()
