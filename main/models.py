@@ -51,6 +51,16 @@ class Goods(models.Model):
         return self.name
 
 
+class Order(models.Model):
+    buyer = models.ForeignKey(Buyer)
+    goods = models.CharField(max_length=1000)
+    date = models.CharField(max_length=30)
+    state = models.IntegerField()
+
+    def __unicode__(self):
+        return self.goods.name
+
+
 # state=0 未付款
 # state=1 已付款
 # state=2 已发货
@@ -65,16 +75,6 @@ class BuyHistory(models.Model):
     price = models.FloatField()
     amount = models.IntegerField()
     order = models.ForeignKey(Order)
-
-    def __unicode__(self):
-        return self.goods.name
-
-
-class Order(models.Model):
-    buyer = models.ForeignKey(Buyer)
-    goods = models.CharField(max_length=1000)
-    date = models.CharField(max_length=30)
-    state = models.IntegerField()
 
     def __unicode__(self):
         return self.goods.name
