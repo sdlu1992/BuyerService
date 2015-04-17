@@ -391,6 +391,7 @@ def add_order(request):
         for index, foo in enumerate(goods):
             history = BuyHistory(user=buyer, goods=good, price=good.price, amount=counts[index],
                                  order=order, state=0, date=order.date)
+            history.save()
         response['response'] = 1
         response['order_id'] = order.id
     elif len(goods) == 0:
