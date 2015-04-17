@@ -378,7 +378,7 @@ def add_order(request):
         r_goods = request.POST.get('test')
         buyer = Buyer.objects.filter(token_web=request.POST.get('token'))
         for foo in r_goods:
-            good = Goods.objects.get(id=string.atoi(foo['id']))
+            good = Goods.objects.get(id=foo.id)
             goods.append(goods)
         print goods
     if len(buyer) == 1 and len(goods) != 0:
