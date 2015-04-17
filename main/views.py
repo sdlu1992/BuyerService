@@ -1,5 +1,5 @@
 #coding=utf-8
-import json, hashlib, time, datetime
+import json, hashlib, time, datetime, string
 from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList
 from django.forms.models import model_to_dict
 from django.shortcuts import render, HttpResponse, render_to_response, HttpResponseRedirect
@@ -378,7 +378,7 @@ def add_order(request):
         r_goods = request.POST.get('test')
         buyer = Buyer.objects.filter(token_web=request.POST.get('token'))
         for foo in r_goods:
-            good = Goods.objects.get(id=foo['id'])
+            good = Goods.objects.get(id=string.atoi(foo['id']))
             goods.append(goods)
         print goods
     if len(buyer) == 1 and len(goods) != 0:
