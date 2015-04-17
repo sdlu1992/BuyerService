@@ -73,7 +73,7 @@ def login(request):
                     token = get_token(r_password)
                     if r_platform == 'android':
                         buyer[0].token = token
-                    elif r_password == 'web':
+                    elif r_platform == 'web':
                         buyer[0].token_web = token
                     buyer[0].save()
                     info = {'name': buyer[0].name, 'phone': buyer[0].phone, 'email': buyer[0].email}
