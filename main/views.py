@@ -382,7 +382,7 @@ def add_order(request):
             good = Goods.objects.get(id=foo['id'])
             print good
             goods.append(goods)
-            price_total += good.price * foo['count']
+            price_total += good.price * string.atoi(foo['count'])
             print goods
     if len(buyer) == 1 and len(goods) != 0:
         user = buyer[0]
