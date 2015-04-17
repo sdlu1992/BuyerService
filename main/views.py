@@ -381,6 +381,7 @@ def add_order(request):
         for foo in r_goods:
             print foo
             good = Goods.objects.get(id=foo['id'])
+            print good
             goods.append(goods)
             print goods
     if len(buyer) == 1 and len(goods) != 0:
