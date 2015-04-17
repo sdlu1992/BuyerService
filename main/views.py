@@ -350,7 +350,6 @@ def get_wish_list(request):
 
 
 def add_order(request):
-    count = ''
     response = {'response': '2'}
     r_platform = 'android'
     error_message = ''
@@ -369,14 +368,13 @@ def add_order(request):
         else:
             buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
     elif request.method == 'POST':
-        # req = json.loads(request.body)
-        # print req
-        # r_platform = req['platform']
-        # r_goods = req['goods']
-        # buyer = Buyer.objects.filter(token=req['token'])
-        r_platform = request.POST.get('platform')
-        r_goods = json.loads(request.POST.get('test'))
-        count = 0
+        req = json.loads(request.body)
+        print req
+        r_platform = req['platform']
+        r_goods = req['goods']
+        buyer = Buyer.objects.filter(token=req['token'])
+        # r_platform = request.POST.get('platform')
+        # r_goods = json.loads(request.POST.get('test'))
         print r_goods
         buyer = Buyer.objects.filter(token_web=request.POST.get('token'))
         for foo in r_goods:
@@ -391,6 +389,7 @@ def add_order(request):
         order = Order(goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0, price=price_total)
         order.save()
         response['response'] = 1
+        response['order_id'] = order.id
     elif len(goods) == 0:
         error_message = 'No this goods'
     response['error_msg'] = error_message
