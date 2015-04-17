@@ -369,11 +369,14 @@ def add_order(request):
         else:
             buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
     elif request.method == 'POST':
-        req = json.loads(request.body)
-        print req
-        r_platform = req['platform']
-        r_goods = req['goods']
-        buyer = Buyer.objects.filter(token=req['token'])
+        # req = json.loads(request.body)
+        # print req
+        # r_platform = req['platform']
+        # r_goods = req['goods']
+        # buyer = Buyer.objects.filter(token=req['token'])
+        r_platform = request.POST.get('platform')
+        r_goods = request.POST.get('test')
+        buyer = Buyer.objects.filter(web_token=request.POST.get('token'))
         for foo in r_goods:
             good = Goods.objects.get(id=foo['id'])
             goods.append(goods)
@@ -397,7 +400,7 @@ def test(request):
     if request.method == 'GET':
         return render_to_response('test.html')
     elif request.method == 'POST':
-        return get_wish_list(request)
+        return add_order(request)
 
 
 def get_buyer_by_phone(phone_number):

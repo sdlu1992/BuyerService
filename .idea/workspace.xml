@@ -53,7 +53,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="376" column="26" selection-start="12443" selection-end="12443" vertical-scroll-proportion="0.533195" vertical-offset="5383" max-vertical-offset="6465">
+            <state line="377" column="38" selection-start="12515" selection-end="12515" vertical-scroll-proportion="0.373444" vertical-offset="5475" max-vertical-offset="6510">
               <folding>
                 <element signature="e#14#50#0" expanded="true" />
               </folding>
@@ -107,9 +107,9 @@
         <option value="$PROJECT_DIR$/main/helper.py" />
         <option value="$PROJECT_DIR$/BuyerService/settings.py" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/BuyerService/urls.py" />
         <option value="$PROJECT_DIR$/main/models.py" />
+        <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
@@ -693,7 +693,11 @@
       <created>1429265740434</created>
       <updated>1429265740434</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="fix bugs&#10;">
+      <created>1429265852877</created>
+      <updated>1429265852877</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -763,7 +767,8 @@
     <MESSAGE value="new feature: token has a brother: token_web, then they will not confilct between web and android&#10;" />
     <MESSAGE value="new feature: getWishList&#10; &#10;" />
     <MESSAGE value="new feature: order&#10;&#10; &#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="new feature: order&#10;&#10; &#10;" />
+    <MESSAGE value="fix bugs&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -847,13 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="43" selection-start="266" selection-end="266" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="315">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="40" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
@@ -870,9 +868,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="43" selection-start="266" selection-end="266" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="376" column="26" selection-start="12443" selection-end="12443" vertical-scroll-proportion="0.533195" vertical-offset="5383" max-vertical-offset="6465">
+        <state line="377" column="38" selection-start="12515" selection-end="12515" vertical-scroll-proportion="0.373444" vertical-offset="5475" max-vertical-offset="6510">
           <folding>
             <element signature="e#14#50#0" expanded="true" />
           </folding>
