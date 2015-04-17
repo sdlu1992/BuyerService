@@ -358,6 +358,7 @@ def add_order(request):
     r_goods = ''
     goods = []
     price_total = 0
+    counts = []
     print(request.method)
 
     if request.method == 'GET':
@@ -378,18 +379,18 @@ def add_order(request):
         # print r_goods
         # buyer = Buyer.objects.filter(token_web=request.session.get('token'))
         for foo in r_goods:
-            print foo
             good = Goods.objects.get(id=foo['id'])
-            print good
             goods.append(goods)
             price_total += good.price * string.atoi(foo['count'])
-            print goods
+            counts.append(foo['count'])
     print len(buyer)
     if len(buyer) == 1 and len(goods) != 0:
         user = buyer[0]
         order = Order(goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0, price=price_total)
         order.save()
-
+        for index, foo in enumerate(goods):
+            history = BuyHistory(user=buyer, goods=good, price=good.price, amount=counts[index],
+                                 order=order, state=0, date=order.date)
         response['response'] = 1
         response['order_id'] = order.id
     elif len(goods) == 0:

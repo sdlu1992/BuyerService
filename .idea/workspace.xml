@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models.py" afterPath="$PROJECT_DIR$/main/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -31,10 +30,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="13" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.65352696" vertical-offset="810" max-vertical-offset="1845">
+            <state line="75" column="14" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1845">
               <folding>
                 <element signature="e#14#42#0" expanded="true" />
               </folding>
@@ -42,10 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="391" column="0" selection-start="13112" selection-end="13112" vertical-scroll-proportion="0.0" vertical-offset="5520" max-vertical-offset="6615">
+            <state line="388" column="22" selection-start="12993" selection-end="12993" vertical-scroll-proportion="0.560166" vertical-offset="5550" max-vertical-offset="6630">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
@@ -101,8 +100,8 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/BuyerService/urls.py" />
         <option value="$PROJECT_DIR$/templates/test.html" />
-        <option value="$PROJECT_DIR$/main/views.py" />
         <option value="$PROJECT_DIR$/main/models.py" />
+        <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
   </component>
@@ -789,7 +788,11 @@
       <created>1429271133711</created>
       <updated>1429271133711</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="fix bugs addOrder&#10;">
+      <created>1429273123801</created>
+      <updated>1429273123801</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -961,20 +964,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/views.py">
+    <entry file="file://$PROJECT_DIR$/main/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="391" column="0" selection-start="13112" selection-end="13112" vertical-scroll-proportion="0.0" vertical-offset="5520" max-vertical-offset="6615">
+        <state line="75" column="14" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1845">
           <folding>
-            <element signature="e#14#58#0" expanded="true" />
+            <element signature="e#14#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/models.py">
+    <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="13" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.65352696" vertical-offset="810" max-vertical-offset="1845">
+        <state line="388" column="22" selection-start="12993" selection-end="12993" vertical-scroll-proportion="0.560166" vertical-offset="5550" max-vertical-offset="6630">
           <folding>
-            <element signature="e#14#42#0" expanded="true" />
+            <element signature="e#14#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
