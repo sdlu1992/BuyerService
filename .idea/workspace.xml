@@ -44,19 +44,10 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="430" column="23" selection-start="14438" selection-end="14438" vertical-scroll-proportion="0.43568465" vertical-offset="6240" max-vertical-offset="8685">
+            <state line="430" column="16" selection-start="14429" selection-end="14429" vertical-scroll-proportion="0.43568465" vertical-offset="6240" max-vertical-offset="8700">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="43" selection-start="938" selection-end="938" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -861,7 +852,11 @@
       <created>1429456338739</created>
       <updated>1429456338739</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="new feature: orderdetail&#10;">
+      <created>1429456457311</created>
+      <updated>1429456457311</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1043,14 +1038,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="43" selection-start="938" selection-end="938" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+        <state line="23" column="43" selection-start="938" selection-end="938" vertical-scroll-proportion="0.65352696" vertical-offset="0" max-vertical-offset="482">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="430" column="23" selection-start="14438" selection-end="14438" vertical-scroll-proportion="0.43568465" vertical-offset="6240" max-vertical-offset="8685">
+        <state line="430" column="16" selection-start="14429" selection-end="14429" vertical-scroll-proportion="0.43568465" vertical-offset="6240" max-vertical-offset="8700">
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>

@@ -427,13 +427,14 @@ def get_order(request):
     print(request.method)
 
     if request.method == 'POST':
-        # req = json.loads(request.body)
-        # r_platform = req['platform']
-        # buyer = Buyer.objects.filter(token=req['token'])
-        # order_id = req['order_id']
-        r_platform = request.POST.get('platform')
-        order_id = request.POST.get('test')
-        buyer = Buyer.objects.filter(token_web=request.session.get('token'))
+        req = json.loads(request.body)
+        print req
+        r_platform = req['platform']
+        buyer = Buyer.objects.filter(token=req['token'])
+        order_id = req['order_id']
+        # r_platform = request.POST.get('platform')
+        # order_id = request.POST.get('test')
+        # buyer = Buyer.objects.filter(token_web=request.session.get('token'))
     if len(buyer) == 1:
         user = buyer[0]
         order = Order.objects.get(id=order_id)
