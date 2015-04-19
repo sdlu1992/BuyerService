@@ -9,6 +9,7 @@ print sys.getdefaultencoding()
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
+
 class Buyer(models.Model):
     # user = models.OneToOneField(User)
     nickname = models.CharField(max_length=20)
@@ -65,10 +66,11 @@ class Order(models.Model):
 # state=0 未付款
 # state=1 已付款
 # state=2 已发货
-# state=3 确认收货
-# state=4 申请退款
-# state=5 已退款
-# state=-1 已关闭
+# state=3 待评价
+# state=4 已评价
+# state=5 退款中
+# state=6 已退款
+# state=7 已关闭
 class BuyHistory(models.Model):
     buyer = models.ForeignKey(Buyer)
     goods = models.ForeignKey(Goods)
@@ -105,6 +107,7 @@ class WishList(models.Model):
     buyer = models.ForeignKey(Buyer)
     amount = models.IntegerField()
     date = models.CharField(max_length=30)
+    dele = models.IntegerField()
 
     def __unicode__(self):
         return self.id

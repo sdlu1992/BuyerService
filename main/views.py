@@ -296,7 +296,7 @@ def add_wish_list(request):
             wish.amount += int(count)
             wish.date = datetime.datetime.now()
         else:
-            wish = WishList(amount=count, goods=good, buyer=user, date=datetime.datetime.now())
+            wish = WishList(amount=count, goods=good, buyer=user, date=datetime.datetime.now(), dele=1)
         wish.save()
         response['response'] = 1
     else:
@@ -329,6 +329,8 @@ def get_wish_list(request):
         if len(wish_list) != 0:
             wishes = []
             for foo in wish_list:
+                if foo.dele == 0:
+                    continue
                 dic = model_to_dict(foo)
                 dic['good'] = model_to_dict(foo.goods)
                 dic['store'] = model_to_dict(foo.goods.store)
@@ -359,6 +361,7 @@ def add_order(request):
     goods = []
     price_total = 0
     counts = []
+    wishes_json = None
     print(request.method)
 
     if request.method == 'GET':
@@ -374,7 +377,15 @@ def add_order(request):
         r_platform = req['platform']
         r_goods = json.loads(req['goods'])
         buyer = Buyer.objects.filter(token=req['token'])
-        # r_platform = request.POST.get('platform')
+        try:
+            wishes_json = json.loads(req['wish_list'])
+            for foo in wishes_json:
+                wish = WishList.objects.get(id=foo['id'])
+                wish.dele = 0
+                wish.save()
+        except Exception:
+            print wishes_json is None
+            # r_platform = request.POST.get('platform')
         # r_goods = json.loads(request.POST.get('test'))
         # print r_goods
         # buyer = Buyer.objects.filter(token_web=request.session.get('token'))
@@ -439,6 +450,44 @@ def get_buy_history(request):
         error_message = 'error'
     if r_platform == 'web':
         return render_to_response('personal.html', locals())
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
+def pay_for_goods(request):
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    history_id = ''
+    print(request.method)
+
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        history_id = req['history_id']
+        buyer = Buyer.objects.filter(token=req['token'])
+    if len(buyer) == 1:
+        user = buyer[0]
+        histories = BuyHistory.objects.filter(id=history_id)
+        if len(histories) == 1:
+            histories[0].state = 2
+            histories[0].save()
+            response['history'] = model_to_dict(histories[0])
+            response['response'] = 1
+        else:
+            response['response'] = 3
+            error_message = 'no this history'
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'no this user'
+    response['error_msg'] = error_message
+    if r_platform == 'web':
+        return HttpResponseRedirect('/info')
     elif r_platform == 'android':
         json.dumps(response)
         j = json.dumps(response)

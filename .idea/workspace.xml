@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/sdlu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models.py" afterPath="$PROJECT_DIR$/main/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BuyerService/urls.py" afterPath="$PROJECT_DIR$/BuyerService/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -34,7 +36,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="14" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1845">
+            <state line="109" column="6" selection-start="2858" selection-end="2858" vertical-scroll-proportion="0.0" vertical-offset="1393" max-vertical-offset="1890">
               <folding>
                 <element signature="e#14#42#0" expanded="true" />
               </folding>
@@ -42,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="423" column="30" selection-start="14228" selection-end="14228" vertical-scroll-proportion="0.0" vertical-offset="6075" max-vertical-offset="7245">
+            <state line="331" column="32" selection-start="11132" selection-end="11132" vertical-scroll-proportion="1.6493776" vertical-offset="4170" max-vertical-offset="7980">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
@@ -53,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="14" selection-start="909" selection-end="909" vertical-scroll-proportion="0.65352696" vertical-offset="0" max-vertical-offset="482">
+            <state line="10" column="21" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
               <folding />
             </state>
           </provider>
@@ -109,8 +111,8 @@
         <option value="$PROJECT_DIR$/BuyerService/settings.py" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/templates/test.html" />
-        <option value="$PROJECT_DIR$/main/models.py" />
         <option value="$PROJECT_DIR$/BuyerService/urls.py" />
+        <option value="$PROJECT_DIR$/main/models.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
@@ -818,7 +820,11 @@
       <created>1429274512484</created>
       <updated>1429274512484</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="new feature: getBuyHistory">
+      <created>1429278638206</created>
+      <updated>1429278638206</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -892,7 +898,8 @@
     <MESSAGE value="fix bugs test&#10;" />
     <MESSAGE value="fix bugs login&#10;" />
     <MESSAGE value="fix bugs addOrder&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs addOrder&#10;" />
+    <MESSAGE value="new feature: getBuyHistory" />
+    <option name="LAST_COMMIT_MESSAGE" value="new feature: getBuyHistory" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -983,9 +990,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="21" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="14" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1845">
+        <state line="109" column="6" selection-start="2858" selection-end="2858" vertical-scroll-proportion="0.0" vertical-offset="1393" max-vertical-offset="1890">
           <folding>
             <element signature="e#14#42#0" expanded="true" />
           </folding>
@@ -994,17 +1008,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="423" column="30" selection-start="14228" selection-end="14228" vertical-scroll-proportion="0.0" vertical-offset="6075" max-vertical-offset="7245">
+        <state line="331" column="32" selection-start="11132" selection-end="11132" vertical-scroll-proportion="1.6493776" vertical-offset="4170" max-vertical-offset="7980">
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="14" selection-start="909" selection-end="909" vertical-scroll-proportion="0.65352696" vertical-offset="0" max-vertical-offset="482">
-          <folding />
         </state>
       </provider>
     </entry>
