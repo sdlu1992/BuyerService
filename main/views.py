@@ -427,7 +427,7 @@ def get_order(request):
     print(request.method)
 
     if request.method == 'POST':
-        req = json.loads(request.body)
+        # req = json.loads(request.body)
         # r_platform = req['platform']
         # buyer = Buyer.objects.filter(token=req['token'])
         # order_id = req['order_id']
