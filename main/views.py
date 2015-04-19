@@ -440,7 +440,7 @@ def get_buy_history(request):
                 dic['good'] = model_to_dict(foo.goods)
                 dic['store'] = model_to_dict(foo.goods.store)
                 his_dic.append(dic)
-            response['history_list'] = his_dic
+            response['history_list'] = his_dic.reverse()
         else:
             pass
         response['response'] = 1
