@@ -222,7 +222,7 @@ def get_goods_by_category(request):
                        'store': foo.store.id, 'count': len(BuyHistory.objects.filter(goods=foo)),
                        'store_name': foo.store.name}
                 # dic = model_to_dict(foo)
-                r_goods.append(dic)
+                r_goods.insert(0, dic)
             response['goods'] = r_goods
         response['response'] = '1'
 
@@ -334,7 +334,7 @@ def get_wish_list(request):
                 dic = model_to_dict(foo)
                 dic['good'] = model_to_dict(foo.goods)
                 dic['store'] = model_to_dict(foo.goods.store)
-                wishes.append(dic)
+                wishes.insert(0, dic)
             response['wish_list'] = wishes
         else:
             pass
@@ -408,6 +408,50 @@ def add_order(request):
     elif len(goods) == 0:
         error_message = 'No this goods'
     response['error_msg'] = error_message
+    if r_platform == 'web':
+        return render_to_response('personal.html', locals())
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
+def get_order(request):
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    order = None
+    order_id = ''
+    print(request.method)
+
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        buyer = Buyer.objects.filter(token=req['token'])
+        order_id = req['order_id']
+    if len(buyer) == 1:
+        user = buyer[0]
+        order = Order.objects.get(id=order_id)
+        histories = BuyHistory.objects.filter(order=order)
+        if len(histories) != 0:
+            his_dic = []
+            for foo in histories:
+                dic = model_to_dict(foo)
+                dic['good'] = model_to_dict(foo.goods)
+                dic['store'] = model_to_dict(foo.goods.store)
+                his_dic.append(dic)
+            response['history_list'] = his_dic
+            response['len'] = len(histories)
+            response['order'] = model_to_dict(order)
+        else:
+            pass
+        response['response'] = 1
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'error'
     if r_platform == 'web':
         return render_to_response('personal.html', locals())
     elif r_platform == 'android':

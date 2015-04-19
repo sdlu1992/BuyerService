@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BuyerService/urls.py" afterPath="$PROJECT_DIR$/BuyerService/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -33,7 +34,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="6" selection-start="2858" selection-end="2858" vertical-scroll-proportion="0.0" vertical-offset="1393" max-vertical-offset="1890">
+            <state line="58" column="14" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="1890">
               <folding>
                 <element signature="e#14#42#0" expanded="true" />
               </folding>
@@ -44,7 +45,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="441" column="33" selection-start="14916" selection-end="14916" vertical-scroll-proportion="0.7157676" vertical-offset="6270" max-vertical-offset="7980">
+            <state line="426" column="24" selection-start="14338" selection-end="14338" vertical-scroll-proportion="0.46680498" vertical-offset="6165" max-vertical-offset="8640">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
@@ -55,7 +56,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="21" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+            <state line="23" column="43" selection-start="938" selection-end="938" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
               <folding />
             </state>
           </provider>
@@ -108,8 +109,8 @@
         <option value="$PROJECT_DIR$/BuyerService/settings.py" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/templates/test.html" />
-        <option value="$PROJECT_DIR$/BuyerService/urls.py" />
         <option value="$PROJECT_DIR$/main/models.py" />
+        <option value="$PROJECT_DIR$/BuyerService/urls.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
@@ -849,7 +850,11 @@
       <created>1429446905068</created>
       <updated>1429446905068</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="fix bugs :">
+      <created>1429446969734</created>
+      <updated>1429446969734</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1012,22 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="21" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="6" selection-start="2858" selection-end="2858" vertical-scroll-proportion="0.0" vertical-offset="1393" max-vertical-offset="1890">
-          <folding>
-            <element signature="e#14#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Python/2.7/site-packages/django/db/models/query.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="749" column="8" selection-start="28315" selection-end="28315" vertical-scroll-proportion="0.33195022" vertical-offset="10835" max-vertical-offset="25815">
@@ -1035,9 +1024,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="14" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="1890">
+          <folding>
+            <element signature="e#14#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="43" selection-start="938" selection-end="938" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="441" column="33" selection-start="14916" selection-end="14916" vertical-scroll-proportion="0.7157676" vertical-offset="6270" max-vertical-offset="7980">
+        <state line="426" column="24" selection-start="14338" selection-end="14338" vertical-scroll-proportion="0.46680498" vertical-offset="6165" max-vertical-offset="8640">
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>
