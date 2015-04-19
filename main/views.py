@@ -434,7 +434,6 @@ def get_buy_history(request):
         histories = BuyHistory.objects.filter(buyer=user)
         response['len'] = len(histories)
         if len(histories) != 0:
-            histories.reverse()
             his_dic = []
             for foo in histories:
                 dic = model_to_dict(foo)
