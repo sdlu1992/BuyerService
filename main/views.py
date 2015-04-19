@@ -215,6 +215,7 @@ def get_goods_by_category(request):
         goods = Goods.objects.filter(category=cate)
         response['len'] = len(goods)
         if len(goods) != 0:
+            goods.reverse()
             r_goods = []
             for foo in goods:
                 dic = {'id': foo.id, 'title': foo.name, 'price': foo.price, 'des': foo.des, 'category': foo.category,
@@ -290,7 +291,7 @@ def add_wish_list(request):
     if len(buyer) == 1 and len(goods) == 1:
         user = buyer[0]
         good = goods[0]
-        wish_exist = WishList.objects.filter(goods=good, buyer=user)
+        wish_exist = WishList.objects.filter(goods=good, buyer=user, dele=1)
         if len(wish_exist) == 1:
             wish = wish_exist[0]
             wish.amount += int(count)
@@ -327,6 +328,7 @@ def get_wish_list(request):
         wish_list = WishList.objects.filter(buyer=user)
         response['len'] = len(wish_list)
         if len(wish_list) != 0:
+            wish_list.reverse()
             wishes = []
             for foo in wish_list:
                 if foo.dele == 0:
@@ -434,6 +436,7 @@ def get_buy_history(request):
         histories = BuyHistory.objects.filter(buyer=user)
         response['len'] = len(histories)
         if len(histories) != 0:
+            histories.reverse()
             his_dic = []
             for foo in histories:
                 dic = model_to_dict(foo)
