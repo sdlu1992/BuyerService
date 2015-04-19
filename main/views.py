@@ -325,14 +325,12 @@ def get_wish_list(request):
         buyer = Buyer.objects.filter(token=req['token'])
     if len(buyer) == 1:
         user = buyer[0]
-        wish_list = WishList.objects.filter(buyer=user)
+        wish_list = WishList.objects.filter(buyer=user, dele=1)
         response['len'] = len(wish_list)
         if len(wish_list) != 0:
             wish_list.reverse()
             wishes = []
             for foo in wish_list:
-                if foo.dele == 0:
-                    continue
                 dic = model_to_dict(foo)
                 dic['good'] = model_to_dict(foo.goods)
                 dic['store'] = model_to_dict(foo.goods.store)
