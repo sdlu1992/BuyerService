@@ -44,7 +44,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="549" column="19" selection-start="18242" selection-end="18242" vertical-scroll-proportion="0.43568465" vertical-offset="8025" max-vertical-offset="8745">
+            <state line="375" column="49" selection-start="12462" selection-end="12462" vertical-scroll-proportion="0.21784233" vertical-offset="5520" max-vertical-offset="8745">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
@@ -893,7 +893,11 @@
       <created>1429523747514</created>
       <updated>1429523747514</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="fix bugs: when order have many goods the same they are">
+      <created>1429523990678</created>
+      <updated>1429523990678</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1083,7 +1087,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="549" column="19" selection-start="18242" selection-end="18242" vertical-scroll-proportion="0.43568465" vertical-offset="8025" max-vertical-offset="8745">
+        <state line="375" column="49" selection-start="12462" selection-end="12462" vertical-scroll-proportion="0.21784233" vertical-offset="5520" max-vertical-offset="8745">
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>

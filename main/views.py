@@ -373,7 +373,7 @@ def add_order(request):
             buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
     elif request.method == 'POST':
         # req = json.loads(request.body)
-        req = request.POST.get('test')
+        req = json.loads(request.POST.get('test'))
         print req
         r_platform = req['platform']
         r_goods = json.loads(req['goods'])
