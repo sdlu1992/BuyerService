@@ -515,17 +515,18 @@ def pay_for_goods(request):
     error_message = ''
     user = None
     buyer = None
-    history_id = ''
+    order_id = ''
     print(request.method)
 
     if request.method == 'POST':
         req = json.loads(request.body)
         r_platform = req['platform']
-        history_id = req['history_id']
+        order_id = req['order_id']
         buyer = Buyer.objects.filter(token=req['token'])
     if len(buyer) == 1:
         user = buyer[0]
-        histories = BuyHistory.objects.filter(id=history_id)
+        order = Order.objects.get(id=order_id)
+        histories = BuyHistory.objects.filter(order=order)
         if len(histories) == 1:
             histories[0].state = 2
             histories[0].save()

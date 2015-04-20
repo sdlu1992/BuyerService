@@ -33,7 +33,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="23" selection-start="2118" selection-end="2118" vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="1890">
+            <state line="79" column="23" selection-start="2118" selection-end="2118" vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="1890">
               <folding>
                 <element signature="e#14#42#0" expanded="true" />
               </folding>
@@ -44,10 +44,19 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="450" column="32" selection-start="15324" selection-end="15324" vertical-scroll-proportion="0.75103736" vertical-offset="6388" max-vertical-offset="8775">
+            <state line="526" column="22" selection-start="17588" selection-end="17588" vertical-scroll-proportion="0.52904564" vertical-offset="7635" max-vertical-offset="8790">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="21" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -864,7 +873,11 @@
       <created>1429510427744</created>
       <updated>1429510427744</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="new feature: orderdetail&#10;">
+      <created>1429514788253</created>
+      <updated>1429514788254</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1035,13 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="43" selection-start="938" selection-end="938" vertical-scroll-proportion="0.65352696" vertical-offset="0" max-vertical-offset="482">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="23" selection-start="2118" selection-end="2118" vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="1890">
@@ -1051,9 +1057,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="21" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="450" column="32" selection-start="15324" selection-end="15324" vertical-scroll-proportion="0.75103736" vertical-offset="6388" max-vertical-offset="8775">
+        <state line="526" column="22" selection-start="17588" selection-end="17588" vertical-scroll-proportion="0.52904564" vertical-offset="7635" max-vertical-offset="8790">
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>
