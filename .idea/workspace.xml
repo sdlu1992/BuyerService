@@ -44,7 +44,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="402" column="38" selection-start="13582" selection-end="13582" vertical-scroll-proportion="0.65352696" vertical-offset="5715" max-vertical-offset="8790">
+            <state line="402" column="64" selection-start="13608" selection-end="13608" vertical-scroll-proportion="0.5912863" vertical-offset="5745" max-vertical-offset="8790">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
@@ -885,7 +885,11 @@
       <created>1429517840137</created>
       <updated>1429517840138</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="fix bugs: when order have many goods the same they are">
+      <created>1429522936697</created>
+      <updated>1429522936697</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -963,7 +967,8 @@
     <MESSAGE value="new feature: when add order , delete wishlist if it is" />
     <MESSAGE value="fix bugs :" />
     <MESSAGE value="new feature: orderdetail&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="new feature: orderdetail&#10;" />
+    <MESSAGE value="fix bugs: when order have many goods the same they are" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs: when order have many goods the same they are" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1074,7 +1079,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="402" column="38" selection-start="13582" selection-end="13582" vertical-scroll-proportion="0.65352696" vertical-offset="5715" max-vertical-offset="8790">
+        <state line="402" column="64" selection-start="13608" selection-end="13608" vertical-scroll-proportion="0.5912863" vertical-offset="5745" max-vertical-offset="8790">
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>
