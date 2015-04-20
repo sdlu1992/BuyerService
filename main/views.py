@@ -379,22 +379,18 @@ def add_order(request):
         r_goods = json.loads(req['goods'])
         buyer = Buyer.objects.filter(token=req['token'])
         try:
-            print "h"
             wishes_json = json.loads(req['wish_list'])
             for foo in wishes_json:
                 wish = WishList.objects.get(id=foo['id'])
                 wish.dele = 0
                 wish.save()
-            print "e"
         except Exception:
             print wishes_json is None
-        print "l"
         for foo in r_goods:
             good = Goods.objects.get(id=foo['id'])
-            goods.append(goods)
+            goods.append(good)
             price_total += good.price * string.atoi(foo['count'])
             counts.append(foo['count'])
-        print "o"
     print len(buyer)
     if len(buyer) == 1 and len(goods) != 0:
         user = buyer[0]
