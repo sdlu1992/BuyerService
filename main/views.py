@@ -526,8 +526,8 @@ def pay_for_goods(request):
     if len(buyer) == 1:
         user = buyer[0]
         order = Order.objects.get(id=order_id)
-        histories = BuyHistory.objects.filter(order=order)
-        if len(histories) == 1:
+        histories = BuyHistory.objects.filter(order=order, state=1)
+        if len(histories) != 0:
             histories[0].state = 2
             histories[0].save()
             response['history'] = model_to_dict(histories[0])
