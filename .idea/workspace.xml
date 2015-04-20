@@ -33,7 +33,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="14" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="1890">
+            <state line="79" column="23" selection-start="2118" selection-end="2118" vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="1890">
               <folding>
                 <element signature="e#14#42#0" expanded="true" />
               </folding>
@@ -44,7 +44,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="430" column="16" selection-start="14429" selection-end="14429" vertical-scroll-proportion="0.43568465" vertical-offset="6240" max-vertical-offset="8700">
+            <state line="249" column="31" selection-start="8485" selection-end="8493" vertical-scroll-proportion="5.059081" vertical-offset="1423" max-vertical-offset="8745">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
@@ -856,7 +856,11 @@
       <created>1429456457311</created>
       <updated>1429456457311</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="new feature: orderdetail&#10;">
+      <created>1429456668241</created>
+      <updated>1429456668241</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1027,15 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="14" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="1890">
-          <folding>
-            <element signature="e#14#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="43" selection-start="938" selection-end="938" vertical-scroll-proportion="0.65352696" vertical-offset="0" max-vertical-offset="482">
@@ -1043,9 +1038,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="23" selection-start="2118" selection-end="2118" vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="1890">
+          <folding>
+            <element signature="e#14#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="430" column="16" selection-start="14429" selection-end="14429" vertical-scroll-proportion="0.43568465" vertical-offset="6240" max-vertical-offset="8700">
+        <state line="249" column="31" selection-start="8485" selection-end="8493" vertical-scroll-proportion="5.059081" vertical-offset="1423" max-vertical-offset="8745">
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>
