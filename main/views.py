@@ -445,6 +445,8 @@ def get_order(request):
                 dic = model_to_dict(foo)
                 dic['good'] = model_to_dict(foo.goods)
                 dic['store'] = model_to_dict(foo.goods.store)
+                dic['solder'] = model_to_dict(foo.goods.store.owner)
+                dic['solder']['password'] = ''
                 his_dic.append(dic)
             response['history_list'] = his_dic
             j_buyer = model_to_dict(user)

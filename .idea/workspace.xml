@@ -44,7 +44,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="249" column="31" selection-start="8485" selection-end="8493" vertical-scroll-proportion="5.059081" vertical-offset="1423" max-vertical-offset="8745">
+            <state line="450" column="32" selection-start="15324" selection-end="15324" vertical-scroll-proportion="0.75103736" vertical-offset="6388" max-vertical-offset="8775">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
@@ -860,7 +860,11 @@
       <created>1429456668241</created>
       <updated>1429456668241</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="new feature: orderdetail&#10;">
+      <created>1429510427744</created>
+      <updated>1429510427744</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1049,7 +1053,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="31" selection-start="8485" selection-end="8493" vertical-scroll-proportion="5.059081" vertical-offset="1423" max-vertical-offset="8745">
+        <state line="450" column="32" selection-start="15324" selection-end="15324" vertical-scroll-proportion="0.75103736" vertical-offset="6388" max-vertical-offset="8775">
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>
