@@ -523,7 +523,7 @@ def pay_for_goods(request):
     if len(buyer) == 1:
         user = buyer[0]
         order = Order.objects.get(id=order_id)
-        histories = BuyHistory.objects.filter(order=order, state=1)
+        histories = BuyHistory.objects.filter(order=order, state=0)
         if len(histories) != 0:
             histories[0].state = 2
             histories[0].save()

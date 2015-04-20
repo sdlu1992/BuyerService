@@ -44,7 +44,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="390" column="27" selection-start="13009" selection-end="13009" vertical-scroll-proportion="0.31120333" vertical-offset="5700" max-vertical-offset="8745">
+            <state line="525" column="65" selection-start="17536" selection-end="17536" vertical-scroll-proportion="0.31120333" vertical-offset="7725" max-vertical-offset="8745">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
@@ -896,7 +896,11 @@
       <created>1429524390688</created>
       <updated>1429524390688</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="fix bugs: when order have many goods the same they are">
+      <created>1429524511758</created>
+      <updated>1429524511759</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -979,7 +983,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1086,7 +1090,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="390" column="27" selection-start="13009" selection-end="13009" vertical-scroll-proportion="0.31120333" vertical-offset="5700" max-vertical-offset="8745">
+        <state line="525" column="65" selection-start="17536" selection-end="17536" vertical-scroll-proportion="0.31120333" vertical-offset="7725" max-vertical-offset="8745">
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>
