@@ -400,7 +400,7 @@ def add_order(request):
         order = Order(goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0, price=price_total)
         order.save()
         for index, foo in enumerate(goods):
-            history = BuyHistory(buyer=user, goods=good, price=good.price, amount=counts[index],
+            history = BuyHistory(buyer=user, goods=goods[index], price=goods[index].price, amount=counts[index],
                                  order=order, state=0, date=order.date)
             history.save()
         response['response'] = 1

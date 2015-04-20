@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="new feature: orderdetail&#10;">
+    <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -44,7 +44,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="531" column="27" selection-start="17799" selection-end="17799" vertical-scroll-proportion="0.6846473" vertical-offset="7635" max-vertical-offset="8790">
+            <state line="402" column="38" selection-start="13582" selection-end="13582" vertical-scroll-proportion="0.65352696" vertical-offset="5715" max-vertical-offset="8790">
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
@@ -881,7 +881,11 @@
       <created>1429516470866</created>
       <updated>1429516470867</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="new feature: orderdetail&#10;">
+      <created>1429517840137</created>
+      <updated>1429517840138</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1070,7 +1074,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="531" column="27" selection-start="17799" selection-end="17799" vertical-scroll-proportion="0.6846473" vertical-offset="7635" max-vertical-offset="8790">
+        <state line="402" column="38" selection-start="13582" selection-end="13582" vertical-scroll-proportion="0.65352696" vertical-offset="5715" max-vertical-offset="8790">
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>
