@@ -372,7 +372,8 @@ def add_order(request):
         else:
             buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
     elif request.method == 'POST':
-        req = json.loads(request.body)
+        # req = json.loads(request.body)
+        req = request.POST.get('test')
         print req
         r_platform = req['platform']
         r_goods = json.loads(req['goods'])
@@ -385,10 +386,6 @@ def add_order(request):
                 wish.save()
         except Exception:
             print wishes_json is None
-            # r_platform = request.POST.get('platform')
-        # r_goods = json.loads(request.POST.get('test'))
-        # print r_goods
-        # buyer = Buyer.objects.filter(token_web=request.session.get('token'))
         for foo in r_goods:
             good = Goods.objects.get(id=foo['id'])
             goods.append(goods)
@@ -552,7 +549,7 @@ def test(request):
     if request.method == 'GET':
         return render_to_response('test.html')
     elif request.method == 'POST':
-        return get_order(request)
+        return add_order(request)
 
 
 def get_buyer_by_phone(phone_number):
