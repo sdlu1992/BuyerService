@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/helper.py" afterPath="$PROJECT_DIR$/main/helper.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -45,10 +46,22 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6280992" vertical-offset="3251" max-vertical-offset="8985">
-              <caret line="237" column="24" selection-start-line="237" selection-start-column="24" selection-end-line="237" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.49586776" vertical-offset="3690" max-vertical-offset="9000">
+              <caret line="262" column="22" selection-start-line="262" selection-start-column="22" selection-end-line="262" selection-end-column="22" />
               <folding>
                 <element signature="e#15#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helper.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="960">
+              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+              <folding>
+                <element signature="e#20#46#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,6 +128,7 @@
         <option value="$PROJECT_DIR$/main/form_new_goods.py" />
         <option value="$PROJECT_DIR$/BuyerService/urls.py" />
         <option value="$PROJECT_DIR$/main/models.py" />
+        <option value="$PROJECT_DIR$/main/helper.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
@@ -544,12 +558,6 @@
       <option name="number" value="Default" />
       <updated>1426832376476</updated>
     </task>
-    <task id="LOCAL-00063" summary="fix bugs login&#10;">
-      <created>1429270195162</created>
-      <option name="number" value="00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1429270195162</updated>
-    </task>
     <task id="LOCAL-00064" summary="fix bugs addOrder&#10;">
       <created>1429270311658</created>
       <option name="number" value="00064" />
@@ -838,7 +846,13 @@
       <option name="project" value="LOCAL" />
       <updated>1429618507206</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="upload imges&#10;">
+      <created>1429618666854</created>
+      <option name="number" value="00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1429618666854</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1073,13 +1087,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08230453" vertical-offset="0" max-vertical-offset="729">
-          <caret line="6" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="483">
@@ -1165,10 +1172,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/django/forms/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.177686" vertical-offset="2464" max-vertical-offset="18330">
+          <caret line="109" column="16" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="960">
+          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+          <folding>
+            <element signature="e#20#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6280992" vertical-offset="3251" max-vertical-offset="8985">
-          <caret line="237" column="24" selection-start-line="237" selection-start-column="24" selection-end-line="237" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.49586776" vertical-offset="3690" max-vertical-offset="9000">
+          <caret line="262" column="22" selection-start-line="262" selection-start-column="22" selection-end-line="262" selection-end-column="22" />
           <folding>
             <element signature="e#15#59#0" expanded="true" />
           </folding>

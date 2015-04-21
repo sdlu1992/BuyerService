@@ -3,7 +3,7 @@ import json, hashlib, time, datetime, string
 from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order
 from django.forms.models import model_to_dict
 from django.shortcuts import render, HttpResponse, render_to_response, HttpResponseRedirect
-from helper import get_login_info, get_register_info
+from helper import get_login_info, get_register_info, get_good_dic_by_model
 from form_new_goods import NewGoodForm
 # Create your views here.
 
@@ -220,10 +220,10 @@ def get_goods_by_category(request):
     error_message = ''
     print(request.method)
     if request.method == 'POST':
-        # req = json.loads(request.body)
-        # print req
-        # cate = req['category']
-        cate = request.POST.get('test')
+        req = json.loads(request.body)
+        print req
+        cate = req['category']
+        # cate = request.POST.get('test')
         goods = Goods.objects.filter(category=cate)
         response['len'] = len(goods)
         if len(goods) != 0:
@@ -233,11 +233,11 @@ def get_goods_by_category(request):
                 # dic = {'id': foo.id, 'title': foo.name, 'price': foo.price, 'des': foo.des, 'category': foo.category,
                 #        'store': foo.store.id, 'count': len(BuyHistory.objects.filter(goods=foo)),
                 #        'store_name': foo.store.name}
-                print model_to_dict(foo)
-                dic = json.loads(model_to_dict(foo))
+                dic = get_good_dic_by_model(foo)
                 print dic
                 dic['count'] = len(BuyHistory.objects.filter(goods=foo))
-                dic['store'] = json.loads(model_to_dict(foo.store))
+                dic['store'] = model_to_dict(foo.store)
+                print dic['store']
                 r_goods.insert(0, dic)
             response['goods'] = r_goods
         response['response'] = '1'
@@ -263,7 +263,8 @@ def get_good(request):
         goods = Goods.objects.filter(id=good_id)
         if len(goods) != 0:
             good = goods[0]
-            dic_good = model_to_dict(good)
+            dic_good = get_good_dic_by_model(good)
+            print dic_good
             dic_good['count'] = len(BuyHistory.objects.filter(goods=good))
             store = good.store
             solder = store.owner
