@@ -7,6 +7,8 @@
     </list>
     <ignored path="BuyerService.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,19 +32,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="35" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1875">
+            <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1875">
+              <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="23" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="8745">
+            <state vertical-scroll-proportion="0.15455747" vertical-offset="2253" max-vertical-offset="8745">
+              <caret line="158" column="23" selection-start-line="158" selection-start-column="23" selection-end-line="158" selection-end-column="23" />
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
@@ -50,30 +54,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_goods.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="new_goods.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/new_goods.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="123" selection-start="2518" selection-end="2518" vertical-scroll-proportion="0.56647396" vertical-offset="523" max-vertical-offset="1215">
+            <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1215">
+              <caret line="61" column="126" selection-start-line="61" selection-start-column="126" selection-end-line="61" selection-end-column="126" />
               <folding>
+                <element signature="e#2410#2435#0" expanded="true" />
                 <element signature="e#3262#3283#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="21" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="510">
+            <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="480">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personal.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="personal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/personal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="25" selection-start="718" selection-end="718" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1050">
+            <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1050">
+              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -94,25 +102,8 @@
       <MyDateState />
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="changedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/main/QuerySetEncoder.py" />
-        <option value="$PROJECT_DIR$/templates/personal.html" />
-        <option value="$PROJECT_DIR$/templates/register.html" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/templates/goods_list.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/main/helper.py" />
-        <option value="$PROJECT_DIR$/BuyerService/settings.py" />
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/templates/test.html" />
-        <option value="$PROJECT_DIR$/BuyerService/urls.py" />
-        <option value="$PROJECT_DIR$/main/views.py" />
-        <option value="$PROJECT_DIR$/main/models.py" />
-        <option value="$PROJECT_DIR$/templates/new_goods.html" />
-      </list>
-    </option>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
@@ -152,7 +143,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -364,29 +355,10 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="BuyerService" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -412,7 +384,27 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BuyerService" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -453,12 +445,6 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
     <configuration default="false" name="BuyerService" type="Python.DjangoServer" factoryName="Django server">
@@ -515,421 +501,304 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="" />
       <created>1426832376476</created>
+      <option name="number" value="Default" />
       <updated>1426832376476</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Login">
-      <created>1427033668157</created>
-      <updated>1427033668157</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Login">
-      <created>1427094801248</created>
-      <updated>1427094801248</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Login">
-      <created>1427097226589</created>
-      <updated>1427097226589</updated>
-    </task>
-    <task id="LOCAL-00004" summary="change database to mysql&#10;API: category">
-      <created>1427185777865</created>
-      <updated>1427185777865</updated>
-    </task>
-    <task id="LOCAL-00005" summary="web: login logout new_goods goods_list">
-      <created>1428807399824</created>
-      <updated>1428807399824</updated>
-    </task>
-    <task id="LOCAL-00006" summary="fix bugs">
-      <created>1428807668300</created>
-      <updated>1428807668300</updated>
-    </task>
-    <task id="LOCAL-00007" summary="fix bugs">
-      <created>1428807822201</created>
-      <updated>1428807822201</updated>
-    </task>
-    <task id="LOCAL-00008" summary="fix bugs">
-      <created>1428815499222</created>
-      <updated>1428815499222</updated>
-    </task>
-    <task id="LOCAL-00009" summary="fix bugs">
-      <created>1428815663625</created>
-      <updated>1428815663625</updated>
-    </task>
-    <task id="LOCAL-00010" summary="get goods list by category">
-      <created>1428851033683</created>
-      <updated>1428851033683</updated>
-    </task>
-    <task id="LOCAL-00011" summary="get goods list by category">
-      <created>1428851619787</created>
-      <updated>1428851619787</updated>
-    </task>
-    <task id="LOCAL-00012" summary="fix bugs">
-      <created>1428851704294</created>
-      <updated>1428851704294</updated>
-    </task>
-    <task id="LOCAL-00013" summary="fix bugs">
-      <created>1428851738466</created>
-      <updated>1428851738466</updated>
-    </task>
-    <task id="LOCAL-00014" summary="fix bugs">
-      <created>1428851936495</created>
-      <updated>1428851936495</updated>
-    </task>
-    <task id="LOCAL-00015" summary="fix bugs">
-      <created>1428852036845</created>
-      <updated>1428852036845</updated>
-    </task>
-    <task id="LOCAL-00016" summary="fix bugs:templenotexist">
-      <created>1428853206562</created>
-      <updated>1428853206562</updated>
-    </task>
-    <task id="LOCAL-00017" summary="fix bugs:templenotexist">
-      <created>1428853345795</created>
-      <updated>1428853345795</updated>
-    </task>
-    <task id="LOCAL-00018" summary="fix bugs:templenotexist">
-      <created>1428853388047</created>
-      <updated>1428853388047</updated>
-    </task>
-    <task id="LOCAL-00019" summary="fix bugs: chinese?">
-      <created>1428855269217</created>
-      <updated>1428855269217</updated>
-    </task>
-    <task id="LOCAL-00020" summary="fix bugs: chinese?">
-      <created>1428856021042</created>
-      <updated>1428856021042</updated>
-    </task>
-    <task id="LOCAL-00021" summary="fix bugs: chinese?">
-      <created>1428856498102</created>
-      <updated>1428856498102</updated>
-    </task>
-    <task id="LOCAL-00022" summary="fix bugs:  get_goods_by_catgory">
-      <created>1428896024379</created>
-      <updated>1428896024379</updated>
-    </task>
-    <task id="LOCAL-00023" summary="fix bugs:  get_goods_by_catgory">
-      <created>1428896481593</created>
-      <updated>1428896481593</updated>
-    </task>
-    <task id="LOCAL-00024" summary="fix bugs:  get_goods_by_catgory">
-      <created>1428896606010</created>
-      <updated>1428896606010</updated>
-    </task>
-    <task id="LOCAL-00025" summary="fix bugs:  get_goods_by_catgory">
-      <created>1428896894852</created>
-      <updated>1428896894852</updated>
-    </task>
-    <task id="LOCAL-00026" summary="fix bugs:  get_goods_by_catgory">
-      <created>1428896980693</created>
-      <updated>1428896980693</updated>
-    </task>
-    <task id="LOCAL-00027" summary="fix bugs:  get_goods_by_catgory">
-      <created>1428897051464</created>
-      <updated>1428897051464</updated>
-    </task>
-    <task id="LOCAL-00028" summary="fix bugs:  get_goods_by_catgory">
-      <created>1428897192208</created>
-      <updated>1428897192208</updated>
-    </task>
-    <task id="LOCAL-00029" summary="fix bugs:  get_goods_by_catgory">
-      <created>1428897292353</created>
-      <updated>1428897292354</updated>
-    </task>
-    <task id="LOCAL-00030" summary="fix bugs:  get_goods_by_catgory">
-      <created>1428897501897</created>
-      <updated>1428897501897</updated>
-    </task>
-    <task id="LOCAL-00031" summary="fix bugs:  get_goods_by_catgory">
-      <created>1428897564866</created>
-      <updated>1428897564866</updated>
-    </task>
-    <task id="LOCAL-00032" summary="fix bugs:  get_good_by_id">
-      <created>1429004387326</created>
-      <updated>1429004387326</updated>
-    </task>
-    <task id="LOCAL-00033" summary="fix bugs:  add_wish_list">
-      <created>1429078026649</created>
-      <updated>1429078026649</updated>
-    </task>
-    <task id="LOCAL-00034" summary="fix bugs:  add_wish_list">
-      <created>1429078315861</created>
-      <updated>1429078315861</updated>
-    </task>
-    <task id="LOCAL-00035" summary="fix bugs:  add_wish_list">
-      <created>1429078365296</created>
-      <updated>1429078365296</updated>
-    </task>
-    <task id="LOCAL-00036" summary="fix bugs:  add_wish_list">
-      <created>1429078481988</created>
-      <updated>1429078481988</updated>
-    </task>
-    <task id="LOCAL-00037" summary="fix bugs:  add_wish_list">
-      <created>1429078738860</created>
-      <updated>1429078738860</updated>
-    </task>
-    <task id="LOCAL-00038" summary="fix bugs:  add_wish_list: now when goods has exist in wishlist, it will add the amount">
-      <created>1429079714239</created>
-      <updated>1429079714239</updated>
-    </task>
-    <task id="LOCAL-00039" summary="new feature: get_wish_list&#10;">
-      <created>1429089090053</created>
-      <updated>1429089090053</updated>
-    </task>
-    <task id="LOCAL-00040" summary="new feature: token has a brother: token_web, then they will not confilct between web and android&#10;">
-      <created>1429089729056</created>
-      <updated>1429089729056</updated>
-    </task>
-    <task id="LOCAL-00041" summary="new feature: token has a brother: token_web, then they will not confilct between web and android&#10;">
-      <created>1429092120225</created>
-      <updated>1429092120225</updated>
-    </task>
-    <task id="LOCAL-00042" summary="new feature: getWishList&#10; &#10;">
-      <created>1429093061439</created>
-      <updated>1429093061439</updated>
-    </task>
-    <task id="LOCAL-00043" summary="new feature: order&#10;&#10; &#10;">
-      <created>1429265412140</created>
-      <updated>1429265412140</updated>
-    </task>
-    <task id="LOCAL-00044" summary="new feature: order&#10;&#10; &#10;">
-      <created>1429265740434</created>
-      <updated>1429265740434</updated>
-    </task>
-    <task id="LOCAL-00045" summary="fix bugs&#10;">
-      <created>1429265852877</created>
-      <updated>1429265852877</updated>
-    </task>
-    <task id="LOCAL-00046" summary="fix bugs test&#10;">
-      <created>1429266239372</created>
-      <updated>1429266239372</updated>
-    </task>
-    <task id="LOCAL-00047" summary="fix bugs test&#10;">
-      <created>1429266288270</created>
-      <updated>1429266288270</updated>
-    </task>
-    <task id="LOCAL-00048" summary="fix bugs test&#10;">
-      <created>1429266430163</created>
-      <updated>1429266430163</updated>
-    </task>
-    <task id="LOCAL-00049" summary="fix bugs test&#10;">
-      <created>1429266576854</created>
-      <updated>1429266576854</updated>
-    </task>
-    <task id="LOCAL-00050" summary="fix bugs test&#10;">
-      <created>1429266651163</created>
-      <updated>1429266651164</updated>
-    </task>
-    <task id="LOCAL-00051" summary="fix bugs test&#10;">
-      <created>1429266820963</created>
-      <updated>1429266820963</updated>
-    </task>
-    <task id="LOCAL-00052" summary="fix bugs test&#10;">
-      <created>1429266956877</created>
-      <updated>1429266956878</updated>
-    </task>
-    <task id="LOCAL-00053" summary="fix bugs login&#10;">
-      <created>1429267198456</created>
-      <updated>1429267198456</updated>
-    </task>
-    <task id="LOCAL-00054" summary="fix bugs login&#10;">
-      <created>1429267421148</created>
-      <updated>1429267421149</updated>
-    </task>
-    <task id="LOCAL-00055" summary="fix bugs login&#10;">
-      <created>1429267606502</created>
-      <updated>1429267606502</updated>
     </task>
     <task id="LOCAL-00056" summary="fix bugs login&#10;">
       <created>1429267739969</created>
+      <option name="number" value="00056" />
+      <option name="project" value="LOCAL" />
       <updated>1429267739969</updated>
     </task>
     <task id="LOCAL-00057" summary="fix bugs login&#10;">
       <created>1429267778319</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
       <updated>1429267778319</updated>
     </task>
     <task id="LOCAL-00058" summary="fix bugs login&#10;">
       <created>1429268682395</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
       <updated>1429268682395</updated>
     </task>
     <task id="LOCAL-00059" summary="fix bugs login&#10;">
       <created>1429268782331</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
       <updated>1429268782331</updated>
     </task>
     <task id="LOCAL-00060" summary="fix bugs login&#10;">
       <created>1429268940958</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
       <updated>1429268940958</updated>
     </task>
     <task id="LOCAL-00061" summary="fix bugs login&#10;">
       <created>1429269353581</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
       <updated>1429269353581</updated>
     </task>
     <task id="LOCAL-00062" summary="fix bugs login&#10;">
       <created>1429270102258</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
       <updated>1429270102258</updated>
     </task>
     <task id="LOCAL-00063" summary="fix bugs login&#10;">
       <created>1429270195162</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
       <updated>1429270195162</updated>
     </task>
     <task id="LOCAL-00064" summary="fix bugs addOrder&#10;">
       <created>1429270311658</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
       <updated>1429270311658</updated>
     </task>
     <task id="LOCAL-00065" summary="fix bugs addOrder&#10;">
       <created>1429270482823</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
       <updated>1429270482824</updated>
     </task>
     <task id="LOCAL-00066" summary="fix bugs addOrder&#10;">
       <created>1429270521916</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
       <updated>1429270521916</updated>
     </task>
     <task id="LOCAL-00067" summary="fix bugs addOrder&#10;">
       <created>1429270651739</created>
+      <option name="number" value="00067" />
+      <option name="project" value="LOCAL" />
       <updated>1429270651740</updated>
     </task>
     <task id="LOCAL-00068" summary="fix bugs addOrder&#10;">
       <created>1429271010605</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
       <updated>1429271010605</updated>
     </task>
     <task id="LOCAL-00069" summary="fix bugs addOrder&#10;">
       <created>1429271093916</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
       <updated>1429271093916</updated>
     </task>
     <task id="LOCAL-00070" summary="fix bugs addOrder&#10;">
       <created>1429271133711</created>
+      <option name="number" value="00070" />
+      <option name="project" value="LOCAL" />
       <updated>1429271133711</updated>
     </task>
     <task id="LOCAL-00071" summary="fix bugs addOrder&#10;">
       <created>1429273123801</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
       <updated>1429273123801</updated>
     </task>
     <task id="LOCAL-00072" summary="fix bugs addOrder&#10;">
       <created>1429273869189</created>
+      <option name="number" value="00072" />
+      <option name="project" value="LOCAL" />
       <updated>1429273869189</updated>
     </task>
     <task id="LOCAL-00073" summary="fix bugs addOrder&#10;">
       <created>1429274205799</created>
+      <option name="number" value="00073" />
+      <option name="project" value="LOCAL" />
       <updated>1429274205799</updated>
     </task>
     <task id="LOCAL-00074" summary="fix bugs addOrder&#10;">
       <created>1429274393929</created>
+      <option name="number" value="00074" />
+      <option name="project" value="LOCAL" />
       <updated>1429274393929</updated>
     </task>
     <task id="LOCAL-00075" summary="fix bugs addOrder&#10;">
       <created>1429274512484</created>
+      <option name="number" value="00075" />
+      <option name="project" value="LOCAL" />
       <updated>1429274512484</updated>
     </task>
     <task id="LOCAL-00076" summary="new feature: getBuyHistory">
       <created>1429278638206</created>
+      <option name="number" value="00076" />
+      <option name="project" value="LOCAL" />
       <updated>1429278638206</updated>
     </task>
     <task id="LOCAL-00077" summary="new feature: when add order , delete wishlist if it is">
       <created>1429444519864</created>
+      <option name="number" value="00077" />
+      <option name="project" value="LOCAL" />
       <updated>1429444519864</updated>
     </task>
     <task id="LOCAL-00078" summary="fix bugs :">
       <created>1429446233024</created>
+      <option name="number" value="00078" />
+      <option name="project" value="LOCAL" />
       <updated>1429446233024</updated>
     </task>
     <task id="LOCAL-00079" summary="fix bugs :">
       <created>1429446329723</created>
+      <option name="number" value="00079" />
+      <option name="project" value="LOCAL" />
       <updated>1429446329723</updated>
     </task>
     <task id="LOCAL-00080" summary="fix bugs :">
       <created>1429446577095</created>
+      <option name="number" value="00080" />
+      <option name="project" value="LOCAL" />
       <updated>1429446577095</updated>
     </task>
     <task id="LOCAL-00081" summary="fix bugs :">
       <created>1429446745400</created>
+      <option name="number" value="00081" />
+      <option name="project" value="LOCAL" />
       <updated>1429446745400</updated>
     </task>
     <task id="LOCAL-00082" summary="fix bugs :">
       <created>1429446817574</created>
+      <option name="number" value="00082" />
+      <option name="project" value="LOCAL" />
       <updated>1429446817574</updated>
     </task>
     <task id="LOCAL-00083" summary="fix bugs :">
       <created>1429446905068</created>
+      <option name="number" value="00083" />
+      <option name="project" value="LOCAL" />
       <updated>1429446905068</updated>
     </task>
     <task id="LOCAL-00084" summary="fix bugs :">
       <created>1429446969734</created>
+      <option name="number" value="00084" />
+      <option name="project" value="LOCAL" />
       <updated>1429446969734</updated>
     </task>
     <task id="LOCAL-00085" summary="new feature: orderdetail&#10;">
       <created>1429453380055</created>
+      <option name="number" value="00085" />
+      <option name="project" value="LOCAL" />
       <updated>1429453380055</updated>
     </task>
     <task id="LOCAL-00086" summary="new feature: orderdetail&#10;">
       <created>1429456338739</created>
+      <option name="number" value="00086" />
+      <option name="project" value="LOCAL" />
       <updated>1429456338739</updated>
     </task>
     <task id="LOCAL-00087" summary="new feature: orderdetail&#10;">
       <created>1429456457311</created>
+      <option name="number" value="00087" />
+      <option name="project" value="LOCAL" />
       <updated>1429456457311</updated>
     </task>
     <task id="LOCAL-00088" summary="new feature: orderdetail&#10;">
       <created>1429456668241</created>
+      <option name="number" value="00088" />
+      <option name="project" value="LOCAL" />
       <updated>1429456668241</updated>
     </task>
     <task id="LOCAL-00089" summary="new feature: orderdetail&#10;">
       <created>1429510427744</created>
+      <option name="number" value="00089" />
+      <option name="project" value="LOCAL" />
       <updated>1429510427744</updated>
     </task>
     <task id="LOCAL-00090" summary="new feature: orderdetail&#10;">
       <created>1429514788253</created>
+      <option name="number" value="00090" />
+      <option name="project" value="LOCAL" />
       <updated>1429514788254</updated>
     </task>
     <task id="LOCAL-00091" summary="new feature: orderdetail&#10;">
       <created>1429516470866</created>
+      <option name="number" value="00091" />
+      <option name="project" value="LOCAL" />
       <updated>1429516470867</updated>
     </task>
     <task id="LOCAL-00092" summary="new feature: orderdetail&#10;">
       <created>1429517840137</created>
+      <option name="number" value="00092" />
+      <option name="project" value="LOCAL" />
       <updated>1429517840138</updated>
     </task>
     <task id="LOCAL-00093" summary="fix bugs: when order have many goods the same they are">
       <created>1429522936697</created>
+      <option name="number" value="00093" />
+      <option name="project" value="LOCAL" />
       <updated>1429522936697</updated>
     </task>
     <task id="LOCAL-00094" summary="fix bugs: when order have many goods the same they are">
       <created>1429523747514</created>
+      <option name="number" value="00094" />
+      <option name="project" value="LOCAL" />
       <updated>1429523747514</updated>
     </task>
     <task id="LOCAL-00095" summary="fix bugs: when order have many goods the same they are">
       <created>1429523990678</created>
+      <option name="number" value="00095" />
+      <option name="project" value="LOCAL" />
       <updated>1429523990678</updated>
     </task>
     <task id="LOCAL-00096" summary="fix bugs: when order have many goods the same they are">
       <created>1429524080031</created>
+      <option name="number" value="00096" />
+      <option name="project" value="LOCAL" />
       <updated>1429524080031</updated>
     </task>
     <task id="LOCAL-00097" summary="fix bugs: when order have many goods the same they are">
       <created>1429524390688</created>
+      <option name="number" value="00097" />
+      <option name="project" value="LOCAL" />
       <updated>1429524390688</updated>
     </task>
     <task id="LOCAL-00098" summary="fix bugs: when order have many goods the same they are">
       <created>1429524511758</created>
+      <option name="number" value="00098" />
+      <option name="project" value="LOCAL" />
       <updated>1429524511759</updated>
     </task>
     <task id="LOCAL-00099" summary="fix bugs: when order have many goods the same they are">
       <created>1429525259745</created>
+      <option name="number" value="00099" />
+      <option name="project" value="LOCAL" />
       <updated>1429525259746</updated>
     </task>
     <task id="LOCAL-00100" summary="fix bugs&#10;">
       <created>1429610636629</created>
+      <option name="number" value="00100" />
+      <option name="project" value="LOCAL" />
       <updated>1429610636629</updated>
     </task>
     <task id="LOCAL-00101" summary="fix bugs&#10;">
       <created>1429610774067</created>
+      <option name="number" value="00101" />
+      <option name="project" value="LOCAL" />
       <updated>1429610774067</updated>
     </task>
     <task id="LOCAL-00102" summary="fix bugs&#10;">
       <created>1429611394529</created>
+      <option name="number" value="00102" />
+      <option name="project" value="LOCAL" />
       <updated>1429611394529</updated>
     </task>
     <task id="LOCAL-00103" summary="fix bugs&#10;">
       <created>1429611708361</created>
+      <option name="number" value="00103" />
+      <option name="project" value="LOCAL" />
       <updated>1429611708361</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="fix bugs&#10;">
+      <created>1429611822468</created>
+      <option name="number" value="00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1429611822468</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -956,26 +825,36 @@
     <frame x="0" y="23" width="1436" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29784173" sideWeight="0.673712" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3989432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3020086" sideWeight="0.673712" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2935252" sideWeight="0.28665787" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628798" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3989432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628798" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1014,97 +893,21 @@
     <breakpoint-manager>
       <option name="time" value="11" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="61" selection-start="544" selection-end="544" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="420" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/goods_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="20" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.50672644" vertical-offset="456" max-vertical-offset="1125" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="41" selection-start="1610" selection-end="1610" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="11940">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BuyerService/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="18" selection-start="1688" selection-end="1688" vertical-scroll-proportion="0.4989605" vertical-offset="675" max-vertical-offset="1395">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="48" selection-start="547" selection-end="547" vertical-scroll-proportion="0.3938731" vertical-offset="0" max-vertical-offset="457">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="36" selection-start="4846" selection-end="4846" vertical-scroll-proportion="0.7221007" vertical-offset="1950" max-vertical-offset="2460">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="185" selection-end="185" vertical-scroll-proportion="0.08230453" vertical-offset="0" max-vertical-offset="729" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="483" />
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/django/db/models/query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="749" column="8" selection-start="28315" selection-end="28315" vertical-scroll-proportion="0.33195022" vertical-offset="10835" max-vertical-offset="25815" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="43" selection-start="266" selection-end="266" vertical-scroll-proportion="0.29475984" vertical-offset="0" max-vertical-offset="458">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="21" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/personal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="25" selection-start="718" selection-end="718" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1050">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="35" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1875">
+        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1875">
+          <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="23" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8745">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8745">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#14#58#0" expanded="true" />
           </folding>
@@ -1113,13 +916,153 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/new_goods.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="123" selection-start="2518" selection-end="2518" vertical-scroll-proportion="0.56647396" vertical-offset="523" max-vertical-offset="1215">
+        <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1215">
+          <caret line="61" column="126" selection-start-line="61" selection-start-column="126" selection-end-line="61" selection-end-column="126" />
           <folding>
+            <element signature="e#2410#2435#0" expanded="true" />
             <element signature="e#3262#3283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="480">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/personal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1050">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="420">
+          <caret line="13" column="61" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/goods_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50672644" vertical-offset="456" max-vertical-offset="1125">
+          <caret line="53" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="11940">
+          <caret line="33" column="41" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuyerService/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4989605" vertical-offset="675" max-vertical-offset="1395">
+          <caret line="61" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3938731" vertical-offset="0" max-vertical-offset="457">
+          <caret line="12" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7221007" vertical-offset="1950" max-vertical-offset="2460">
+          <caret line="152" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08230453" vertical-offset="0" max-vertical-offset="729">
+          <caret line="6" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="483">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/django/db/models/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33195022" vertical-offset="10835" max-vertical-offset="25815">
+          <caret line="749" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29475984" vertical-offset="0" max-vertical-offset="458">
+          <caret line="9" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuyerService/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="480">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/personal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1050">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1875">
+          <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/new_goods.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1215">
+          <caret line="61" column="126" selection-start-line="61" selection-start-column="126" selection-end-line="61" selection-end-column="126" />
+          <folding>
+            <element signature="e#2410#2435#0" expanded="true" />
+            <element signature="e#3262#3283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15455747" vertical-offset="2253" max-vertical-offset="8745">
+          <caret line="158" column="23" selection-start-line="158" selection-start-column="23" selection-end-line="158" selection-end-column="23" />
+          <folding>
+            <element signature="e#14#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
   </component>
 </project>
-
