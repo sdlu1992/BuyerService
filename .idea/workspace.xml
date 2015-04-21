@@ -53,9 +53,9 @@
       <file leaf-file-name="new_goods.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/new_goods.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="14" selection-start="2409" selection-end="2409" vertical-scroll-proportion="0.56647396" vertical-offset="523" max-vertical-offset="1230">
+            <state line="61" column="123" selection-start="2518" selection-end="2518" vertical-scroll-proportion="0.56647396" vertical-offset="523" max-vertical-offset="1215">
               <folding>
-                <element signature="e#3256#3277#0" expanded="true" />
+                <element signature="e#3262#3283#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -925,7 +925,11 @@
       <created>1429611394529</created>
       <updated>1429611394529</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="fix bugs&#10;">
+      <created>1429611708361</created>
+      <updated>1429611708361</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1109,9 +1113,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/new_goods.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="14" selection-start="2409" selection-end="2409" vertical-scroll-proportion="0.56647396" vertical-offset="523" max-vertical-offset="1230">
+        <state line="61" column="123" selection-start="2518" selection-end="2518" vertical-scroll-proportion="0.56647396" vertical-offset="523" max-vertical-offset="1215">
           <folding>
-            <element signature="e#3256#3277#0" expanded="true" />
+            <element signature="e#3262#3283#0" expanded="true" />
           </folding>
         </state>
       </provider>
