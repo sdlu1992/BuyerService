@@ -28,6 +28,7 @@
     <form action="." method="post">
         <p><label>商品名称:</label><input type="text" name="goods_name" maxlength="200" value=""></p>
         <p><label>商品价格:</label> <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" name="price" maxlength="9" value=""></p>
+        <p><label>标题图片:</label> <input type="image" name="image_title" value=""></p>
         <p><label>商品类别:</label>
             <select name="root_category" id="root_category" onchange="onSelectRootType()">
             {% for key, value in cc.root_category.items%}
