@@ -4,6 +4,7 @@ from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Ord
 from django.forms.models import model_to_dict
 from django.shortcuts import render, HttpResponse, render_to_response, HttpResponseRedirect
 from helper import get_login_info, get_register_info
+from form_new_goods import NewGoodForm
 # Create your views here.
 
 import sys
@@ -161,6 +162,7 @@ def new_goods(request):
     r_platform = 'web'
     buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
     cc, cMerge = get_category()
+    g_image = ''
     if token == '':
         return HttpResponseRedirect('/login')
     if request.method == 'GET':
@@ -168,12 +170,20 @@ def new_goods(request):
             user = buyer[0]
         return render_to_response('new_goods.html', locals())
     elif request.method == 'POST':
+        form = NewGoodForm(request.POST, request.FILES)
         g_name = request.POST.get('goods_name', '')
         g_price = request.POST.get('price', 0)
         g_category = request.POST.get('category', '')
-        g_image = request.FILES('image_title')
+        if form.is_valid():
+            g_image = form.cleaned_data['image_title']
+            g_image1 = form.cleaned_data['image1']
+            g_image2 = form.cleaned_data['image2']
+            g_image3 = form.cleaned_data['image3']
+            g_image4 = form.cleaned_data['image4']
+        else:
+            error_message = 'form wrong'
 
-    if len(buyer) == 1:
+    if len(buyer) == 1 and error_message != '':
         buyer[0].type = 2
         buyer[0].save()
         user = buyer[0]
