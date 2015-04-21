@@ -183,7 +183,7 @@ def new_goods(request):
         else:
             error_message = 'form wrong'
 
-    if len(buyer) == 1 and error_message != '':
+    if len(buyer) == 1 and error_message == '':
         buyer[0].type = 2
         buyer[0].save()
         user = buyer[0]
