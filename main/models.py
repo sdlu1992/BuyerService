@@ -46,6 +46,10 @@ class Goods(models.Model):
     category = models.IntegerField()
     des = models.CharField(max_length=2000)
     image_url_title = models.FileField(upload_to='./upload/')
+    image1 = models.FileField(upload_to='./upload/', null=True)
+    image2 = models.FileField(upload_to='./upload/', null=True)
+    image3 = models.FileField(upload_to='./upload/', null=True)
+    image4 = models.FileField(upload_to='./upload/', null=True)
     image_url_other = models.CharField(max_length=1000)
 
     def __unicode__(self):

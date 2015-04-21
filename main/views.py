@@ -189,7 +189,8 @@ def new_goods(request):
         user = buyer[0]
         store = Store.objects.filter(owner=user)
         if len(store) == 1:
-            goods = Goods(name=g_name, price=g_price, category=g_category, store=store[0], image_url_title=g_image)
+            goods = Goods(name=g_name, price=g_price, category=g_category, store=store[0], image_url_title=g_image,
+                          image1=g_image1, image2=g_image2, image3=g_image3, image4=g_image4)
             goods.save()
             error_message = '成功！'
     else:
@@ -229,10 +230,12 @@ def get_goods_by_category(request):
             goods.reverse()
             r_goods = []
             for foo in goods:
-                dic = {'id': foo.id, 'title': foo.name, 'price': foo.price, 'des': foo.des, 'category': foo.category,
-                       'store': foo.store.id, 'count': len(BuyHistory.objects.filter(goods=foo)),
-                       'store_name': foo.store.name}
-                # dic = model_to_dict(foo)
+                # dic = {'id': foo.id, 'title': foo.name, 'price': foo.price, 'des': foo.des, 'category': foo.category,
+                #        'store': foo.store.id, 'count': len(BuyHistory.objects.filter(goods=foo)),
+                #        'store_name': foo.store.name}
+                dic = model_to_dict(foo)
+                dic['count'] = len(BuyHistory.objects.filter(goods=foo))
+                dic['store'] = model_to_dict(foo.store)
                 r_goods.insert(0, dic)
             response['goods'] = r_goods
         response['response'] = '1'
