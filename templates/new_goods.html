@@ -22,11 +22,11 @@
             return root.options[root.selectedIndex].value;
         }
         function viewmypic(mypic, imgfile) {
-            if (imgfile.value) {
-                mypic.src = imgfile.value;
-                mypic.style.display = "";
-                mypic.border = 1;
-            }
+{#            if (imgfile.value) {#}
+{#                mypic.src = imgfile.value;#}
+{#                mypic.style.display = "";#}
+{#                mypic.border = 1;#}
+{#            }#}
         }
     </script>
     <div class="body">
@@ -59,6 +59,7 @@
                     {% endfor %}
                 </select>
             </p>
+            <p></p>
             <p><label>标题图片:</label> <input type="file" id="image_title" name="image_title" value="" onchange="viewmypic(showimg,this.form.image_title);"></p>
 
             <p><label>图片1:</label> <input type="file" name="image1" id="image1" value="" onchange="viewmypic(showimg,this.form.image1);"></p>
