@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 import json, hashlib, time, datetime, string
 from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order
 from django.forms.models import model_to_dict
@@ -171,6 +171,7 @@ def new_goods(request):
         g_name = request.POST.get('goods_name', '')
         g_price = request.POST.get('price', 0)
         g_category = request.POST.get('category', '')
+        g_image = request.FILES('image_title')
 
     if len(buyer) == 1:
         buyer[0].type = 2
@@ -178,7 +179,7 @@ def new_goods(request):
         user = buyer[0]
         store = Store.objects.filter(owner=user)
         if len(store) == 1:
-            goods = Goods(name=g_name, price=g_price, category=g_category, store=store[0])
+            goods = Goods(name=g_name, price=g_price, category=g_category, store=store[0], image_url_title=g_image)
             goods.save()
             error_message = '成功！'
     else:

@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
@@ -45,7 +45,7 @@ class Goods(models.Model):
     store = models.ForeignKey(Store)
     category = models.IntegerField()
     des = models.CharField(max_length=2000)
-    image_url_title = models.CharField(max_length=200)
+    image_url_title = models.FileField(upload_to='./upload/')
     image_url_other = models.CharField(max_length=1000)
 
     def __unicode__(self):
