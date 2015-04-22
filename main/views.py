@@ -349,7 +349,7 @@ def get_wish_list(request):
             wishes = []
             for foo in wish_list:
                 dic = model_to_dict(foo)
-                dic['good'] = model_to_dict(foo.goods)
+                dic['good'] = get_good_dic_by_model(foo.goods)
                 dic['store'] = model_to_dict(foo.goods.store)
                 wishes.insert(0, dic)
             response['wish_list'] = wishes
@@ -504,7 +504,7 @@ def get_buy_history(request):
             his_dic = []
             for foo in histories:
                 dic = model_to_dict(foo)
-                dic['good'] = model_to_dict(foo.goods)
+                dic['good'] = get_good_dic_by_model(foo.goods)
                 dic['store'] = model_to_dict(foo.goods.store)
                 his_dic.insert(0, dic)
             response['history_list'] = his_dic
@@ -518,7 +518,6 @@ def get_buy_history(request):
     if r_platform == 'web':
         return render_to_response('personal.html', locals())
     elif r_platform == 'android':
-        json.dumps(response)
         j = json.dumps(response)
         return HttpResponse(j)
 
