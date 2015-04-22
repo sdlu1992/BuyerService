@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/goods_list.html" afterPath="$PROJECT_DIR$/templates/goods_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -46,8 +45,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.8904959" vertical-offset="4001" max-vertical-offset="10650">
-              <caret line="238" column="54" selection-start-line="238" selection-start-column="54" selection-end-line="238" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.67975205" vertical-offset="3736" max-vertical-offset="10650">
+              <caret line="271" column="44" selection-start-line="271" selection-start-column="44" selection-end-line="271" selection-end-column="44" />
               <folding>
                 <element signature="e#15#59#0" expanded="true" />
               </folding>
@@ -569,12 +568,6 @@
       <option name="number" value="Default" />
       <updated>1426832376476</updated>
     </task>
-    <task id="LOCAL-00069" summary="fix bugs addOrder&#10;">
-      <created>1429271093916</created>
-      <option name="number" value="00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1429271093916</updated>
-    </task>
     <task id="LOCAL-00070" summary="fix bugs addOrder&#10;">
       <created>1429271133711</created>
       <option name="number" value="00070" />
@@ -863,7 +856,13 @@
       <option name="project" value="LOCAL" />
       <updated>1429699484594</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="upload imges&#10;">
+      <created>1429699932065</created>
+      <option name="number" value="00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1429699932065</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1370,8 +1369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8904959" vertical-offset="4001" max-vertical-offset="10650">
-          <caret line="238" column="54" selection-start-line="238" selection-start-column="54" selection-end-line="238" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.67975205" vertical-offset="3736" max-vertical-offset="10650">
+          <caret line="271" column="44" selection-start-line="271" selection-start-column="44" selection-end-line="271" selection-end-column="44" />
           <folding>
             <element signature="e#15#59#0" expanded="true" />
           </folding>

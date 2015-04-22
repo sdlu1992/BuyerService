@@ -269,7 +269,7 @@ def report(request):
         user = buyer[0]
         goods_list = Goods.objects.filter(store=user.store)
         for good in goods_list:
-            dic = get_good_dic_by_model(goods)
+            dic = get_good_dic_by_model(good)
             dic['count'] = len(BuyHistory.objects.filter(goods=good).exclude(state=0))
             goods.append(dic)
         response['response'] = 1
