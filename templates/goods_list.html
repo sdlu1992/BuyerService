@@ -52,6 +52,7 @@
                     <th>名称</th>
                     <th>价格</th>
                     <th>类目</th>
+                    <th>销量</th>
                 </tr>
             {% endif %}
             {% for foo in goods %}
@@ -59,6 +60,7 @@
                 <td>{{ foo.name }}</td>
                 <td>{{ foo.price }}</td>
                 <td>{{ foo.category}}</td>
+                <td>{{ foo.count}}</td>
                 </tr>
             {% endfor %}
 

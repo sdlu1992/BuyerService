@@ -235,7 +235,7 @@ def get_goods_by_category(request):
                 #        'store_name': foo.store.name}
                 dic = get_good_dic_by_model(foo)
                 print dic
-                dic['count'] = len(BuyHistory.objects.filter(goods=foo))
+                dic['count'] = len(BuyHistory.objects.filter(goods=foo).exclude(state=0))
                 dic['store'] = model_to_dict(foo.store)
                 print dic['store']
                 r_goods.insert(0, dic)
@@ -267,7 +267,11 @@ def report(request):
         buyer = Buyer.objects.filter(token=req['token'])
     if len(buyer) == 1:
         user = buyer[0]
-        goods = Goods.objects.filter(store=user.store)
+        goods_list = Goods.objects.filter(store=user.store)
+        for good in goods_list:
+            dic = get_good_dic_by_model(goods)
+            dic['count'] = len(BuyHistory.objects.filter(goods=good).exclude(state=0))
+            goods.append(dic)
         response['response'] = 1
         response['info'] = info
     else:
