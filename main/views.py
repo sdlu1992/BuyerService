@@ -248,7 +248,36 @@ def get_goods_by_category(request):
 
 
 def report(request):
-    return render_to_response('goods_list.html', locals())
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    goods = []
+    print(request.method)
+
+    if request.method == 'GET':
+        token = request.session.get('token', '')
+        r_platform = 'web'
+        if token == '':
+            return HttpResponseRedirect('/login')
+        else:
+            buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
+    elif request.method == 'POST':
+        req = json.loads(request.body)
+        buyer = Buyer.objects.filter(token=req['token'])
+    if len(buyer) == 1:
+        user = buyer[0]
+        goods = Goods.objects.filter(buyer=user)
+        response['response'] = 1
+        response['info'] = info
+    else:
+        return HttpResponseRedirect('/login')
+    if r_platform == 'web':
+        return render_to_response('goods_list.html', locals())
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
 
 
 def get_good(request):
@@ -542,6 +571,84 @@ def pay_for_goods(request):
         histories = BuyHistory.objects.filter(order=order, state=0)
         if len(histories) != 0:
             histories[0].state = 2
+            histories[0].save()
+            response['history'] = model_to_dict(histories[0])
+            response['response'] = 1
+        else:
+            response['response'] = 3
+            error_message = 'no this history'
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'no this user'
+    response['error_msg'] = error_message
+    if r_platform == 'web':
+        return HttpResponseRedirect('/info')
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
+def take_goods(request):
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    order_id = ''
+    print(request.method)
+
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        order_id = req['order_id']
+        buyer = Buyer.objects.filter(token=req['token'])
+    if len(buyer) == 1:
+        user = buyer[0]
+        order = Order.objects.get(id=order_id)
+        histories = BuyHistory.objects.filter(order=order, state=2)
+        if len(histories) != 0:
+            histories[0].state = 3
+            histories[0].save()
+            response['history'] = model_to_dict(histories[0])
+            response['response'] = 1
+        else:
+            response['response'] = 3
+            error_message = 'no this history'
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'no this user'
+    response['error_msg'] = error_message
+    if r_platform == 'web':
+        return HttpResponseRedirect('/info')
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
+def apply_refund(request):
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    order_id = ''
+    print(request.method)
+
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        order_id = req['order_id']
+        buyer = Buyer.objects.filter(token=req['token'])
+    if len(buyer) == 1:
+        user = buyer[0]
+        order = Order.objects.get(id=order_id)
+        histories = BuyHistory.objects.filter(order=order)
+        if len(histories) != 0:
+            histories[0].state = 5
             histories[0].save()
             response['history'] = model_to_dict(histories[0])
             response['response'] = 1
