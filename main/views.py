@@ -267,7 +267,7 @@ def report(request):
         buyer = Buyer.objects.filter(token=req['token'])
     if len(buyer) == 1:
         user = buyer[0]
-        goods = Goods.objects.filter(buyer=user)
+        goods = Goods.objects.filter(store=user.store)
         response['response'] = 1
         response['info'] = info
     else:
