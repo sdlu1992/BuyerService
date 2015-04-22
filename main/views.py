@@ -457,7 +457,7 @@ def get_order(request):
             his_dic = []
             for foo in histories:
                 dic = model_to_dict(foo)
-                dic['good'] = model_to_dict(foo.goods)
+                dic['good'] = get_good_dic_by_model(foo.goods)
                 dic['store'] = model_to_dict(foo.goods.store)
                 dic['solder'] = model_to_dict(foo.goods.store.owner)
                 dic['solder']['password'] = ''
