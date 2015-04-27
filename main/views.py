@@ -1,10 +1,17 @@
 # coding=utf-8
-import json, hashlib, time, datetime, string
-from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order
+import json
+import hashlib
+import time
+import datetime
+import string
+
 from django.forms.models import model_to_dict
-from django.shortcuts import render, HttpResponse, render_to_response, HttpResponseRedirect
+from django.shortcuts import HttpResponse, render_to_response, HttpResponseRedirect
+
+from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order
 from helper import get_login_info, get_register_info, get_good_dic_by_model
 from form_new_goods import NewGoodForm
+
 # Create your views here.
 
 import sys
@@ -562,22 +569,28 @@ def pay_for_goods(request):
     user = None
     buyer = None
     order_id = ''
+    history_id = ''
     print(request.method)
 
     if request.method == 'POST':
         req = json.loads(request.body)
         r_platform = req['platform']
         order_id = req['order_id']
+        history_id = req['history_id']
         buyer = Buyer.objects.filter(token=req['token'])
     if len(buyer) == 1:
         user = buyer[0]
         order = Order.objects.get(id=order_id)
-        histories = BuyHistory.objects.filter(order=order, state=0)
+        if history_id == '':
+            histories = BuyHistory.objects.filter(order=order, state=0)
+        else:
+            histories = BuyHistory.objects.filter(order=order, state=0, id=history_id)
         if len(histories) != 0:
-            histories[0].state = 2
-            histories[0].save()
-            response['history'] = model_to_dict(histories[0])
-            response['response'] = 1
+            for foo in histories:
+                foo.state = 2
+                foo.save()
+                response['history'] = model_to_dict(foo)
+                response['response'] = 1
         else:
             response['response'] = 3
             error_message = 'no this history'
@@ -601,22 +614,28 @@ def take_goods(request):
     user = None
     buyer = None
     order_id = ''
+    history_id = ''
     print(request.method)
 
     if request.method == 'POST':
         req = json.loads(request.body)
         r_platform = req['platform']
         order_id = req['order_id']
+        history_id = req['history_id']
         buyer = Buyer.objects.filter(token=req['token'])
     if len(buyer) == 1:
         user = buyer[0]
         order = Order.objects.get(id=order_id)
-        histories = BuyHistory.objects.filter(order=order, state=2)
+        if history_id == '':
+            histories = BuyHistory.objects.filter(order=order, state=2)
+        else:
+            histories = BuyHistory.objects.filter(order=order, state=2, id=history_id)
         if len(histories) != 0:
-            histories[0].state = 3
-            histories[0].save()
-            response['history'] = model_to_dict(histories[0])
-            response['response'] = 1
+            for foo in histories:
+                foo.state = 3
+                foo.save()
+                response['history'] = model_to_dict(foo)
+                response['response'] = 1
         else:
             response['response'] = 3
             error_message = 'no this history'
@@ -640,22 +659,28 @@ def apply_refund(request):
     user = None
     buyer = None
     order_id = ''
+    history_id = ''
     print(request.method)
 
     if request.method == 'POST':
         req = json.loads(request.body)
         r_platform = req['platform']
         order_id = req['order_id']
+        history_id = req['history_id']
         buyer = Buyer.objects.filter(token=req['token'])
     if len(buyer) == 1:
         user = buyer[0]
         order = Order.objects.get(id=order_id)
-        histories = BuyHistory.objects.filter(order=order)
+        if history_id == '':
+            histories = BuyHistory.objects.filter(order=order)
+        else:
+            histories = BuyHistory.objects.filter(order=order, id=history_id)
         if len(histories) != 0:
-            histories[0].state = 5
-            histories[0].save()
-            response['history'] = model_to_dict(histories[0])
-            response['response'] = 1
+            for foo in histories:
+                foo.state = 5
+                foo.save()
+                response['history'] = model_to_dict(foo)
+                response['response'] = 1
         else:
             response['response'] = 3
             error_message = 'no this history'
