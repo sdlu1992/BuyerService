@@ -8,7 +8,7 @@ import string
 from django.forms.models import model_to_dict
 from django.shortcuts import HttpResponse, render_to_response, HttpResponseRedirect
 
-from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order
+from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order, Appraise
 from helper import get_login_info, get_register_info, get_good_dic_by_model
 from form_new_goods import NewGoodForm
 
@@ -39,7 +39,7 @@ def register(request):
             buyer = get_buyer_by_phone(r_phone)
             if len(buyer) == 0:
                 buyer = Buyer(name=r_name, phone=r_phone, nickname=r_name, type=1, email=r_email, password=r_password,
-                              credit=0)
+                              credit=0, money=0)
                 buyer.save()
                 response['response'] = 1
             else:
@@ -501,6 +501,11 @@ def get_order(request):
                 dic['store'] = model_to_dict(foo.goods.store)
                 dic['solder'] = model_to_dict(foo.goods.store.owner)
                 dic['solder']['password'] = ''
+                apps = Appraise.objects.filter(buy_history=foo)
+                if len(apps) != 0:
+                    dic['appraise'] = model_to_dict(apps[0])
+                else:
+                    dic['appraise'] = ''
                 his_dic.append(dic)
             response['history_list'] = his_dic
             j_buyer = model_to_dict(user)
@@ -693,6 +698,106 @@ def apply_refund(request):
         return HttpResponseRedirect('/info')
     elif r_platform == 'android':
         json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
+def appraise(request):
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    history_id = ''
+    order_id = ''
+    print(request.method)
+
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        print req
+        r_platform = req['platform']
+        history_id = req['history_id']
+        order_id = req['order_id']
+        content = req['content']
+        appraise_type = req['type']
+        buyer = Buyer.objects.filter(token=req['token'])
+    if len(buyer) == 1:
+        user = buyer[0]
+
+        if order_id == '' or order_id is None:
+            histories = BuyHistory.objects.filter(id=history_id)
+        elif history_id == '' or history_id is None:
+            order = Order.objects.get(id=order_id)
+            histories = BuyHistory.objects.filter(order=order)
+        else:
+            order = Order.objects.get(id=order_id)
+            histories = BuyHistory.objects.filter(id=history_id, order=order)
+        if len(histories) != 0:
+            for foo in histories:
+                app = Appraise(type=int(appraise_type), buy_history=foo, content=content,
+                               date=datetime.datetime.now(), goods=foo.goods)
+                app.save()
+                foo.state = 4
+                foo.save()
+            response['response'] = 1
+        else:
+            response['response'] = 3
+            error_message = 'no this history'
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'no this user'
+    response['error_msg'] = error_message
+    if r_platform == 'web':
+        return HttpResponseRedirect('/info')
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
+def get_appraise_list(request):
+    count = ''
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    good_id = ''
+    print(request.method)
+
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        good_id = req['good_id']
+        buyer = Buyer.objects.filter(token=req['token'])
+    if len(buyer) == 1:
+        user = buyer[0]
+        goods = Goods.objects.filter(id=good_id)
+        if len(goods) != 0:
+            good = goods[0]
+            histories = BuyHistory.objects.filter(goods=good)
+            appraises = Appraise.objects.filter(goods=good)
+            app_dic = []
+            response['len'] = len(appraises)
+            for foo in appraises:
+                dic = model_to_dict(foo)
+                dic['username'] = foo.buy_history.buyer.name
+                app_dic.insert(0, dic)
+            response['appraise_list'] = app_dic
+            response['total_good'] = len(appraises.filter(type=0))
+            response['total_middle'] = len(appraises.filter(type=1))
+            response['total_bad'] = len(appraises.filter(type=2))
+        else:
+            response['response'] = 3
+        response['response'] = 1
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'error'
+    if r_platform == 'web':
+        return render_to_response('personal.html', locals())
+    elif r_platform == 'android':
         j = json.dumps(response)
         return HttpResponse(j)
 

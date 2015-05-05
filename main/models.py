@@ -24,6 +24,7 @@ class Buyer(models.Model):
     token = models.CharField(max_length=50)
     token_web = models.CharField(max_length=50)
     address = models.CharField(max_length=500)
+    money = models.FloatField()
 
     def __unicode__(self):
         return self.phone
@@ -92,7 +93,8 @@ class Appraise(models.Model):
     type = models.IntegerField()
     buy_history = models.OneToOneField(BuyHistory)
     content = models.CharField(max_length=500)
-    data = models.CharField(max_length=100)
+    date = models.CharField(max_length=100)
+    goods = models.ForeignKey(Goods)
 
     def __unicode__(self):
         return self.id
