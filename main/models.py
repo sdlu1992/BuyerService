@@ -122,6 +122,7 @@ class WishList(models.Model):
 class Collect(models.Model):
     goods = models.ForeignKey(Goods)
     buyer = models.ForeignKey(Buyer)
+    isCollect = models.IntegerField()
 
     def __unicode__(self):
         return self.id

@@ -8,7 +8,7 @@ import string
 from django.forms.models import model_to_dict
 from django.shortcuts import HttpResponse, render_to_response, HttpResponseRedirect
 
-from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order, Appraise
+from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order, Appraise, Collect
 from helper import get_login_info, get_register_info, get_good_dic_by_model
 from form_new_goods import NewGoodForm
 
@@ -78,13 +78,16 @@ def login(request):
             print len(buyer)
             if len(buyer) == 1:
                 if r_password == buyer[0].password:
+                    user = buyer[0]
                     token = get_token(r_password)
                     if r_platform == 'android':
                         buyer[0].token = token
                     elif r_platform == 'web':
                         buyer[0].token_web = token
                     buyer[0].save()
-                    info = {'name': buyer[0].name, 'phone': buyer[0].phone, 'email': buyer[0].email}
+                    info = model_to_dict(user)
+                    info['token_web'] = ''
+                    info['password'] = ''
                     response['response'] = 1
                     response['token'] = token
                     response['info'] = info
@@ -124,8 +127,10 @@ def info(request):
         req = json.loads(request.body)
         buyer = Buyer.objects.filter(token=req['token'])
     if len(buyer) == 1:
-        info = {'name': buyer[0].name, 'phone': buyer[0].phone, 'email': buyer[0].email}
         user = buyer[0]
+        info = model_to_dict(user)
+        info['token_web'] = ''
+        info['password'] = ''
         response['response'] = 1
         response['info'] = info
     else:
@@ -301,11 +306,18 @@ def get_good(request):
         good_id = req['good_id']
         # good_id = request.POST.get('test')
         goods = Goods.objects.filter(id=good_id)
+        buyer = Buyer.objects.filter(token=req['token'])
         if len(goods) != 0:
             good = goods[0]
             dic_good = get_good_dic_by_model(good)
             print dic_good
             dic_good['count'] = len(BuyHistory.objects.filter(goods=good))
+            try:
+                collect = Collect.objects.get(goods=good, buyer=buyer[0])
+                dic_good['isCollect'] = collect.isCollect
+            except Exception:
+                dic_good['isCollect'] = 0
+            print dic_good['isCollect']
             store = good.store
             solder = store.owner
             response['good'] = dic_good
@@ -591,6 +603,16 @@ def pay_for_goods(request):
         else:
             histories = BuyHistory.objects.filter(order=order, state=0, id=history_id)
         if len(histories) != 0:
+            total = 0
+            for foo in histories:
+                total += foo.price * foo.amount
+            if user.money < total:
+                response['response'] = 5
+                error_message = 'money not enough'
+                histories = []
+            else:
+                user.money -= total
+                user.save()
             for foo in histories:
                 foo.state = 2
                 foo.save()
@@ -638,6 +660,7 @@ def take_goods(request):
         if len(histories) != 0:
             for foo in histories:
                 foo.state = 3
+                foo.goods.store.owner.money += foo.price * foo.amount
                 foo.save()
                 response['history'] = model_to_dict(foo)
                 response['response'] = 1
@@ -802,11 +825,135 @@ def get_appraise_list(request):
         return HttpResponse(j)
 
 
+def recharge(request):
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    rechar = 0
+    print(request.method)
+
+    if request.method == 'GET':
+        token = request.session.get('token', '')
+        r_platform = 'web'
+        if token == '':
+            return HttpResponseRedirect('/login')
+        else:
+            buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
+    elif request.method == 'POST':
+        req = json.loads(request.body)
+        print req
+        rechar = req['money']
+        buyer = Buyer.objects.filter(token=req['token'])
+    if len(buyer) == 1:
+        user = buyer[0]
+        user.money += int(rechar)
+        user.save()
+        response['response'] = 1
+    else:
+        return HttpResponseRedirect('/login')
+    if r_platform == 'web':
+        return render_to_response('personal.html', locals())
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
+def add_collection(request):
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    goods = None
+    print(request.method)
+
+    if request.method == 'GET':
+        token = request.session.get('token', '')
+        r_platform = 'web'
+        if token == '':
+            return HttpResponseRedirect('/login')
+        else:
+            buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
+    elif request.method == 'POST':
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        good_id = req['good_id']
+        buyer = Buyer.objects.filter(token=req['token'])
+        goods = Goods.objects.filter(id=good_id)
+    if len(buyer) == 1 and len(goods) == 1:
+        user = buyer[0]
+        good = goods[0]
+        collect_exist = Collect.objects.filter(goods=good, buyer=user)
+        if len(collect_exist) == 1:
+            collect = collect_exist[0]
+            if collect.isCollect == 1:
+                collect.isCollect = 0
+            else:
+                collect.isCollect = 1
+        else:
+            collect = Collect(goods=good, buyer=user, isCollect=1)
+        collect.save()
+        response['response'] = 1
+        response['collect'] = model_to_dict(collect)
+        response['collect']['good'] = get_good_dic_by_model(collect.goods)
+        response['collect']['store'] = model_to_dict(collect.goods.store)
+    else:
+        error_message = 'error'
+    if r_platform == 'web':
+        return render_to_response('personal.html', locals())
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
+def get_collection_list(request):
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    print(request.method)
+
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        buyer = Buyer.objects.filter(token=req['token'])
+
+    if len(buyer) == 1:
+        user = buyer[0]
+        collections = Collect.objects.filter(buyer=user)
+        response['len'] = len(collections)
+        if len(collections) != 0:
+            colle_dic = []
+            for foo in collections:
+                dic = model_to_dict(foo)
+                dic['good'] = get_good_dic_by_model(foo.goods)
+                dic['good']['count'] = len(BuyHistory.objects.filter(goods=foo.goods).exclude(state=0))
+                dic['store'] = model_to_dict(foo.goods.store)
+                colle_dic.insert(0, dic)
+            response['collect_list'] = colle_dic
+        else:
+            pass
+        response['response'] = 1
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'error'
+    if r_platform == 'web':
+        return render_to_response('personal.html', locals())
+    elif r_platform == 'android':
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
 def test(request):
     if request.method == 'GET':
         return render_to_response('test.html')
     elif request.method == 'POST':
-        return get_goods_by_category(request)
+        return get_collection_list(request)
 
 
 def get_buyer_by_phone(phone_number):
