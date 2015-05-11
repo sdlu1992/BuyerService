@@ -4,8 +4,10 @@ import hashlib
 import time
 import datetime
 import string
+import random
 
 from django.forms.models import model_to_dict
+from django.db.models import Count
 from django.shortcuts import HttpResponse, render_to_response, HttpResponseRedirect
 
 from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order, Appraise, Collect
@@ -949,11 +951,83 @@ def get_collection_list(request):
         return HttpResponse(j)
 
 
+def get_home(request):
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    print(request.method)
+
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        buyer = Buyer.objects.filter(token=req['token'])
+        # r_platform = request.POST.get('platform')
+        # order_id = request.POST.get('test')
+        # buyer = Buyer.objects.filter(token_web=request.session.get('token'))
+    goods = Goods.objects.all()
+    random_list = goods if len(goods) < 5 else random.sample(goods, 5)
+    others_list_first = Collect.objects.all()
+    others_list = set()
+    for i in range(len(others_list_first)):
+        others_list.add(random.choice(others_list_first).goods)
+        if len(others_list) == 5:
+            break
+    response['len_random'] = len(random_list)
+    if len(random_list) != 0:
+        colle_dic = []
+        response['response'] = 1
+        for foo in random_list:
+            dic = {}
+            dic['good'] = get_good_dic_by_model(foo)
+            dic['good']['count'] = len(BuyHistory.objects.filter(goods=foo).exclude(state=0))
+            dic['store'] = model_to_dict(foo.store)
+            colle_dic.insert(0, dic)
+        response['random_list'] = colle_dic
+    response['len_others'] = len(others_list)
+    print len(others_list)
+    if len(others_list) != 0:
+        colle_dic = []
+        response['response'] = 1
+        for foo in others_list:
+            dic = {}
+            dic['good'] = get_good_dic_by_model(foo)
+            dic['good']['count'] = len(BuyHistory.objects.filter(goods=foo).exclude(state=0))
+            dic['store'] = model_to_dict(foo.store)
+            colle_dic.insert(0, dic)
+        response['others_list'] = colle_dic
+    if len(buyer) == 1:
+        user = buyer[0]
+        history_list = BuyHistory.objects.all()
+        goods_cate = Goods.objects.filter(category=history_list.last().goods.category)
+        cate_list = goods_cate if len(goods_cate) < 5 else random.sample(goods_cate, 5)
+        if len(cate_list) != 0:
+            colle_dic = []
+            for foo in cate_list:
+                dic = {}
+                dic['good'] = get_good_dic_by_model(foo)
+                dic['good']['count'] = len(BuyHistory.objects.filter(goods=foo).exclude(state=0))
+                dic['store'] = model_to_dict(foo.store)
+                colle_dic.insert(0, dic)
+            response['cate_list'] = colle_dic
+            response['len_cate'] = len(cate_list)
+        else:
+            pass
+        response['response'] = 1
+        print response
+    if r_platform == 'web':
+        return render_to_response('personal.html', locals())
+    elif r_platform == 'android':
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
 def test(request):
     if request.method == 'GET':
         return render_to_response('test.html')
     elif request.method == 'POST':
-        return get_collection_list(request)
+        return get_home(request)
 
 
 def get_buyer_by_phone(phone_number):
