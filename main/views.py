@@ -261,6 +261,54 @@ def get_goods_by_category(request):
     return HttpResponse(j)
 
 
+def get_goods_by_search(request):
+    response = {'response': '2'}
+    error_message = ''
+    print(request.method)
+    dict_pri = {}
+    if request.method == 'POST':
+        # r_platform = request.POST.get('platform')
+        # search_key = request.POST.get('test')
+        # buyer = Buyer.objects.filter(token_web=request.session.get('token'))
+        req = json.loads(request.body)
+        print req
+        search_key = req['search_key']
+        search_keys = search_key.split(' ')
+        goods = Goods.objects.filter(name__icontains=search_key)
+        for key in search_keys:
+            t_goods = Goods.objects.filter(name__icontains=key)
+            for good in t_goods:
+                if len(goods.filter(id=good.id)) == 0:
+                    goods |= t_goods.filter(id=good.id)
+                else:
+                    try:
+                        dict_pri[good.id] += 1
+                    except KeyError:
+                        dict_pri[good.id] = 1
+
+        print len(goods)
+        response['len'] = len(goods)
+        if len(goods) != 0:
+            r_goods = []
+            for foo in goods:
+                dic = get_good_dic_by_model(foo)
+                dic['count'] = len(BuyHistory.objects.filter(goods=foo).exclude(state=0))
+                dic['store'] = model_to_dict(foo.store)
+                try:
+                    dic['my_count'] = dict_pri[foo.id]
+                except KeyError:
+                    dic['my_count'] = 0
+                r_goods.append(dic)
+            r_goods.sort(lambda x, y: cmp(x['my_count'], y['my_count']))
+            r_goods.reverse()
+            response['goods'] = r_goods
+        response['response'] = '1'
+
+    response['error_msg'] = error_message
+    j = json.dumps(response)
+    return HttpResponse(j)
+
+
 def report(request):
     response = {'response': '2'}
     r_platform = 'android'
@@ -1027,7 +1075,7 @@ def test(request):
     if request.method == 'GET':
         return render_to_response('test.html')
     elif request.method == 'POST':
-        return get_home(request)
+        return get_goods_by_search(request)
 
 
 def get_buyer_by_phone(phone_number):
