@@ -10,7 +10,7 @@ from django.forms.models import model_to_dict
 from django.db.models import Count
 from django.shortcuts import HttpResponse, render_to_response, HttpResponseRedirect
 
-from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order, Appraise, Collect
+from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order, Appraise, Collect, Address
 from helper import get_login_info, get_register_info, get_good_dic_by_model
 from form_new_goods import NewGoodForm
 
@@ -40,7 +40,7 @@ def register(request):
         else:
             buyer = get_buyer_by_phone(r_phone)
             if len(buyer) == 0:
-                buyer = Buyer(name=r_name, phone=r_phone, nickname=r_name, type=1, email=r_email, password=r_password,
+                buyer = Buyer(name=r_name, phone=r_phone, type=1, email=r_email, password=r_password,
                               credit=0, money=0)
                 buyer.save()
                 response['response'] = 1
@@ -186,6 +186,7 @@ def new_goods(request):
     elif request.method == 'POST':
         form = NewGoodForm(request.POST, request.FILES)
         g_name = request.POST.get('goods_name', '')
+        g_content = request.POST.get('goods_content', '')
         g_price = request.POST.get('price', 0)
         g_category = request.POST.get('category', '')
         if form.is_valid():
@@ -204,7 +205,7 @@ def new_goods(request):
         store = Store.objects.filter(owner=user)
         if len(store) == 1:
             goods = Goods(name=g_name, price=g_price, category=g_category, store=store[0], image_url_title=g_image,
-                          image1=g_image1, image2=g_image2, image3=g_image3, image4=g_image4)
+                          image1=g_image1, image2=g_image2, image3=g_image3, image4=g_image4, des=g_content)
             goods.save()
             error_message = '成功！'
     else:
@@ -217,15 +218,10 @@ def category(request):
     error_message = ''
     print(request.method)
     cc, cMerge = get_category()
-    cc.save()
     if request.method == 'GET':
-        ca = Category.objects.all()
-        # response['category'] = ca.last().category
         response['category'] = cc.category
-        # response['root'] = str(ca.last().root_category).replace('\\', '%')
         response['root'] = cc.root_category
     j = json.dumps(response)
-    # j = json.JSONEncoder().encode(response)
     return HttpResponse(j)
 
 
@@ -245,8 +241,8 @@ def get_goods_by_category(request):
             r_goods = []
             for foo in goods:
                 # dic = {'id': foo.id, 'title': foo.name, 'price': foo.price, 'des': foo.des, 'category': foo.category,
-                #        'store': foo.store.id, 'count': len(BuyHistory.objects.filter(goods=foo)),
-                #        'store_name': foo.store.name}
+                # 'store': foo.store.id, 'count': len(BuyHistory.objects.filter(goods=foo)),
+                # 'store_name': foo.store.name}
                 dic = get_good_dic_by_model(foo)
                 print dic
                 dic['count'] = len(BuyHistory.objects.filter(goods=foo).exclude(state=0))
@@ -265,7 +261,7 @@ def get_goods_by_search(request):
     response = {'response': '2'}
     error_message = ''
     print(request.method)
-    dict_pri = {}
+    dict_relevancy = {}
     if request.method == 'POST':
         # r_platform = request.POST.get('platform')
         # search_key = request.POST.get('test')
@@ -278,15 +274,14 @@ def get_goods_by_search(request):
         for key in search_keys:
             t_goods = Goods.objects.filter(name__icontains=key)
             for good in t_goods:
-                if len(goods.filter(id=good.id)) == 0:
-                    goods |= t_goods.filter(id=good.id)
-                else:
+                if goods.filter(id=good.id).exists():
                     try:
-                        dict_pri[good.id] += 1
+                        dict_relevancy[good.id] += 1
                     except KeyError:
-                        dict_pri[good.id] = 1
+                        dict_relevancy[good.id] = 1
+                else:
+                    goods |= t_goods.filter(id=good.id)
 
-        print len(goods)
         response['len'] = len(goods)
         if len(goods) != 0:
             r_goods = []
@@ -295,11 +290,12 @@ def get_goods_by_search(request):
                 dic['count'] = len(BuyHistory.objects.filter(goods=foo).exclude(state=0))
                 dic['store'] = model_to_dict(foo.store)
                 try:
-                    dic['my_count'] = dict_pri[foo.id]
+                    dic['relevancy'] = dict_relevancy[foo.id]
                 except KeyError:
-                    dic['my_count'] = 0
+                    dic['relevancy'] = 0
                 r_goods.append(dic)
-            r_goods.sort(lambda x, y: cmp(x['my_count'], y['my_count']))
+            # 根据相关度排序
+            r_goods.sort(lambda x, y: cmp(x['relevancy'], y['relevancy']))
             r_goods.reverse()
             response['goods'] = r_goods
         response['response'] = '1'
@@ -361,13 +357,12 @@ def get_good(request):
             good = goods[0]
             dic_good = get_good_dic_by_model(good)
             print dic_good
-            dic_good['count'] = len(BuyHistory.objects.filter(goods=good))
+            dic_good['count'] = len(BuyHistory.objects.filter(goods=good).exclude(state=0))
             try:
                 collect = Collect.objects.get(goods=good, buyer=buyer[0])
-                dic_good['isCollect'] = collect.isCollect
+                dic_good['isCollect'] = collect.is_collect
             except Exception:
                 dic_good['isCollect'] = 0
-            print dic_good['isCollect']
             store = good.store
             solder = store.owner
             response['good'] = dic_good
@@ -402,6 +397,7 @@ def add_wish_list(request):
             buyer = Buyer.objects.filter(token_web=request.session.get('token', ''))
     elif request.method == 'POST':
         req = json.loads(request.body)
+        print req
         r_platform = req['platform']
         good_id = req['good_id']
         count = req['count']
@@ -496,6 +492,8 @@ def add_order(request):
         print req
         r_platform = req['platform']
         r_goods = json.loads(req['goods'])
+        r_address_id = req['address_id']
+        address1 = Address.objects.get(id=r_address_id)
         buyer = Buyer.objects.filter(token=req['token'])
         try:
             wishes_json = json.loads(req['wish_list'])
@@ -513,7 +511,8 @@ def add_order(request):
     print len(buyer)
     if len(buyer) == 1 and len(goods) != 0:
         user = buyer[0]
-        order = Order(goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0, price=price_total)
+        order = Order(goods=r_goods, buyer=user, date=datetime.datetime.now(), state=0,
+                      price=price_total, address=address1)
         order.save()
         for index, foo in enumerate(goods):
             history = BuyHistory(buyer=user, goods=foo, price=foo.price, amount=counts[index],
@@ -575,6 +574,7 @@ def get_order(request):
             response['buyer'] = j_buyer
             response['len'] = len(histories)
             response['order'] = model_to_dict(order)
+            response['order']['address'] = model_to_dict(order.address)
         else:
             pass
         response['response'] = 1
@@ -664,7 +664,7 @@ def pay_for_goods(request):
                 user.money -= total
                 user.save()
             for foo in histories:
-                foo.state = 2
+                foo.state = 1
                 foo.save()
                 response['history'] = model_to_dict(foo)
                 response['response'] = 1
@@ -730,6 +730,35 @@ def take_goods(request):
         return HttpResponse(j)
 
 
+def deliver_goods(request):
+    response = {'response': '2'}
+    error_message = ''
+    buyer = None
+    history_id = ''
+    print(request.method)
+
+    if request.method == 'POST':
+        history_id = request.POST.get('history_id')
+        buyer = Buyer.objects.filter(token_web=request.session.get('token'))
+    if len(buyer) == 1:
+        histories = BuyHistory.objects.filter(state=1, id=history_id)
+        if len(histories) != 0:
+            for foo in histories:
+                foo.state = 2
+                foo.save()
+                response['history'] = model_to_dict(foo)
+                response['response'] = 1
+        else:
+            response['response'] = 3
+            error_message = 'no this history'
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'no this user'
+    response['error_msg'] = error_message
+    return HttpResponseRedirect('/getOrderListWeb')
+
+
 def apply_refund(request):
     response = {'response': '2'}
     r_platform = 'android'
@@ -775,6 +804,37 @@ def apply_refund(request):
         return HttpResponse(j)
 
 
+def refund_decide(request):
+    response = {'response': '2'}
+    error_message = ''
+    buyer = None
+    history_id = ''
+    print(request.method)
+
+    if request.method == 'POST':
+        history_id = request.POST.get('history_id')
+        buyer = Buyer.objects.filter(token_web=request.session.get('token'))
+    if len(buyer) == 1:
+        histories = BuyHistory.objects.filter(state=5, id=history_id)
+        if len(histories) != 0:
+            for foo in histories:
+                foo.state = 6
+                foo.goods.store.owner.money -= foo.price * foo.amount
+                foo.buyer.money += foo.price * foo.amount
+                foo.save()
+                response['history'] = model_to_dict(foo)
+                response['response'] = 1
+        else:
+            response['response'] = 3
+            error_message = 'no this history'
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'no this user'
+    response['error_msg'] = error_message
+    return HttpResponseRedirect('/getOrderListWeb')
+
+
 def appraise(request):
     response = {'response': '2'}
     r_platform = 'android'
@@ -812,6 +872,8 @@ def appraise(request):
                 app.save()
                 foo.state = 4
                 foo.save()
+                foo.goods.store.credit += (1 - app.type)
+                foo.goods.store.save()
             response['response'] = 1
         else:
             response['response'] = 3
@@ -938,12 +1000,12 @@ def add_collection(request):
         collect_exist = Collect.objects.filter(goods=good, buyer=user)
         if len(collect_exist) == 1:
             collect = collect_exist[0]
-            if collect.isCollect == 1:
-                collect.isCollect = 0
+            if collect.is_collect == 1:
+                collect.is_collect = 0
             else:
-                collect.isCollect = 1
+                collect.is_collect = 1
         else:
-            collect = Collect(goods=good, buyer=user, isCollect=1)
+            collect = Collect(goods=good, buyer=user, is_collect=1)
         collect.save()
         response['response'] = 1
         response['collect'] = model_to_dict(collect)
@@ -1071,6 +1133,126 @@ def get_home(request):
         return HttpResponse(j)
 
 
+def get_report(request):
+    response = {'response': '2'}
+    error_message = ''
+    user = None
+    buyer = None
+    history_list = []
+    history_dic = []
+    order_state_list = get_order_state_list()
+    print(request.method)
+    if request.session.get('token') == '':
+        return HttpResponseRedirect('/login')
+    if request.method == 'GET':
+        buyer = Buyer.objects.filter(token_web=request.session.get('token'))
+    if len(buyer) == 1:
+        user = buyer[0]
+        history_list1 = BuyHistory.objects.all()
+        for foo in history_list1:
+            if foo.goods.store.owner.id == user.id:
+                history_list.append(foo)
+        response['len'] = len(history_list)
+        if len(history_list) != 0:
+            for foo in history_list:
+                dic = model_to_dict(foo)
+                dic['state_text'] = order_state_list[foo.state]
+                dic['buyer'] = model_to_dict(foo.buyer)
+                dic['good'] = get_good_dic_by_model(foo.goods)
+                dic['good']['count'] = len(BuyHistory.objects.filter(goods=foo.goods).exclude(state=0))
+                dic['store'] = model_to_dict(foo.goods.store)
+                history_dic.insert(0, dic)
+            response['history_list'] = history_dic
+        else:
+            pass
+        response['response'] = 1
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'error'
+    print response
+    return render_to_response('report.html', locals())
+
+
+def add_address(request):
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    history_id = ''
+    order_id = ''
+    print(request.method)
+
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        print req
+        r_platform = req['platform']
+        a_name = req['name']
+        a_phone = req['phone']
+        a_province = req['province']
+        a_city = req['city']
+        a_county = req['county']
+        a_zip = req['zip']
+        a_detail = req['detail']
+        buyer = Buyer.objects.filter(token=req['token'])
+    if len(buyer) == 1:
+        user = buyer[0]
+        lenA = len(Address.objects.filter(buyer=user))
+        address = Address(name=a_name, phone=a_phone, province=a_province, city=a_city, county=a_county,
+                          zip=a_zip, detail=a_detail, is_del=0, is_default=(1 if lenA == 0 else 0), buyer=user)
+        address.save()
+        response['response'] = 1
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'no this user'
+    response['error_msg'] = error_message
+    if r_platform == 'web':
+        return HttpResponseRedirect('/info')
+    elif r_platform == 'android':
+        json.dumps(response)
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
+def get_address_list(request):
+    response = {'response': '2'}
+    r_platform = 'android'
+    error_message = ''
+    user = None
+    buyer = None
+    print(request.method)
+
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        r_platform = req['platform']
+        buyer = Buyer.objects.filter(token=req['token'])
+
+    if len(buyer) == 1:
+        user = buyer[0]
+        addresses = Address.objects.filter(buyer=user, is_del=0)
+        response['len'] = len(addresses)
+        if len(addresses) != 0:
+            address_dic = []
+            for foo in addresses:
+                dic = model_to_dict(foo)
+                address_dic.insert(0, dic)
+            response['address_list'] = address_dic
+        else:
+            pass
+        response['response'] = 1
+        print response
+    else:
+        response['response'] = 2
+        error_message = 'error'
+    if r_platform == 'web':
+        return render_to_response('personal.html', locals())
+    elif r_platform == 'android':
+        j = json.dumps(response)
+        return HttpResponse(j)
+
+
 def test(request):
     if request.method == 'GET':
         return render_to_response('test.html')
@@ -1096,8 +1278,12 @@ def get_category():
     c1 = {'10': '手机', '11': '手机配件', '12': '数码相机'}
     c2 = {'20': '板鞋', '21': '跑鞋', '22': '皮鞋'}
     c0 = {'1': c1, '2': c2}
-    c_root = {'1': '手机数码', '2': '鞋类'}
+    c_root = {'1': '手机数码', '2': '鞋类', '3': '衣服', '4': '计算机', '5': '零食'}
     print c0
     cMerge = dict(c1, **c2)
     cc = Category(category=c0, root_category=c_root)
     return cc, cMerge
+
+
+def get_order_state_list():
+    return ['未付款', '已付款', '已发货', '待评价', '已评价', '退款中', '已退款', '已关闭']

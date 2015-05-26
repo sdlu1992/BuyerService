@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}
+    Report-{{ title }}
+{% endblock %}
+
+{% block style %}
+    <style>
+        ul {
+            margin-left: 0px;
+            padding-left: 10px;
+        }
+
+        li {
+            list-style: none;
+            margin-left: 0px;
+            margin-bottom: 10px;
+            padding: 0px;
+        }
+
+        button.menu {
+            height: 100%;
+            background-color: #ffffff;
+            color: #fc461e;
+            font-weight: bold;
+            font-size: 15px;
+            border-style: none;
+            position: relative;
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 100px;
+            top: 5px;
+            margin: 0px;
+            text-align: left;
+
+        }
+
+        button:hover {
+            background-color: #f4f4f4;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <body>
+    <div id="table">
+        <table border="1" cellpadding="10px">
+            {% if history_dic %}
+                <tr>
+                    <th>订单号</th>
+                    <th>名称</th>
+                    <th>价格</th>
+                    <th>类目</th>
+                    <th>销量</th>
+                    <th>买家</th>
+                    <th>状态</th>
+                    <th>购买日期</th>
+                </tr>
+            {% endif %}
+            {% for foo in history_dic %}
+                <tr>
+                    <td>{{ foo.id }}</td>
+                    <td>{{ foo.good.name }}</td>
+                    <td>{{ foo.price }}</td>
+                    <td>{{ foo.good.category }}</td>
+                    <td>{{ foo.good.count }}</td>
+                    <td>{{ foo.buyer.name }}</td>
+                    <td>{{ foo.state_text }}</td>
+                    <td>{{ foo.date }}</td>
+                    {% ifequal foo.state 1 %}
+                        <td>
+                            <form action="/deliver/" method="post">
+                            <input type="hidden" value="{{ foo.id }}" name="history_id"/>
+                            <input type="submit" value="确认发货"/>
+                            </form>
+                        </td>
+                    {% endifequal %}
+                    {% ifequal foo.state 5 %}
+                        <td>
+                            <form action="/refundDecide/" method="post">
+                                <input type="hidden" value="{{ foo.id }}" name="history_id"/>
+                                <input type="submit" value="确认退款"/>
+                            </form>
+                            <form action="/refundRefuse/" method="post">
+                                <input type="hidden" value="{{ foo.id }}" name="history_id"/>
+                                <input type="submit" value="拒绝"/>
+                            </form>
+                        </td>
+                    {% endifequal %}
+                </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+    </body>
+{% endblock %}

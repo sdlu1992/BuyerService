@@ -34,6 +34,9 @@
 
         <p class="error">{{ error_message }}</p>
 
+        <table>
+
+        </table>
         <form action="." method="post" enctype="multipart/form-data">
             <p><label>商品名称:</label><input type="text" name="goods_name" maxlength="200" value=""></p>
 
@@ -41,6 +44,8 @@
                                            onafterpaste="this.value=this.value.replace(/\D/g,'')" name="price"
                                            maxlength="9" value=""></p>
 
+{#            <p><label>商品描述:</label><input type="text" name="goods_content" maxlength="2000" value=""></p>#}
+            <p><label>商品描述:</label><textarea name="goods_content" maxlength="2000" value=""></textarea></p>
             <p><label>商品类别:</label>
                 <select name="root_category" id="root_category" onchange="onSelectRootType()">
                     {% for key, value in cc.root_category.items %}

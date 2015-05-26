@@ -12,7 +12,6 @@ sys.setdefaultencoding('utf-8')
 
 class Buyer(models.Model):
     # user = models.OneToOneField(User)
-    nickname = models.CharField(max_length=20)
     phone = models.CharField(max_length=20)
     credit = models.IntegerField()
     credit_id = models.CharField(max_length=18)
@@ -23,7 +22,6 @@ class Buyer(models.Model):
     name = models.CharField(max_length=20)
     token = models.CharField(max_length=50)
     token_web = models.CharField(max_length=50)
-    address = models.CharField(max_length=500)
     money = models.FloatField()
 
     def __unicode__(self):
@@ -51,10 +49,25 @@ class Goods(models.Model):
     image2 = models.FileField(upload_to='./upload/', null=True)
     image3 = models.FileField(upload_to='./upload/', null=True)
     image4 = models.FileField(upload_to='./upload/', null=True)
-    image_url_other = models.CharField(max_length=1000)
 
     def __unicode__(self):
         return self.name
+
+
+class Address(models.Model):
+    name = models.CharField(max_length=50)
+    phone = models.CharField(max_length=20)
+    zip = models.CharField(max_length=10)
+    province = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+    county = models.CharField(max_length=50)
+    detail = models.CharField(max_length=50)
+    buyer = models.ForeignKey(Buyer)
+    is_default = models.IntegerField()
+    is_del = models.IntegerField(default=0)
+
+    def __unicode__(self):
+        return self.id
 
 
 class Order(models.Model):
@@ -63,6 +76,7 @@ class Order(models.Model):
     date = models.CharField(max_length=30)
     state = models.IntegerField()
     price = models.FloatField()
+    address = models.ForeignKey(Address)
 
     def __unicode__(self):
         return self.goods.name
@@ -113,7 +127,7 @@ class WishList(models.Model):
     buyer = models.ForeignKey(Buyer)
     amount = models.IntegerField()
     date = models.CharField(max_length=30)
-    dele = models.IntegerField()
+    dele = models.IntegerField(default=1)
 
     def __unicode__(self):
         return self.id
@@ -122,7 +136,9 @@ class WishList(models.Model):
 class Collect(models.Model):
     goods = models.ForeignKey(Goods)
     buyer = models.ForeignKey(Buyer)
-    isCollect = models.IntegerField()
+    is_collect = models.IntegerField(default=1)
 
     def __unicode__(self):
         return self.id
+
+
