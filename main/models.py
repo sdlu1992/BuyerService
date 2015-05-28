@@ -17,7 +17,7 @@ class Buyer(models.Model):
     credit_id = models.CharField(max_length=18)
     type = models.IntegerField()
     birthday = models.CharField(max_length=20)
-    password = models.CharField(max_length=20)
+    password = models.CharField(max_length=50)
     email = models.CharField(max_length=30)
     name = models.CharField(max_length=20)
     token = models.CharField(max_length=50)

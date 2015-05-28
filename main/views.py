@@ -6,8 +6,8 @@ import datetime
 import string
 import random
 
+from mycrypt import AESCipher
 from django.forms.models import model_to_dict
-from django.db.models import Count
 from django.shortcuts import HttpResponse, render_to_response, HttpResponseRedirect
 
 from main.models import Buyer, Category, Store, Goods, BuyHistory, WishList, Order, Appraise, Collect, Address
@@ -41,7 +41,7 @@ def register(request):
             buyer = get_buyer_by_phone(r_phone)
             if len(buyer) == 0:
                 buyer = Buyer(name=r_name, phone=r_phone, type=1, email=r_email, password=r_password,
-                              credit=0, money=0)
+                              credit=0, money=0, token=get_token(r_password), token_web=get_token(r_password))
                 buyer.save()
                 response['response'] = 1
             else:
@@ -79,7 +79,11 @@ def login(request):
             buyer = get_buyer_by_phone(r_phone)
             print len(buyer)
             if len(buyer) == 1:
-                if r_password == buyer[0].password:
+                aes = AESCipher()
+                pw1 = aes.decrypt(r_password)
+                pw2 = aes.decrypt(buyer[0].password)
+                print 'pwd'+pw1+pw2
+                if pw1 == pw2:
                     user = buyer[0]
                     token = get_token(r_password)
                     if r_platform == 'android':
@@ -1110,22 +1114,28 @@ def get_home(request):
     if len(buyer) == 1:
         user = buyer[0]
         history_list = BuyHistory.objects.all()
-        goods_cate = Goods.objects.filter(category=history_list.last().goods.category)
-        cate_list = goods_cate if len(goods_cate) < 5 else random.sample(goods_cate, 5)
-        if len(cate_list) != 0:
-            colle_dic = []
-            for foo in cate_list:
-                dic = {}
-                dic['good'] = get_good_dic_by_model(foo)
-                dic['good']['count'] = len(BuyHistory.objects.filter(goods=foo).exclude(state=0))
-                dic['store'] = model_to_dict(foo.store)
-                colle_dic.insert(0, dic)
-            response['cate_list'] = colle_dic
-            response['len_cate'] = len(cate_list)
+        if len(history_list) == 0:
+            response['response'] = 1
+            response['len_cate'] = 0
         else:
-            pass
+            goods_cate = Goods.objects.filter(category=history_list.last().goods.category)
+            cate_list = goods_cate if len(goods_cate) < 5 else random.sample(goods_cate, 5)
+            if len(cate_list) != 0:
+                colle_dic = []
+                for foo in cate_list:
+                    dic = {}
+                    dic['good'] = get_good_dic_by_model(foo)
+                    dic['good']['count'] = len(BuyHistory.objects.filter(goods=foo).exclude(state=0))
+                    dic['store'] = model_to_dict(foo.store)
+                    colle_dic.insert(0, dic)
+                response['cate_list'] = colle_dic
+                response['len_cate'] = len(colle_dic)
+            else:
+                pass
         response['response'] = 1
         print response
+    else:
+        response['len_cate'] = 0
     if r_platform == 'web':
         return render_to_response('personal.html', locals())
     elif r_platform == 'android':
@@ -1275,10 +1285,11 @@ def get_token(r_password):
 
 
 def get_category():
-    c1 = {'10': '手机', '11': '手机配件', '12': '数码相机'}
-    c2 = {'20': '板鞋', '21': '跑鞋', '22': '皮鞋'}
+    c1 = {'10': '手机', '11': '手机配件', '12': '数码相机', '13': '相机', '14': '平板'}
+    c2 = {'20': '运动服', '21': '运动鞋', '22': '健身用品', '23': '骑行装备'}
     c0 = {'1': c1, '2': c2}
-    c_root = {'1': '手机数码', '2': '鞋类', '3': '衣服', '4': '计算机', '5': '零食'}
+    c_root = {'1': '手机数码', '2': '运动户外', '3': '衣服', '4': '计算机', '5': '零食', '6': '珠宝首饰', '7': '家电办公',
+              '8': '护肤彩妆'}
     print c0
     cMerge = dict(c1, **c2)
     cc = Category(category=c0, root_category=c_root)

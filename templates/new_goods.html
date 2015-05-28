@@ -34,27 +34,47 @@
 
         <p class="error">{{ error_message }}</p>
 
-        <table>
+        <table cellspacing="10">
 
-        </table>
         <form action="." method="post" enctype="multipart/form-data">
-            <p><label>商品名称:</label><input type="text" name="goods_name" maxlength="200" value=""></p>
+            <tr>
+                <td>
+                    <label>商品名称:</label>
+                </td>
+                <td>
+                    <input type="text" name="goods_name" maxlength="200" value="">
+                </td>
+            </tr>
 
-            <p><label>商品价格:</label> <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"
-                                           onafterpaste="this.value=this.value.replace(/\D/g,'')" name="price"
-                                           maxlength="9" value=""></p>
+            <tr>
+                <td>
+                    <label>商品价格:</label>
+                </td>
+                <td>
+                    <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="price"
+                                           maxlength="9" value="">
+                </td>
+            </tr>
 
-{#            <p><label>商品描述:</label><input type="text" name="goods_content" maxlength="2000" value=""></p>#}
-            <p><label>商品描述:</label><textarea name="goods_content" maxlength="2000" value=""></textarea></p>
-            <p><label>商品类别:</label>
-                <select name="root_category" id="root_category" onchange="onSelectRootType()">
+            <tr>
+                <td>
+                    <label>商品描述:</label>
+                </td>
+                <td>
+                    <textarea name="goods_content" maxlength="2000" value=""></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>商品类别:</label>
+                </td>
+                <td>
+                     <select name="root_category" id="root_category" onchange="onSelectRootType()">
                     {% for key, value in cc.root_category.items %}
                         <option value="{{ key }}">{{ value }}</option>
                     {% endfor %}
-                </select>
-            </p>
-            <p>
-                <select name="category" id="category">
+                    </select>
+                     <select name="category" id="category">
                     {% for key, value in cMerge.items %}
                         <script>
                             if ("{{ key}}".charAt(0) == getRootValue()) {
@@ -62,20 +82,58 @@
                             }
                         </script>
                     {% endfor %}
-                </select>
-            </p>
-            <p style="margin-top: 50px;"><label>标题图片:</label> <input type="file" id="image_title" name="image_title" value="" onchange="viewmypic(showimg,this.form.image_title);"></p>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>标题图片:</label>
 
-            <p><label>图片1:</label> <input type="file" name="image1" id="image1" value="" onchange="viewmypic(showimg,this.form.image1);"></p>
-
-            <p><label>图片2:</label> <input type="file" name="image2" id="image2"  value="" onchange="viewmypic(showimg,this.form.image2);"></p>
-
-            <p><label>图片3:</label> <input type="file" name="image3" id="image3" value="" onchange="viewmypic(showimg,this.form.image3);"></p>
-
-            <p><label>图片4:</label> <input type="file" name="image4" id="image4" value="" onchange="viewmypic(showimg,this.form.image4);"></p>
-
-            <input type="Submit" value="提交">
+                </td>
+                <td>
+                    <input type="file" id="image_title" name="image_title" value="" onchange="viewmypic(showimg,this.form.image_title);">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>图片1:</label>
+                </td>
+                <td>
+                    <input type="file" name="image1" id="image1" value="" onchange="viewmypic(showimg,this.form.image1);">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>图片2:</label>
+                </td>
+                <td>
+                    <input type="file" name="image2" id="image2"  value="" onchange="viewmypic(showimg,this.form.image2);">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>图片3:</label>
+                </td>
+                <td>
+                    <input type="file" name="image3" id="image3" value="" onchange="viewmypic(showimg,this.form.image3);">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>图片4:</label>
+                </td>
+                <td>
+                    <input type="file" name="image4" id="image4" value="" onchange="viewmypic(showimg,this.form.image4);">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="Submit" value="提交">
+                </td>
+            </tr>
         </form>
+        </table>
         <img name="showimg" id="showimg" src="" style="display:none;" alt="预览图片"/>
     </div>
 {% endblock %}
