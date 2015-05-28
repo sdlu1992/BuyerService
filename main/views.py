@@ -641,12 +641,13 @@ def pay_for_goods(request):
     buyer = None
     order_id = ''
     history_id = ''
+    aes = AESCipher()
     print(request.method)
 
     if request.method == 'POST':
         req = json.loads(request.body)
         r_platform = req['platform']
-        order_id = req['order_id']
+        order_id = aes.decrypt(req['order_id'])
         history_id = req['history_id']
         buyer = Buyer.objects.filter(token=req['token'])
     if len(buyer) == 1:
@@ -655,6 +656,7 @@ def pay_for_goods(request):
         if history_id == '':
             histories = BuyHistory.objects.filter(order=order, state=0)
         else:
+            history_id = aes.decrypt(history_id)
             histories = BuyHistory.objects.filter(order=order, state=0, id=history_id)
         if len(histories) != 0:
             total = 0
@@ -696,12 +698,13 @@ def take_goods(request):
     buyer = None
     order_id = ''
     history_id = ''
+    aes = AESCipher()
     print(request.method)
 
     if request.method == 'POST':
         req = json.loads(request.body)
         r_platform = req['platform']
-        order_id = req['order_id']
+        order_id = aes.decrypt(req['order_id'])
         history_id = req['history_id']
         buyer = Buyer.objects.filter(token=req['token'])
     if len(buyer) == 1:
@@ -710,6 +713,7 @@ def take_goods(request):
         if history_id == '':
             histories = BuyHistory.objects.filter(order=order, state=2)
         else:
+            history_id = aes.decrypt(history_id)
             histories = BuyHistory.objects.filter(order=order, state=2, id=history_id)
         if len(histories) != 0:
             for foo in histories:
@@ -959,7 +963,8 @@ def recharge(request):
     elif request.method == 'POST':
         req = json.loads(request.body)
         print req
-        rechar = req['money']
+        aes = AESCipher()
+        rechar = aes.decrypt(req['money'])
         buyer = Buyer.objects.filter(token=req['token'])
     if len(buyer) == 1:
         user = buyer[0]

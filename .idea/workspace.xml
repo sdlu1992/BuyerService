@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64630c33-9d3d-4322-b387-955d0bd2b575" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/mycrypt.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models.py" afterPath="$PROJECT_DIR$/main/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_goods.html" afterPath="$PROJECT_DIR$/templates/new_goods.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -55,8 +51,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.845041" vertical-offset="7545" max-vertical-offset="19575">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.75929976" vertical-offset="10378" max-vertical-offset="19650">
+              <caret line="715" column="46" selection-start-line="715" selection-start-column="46" selection-end-line="715" selection-end-column="46" />
               <folding>
                 <element signature="e#15#26#0" expanded="true" />
               </folding>
@@ -573,12 +569,6 @@
       <option name="number" value="Default" />
       <updated>1426832376476</updated>
     </task>
-    <task id="LOCAL-00077" summary="new feature: when add order , delete wishlist if it is">
-      <created>1429444519864</created>
-      <option name="number" value="00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1429444519864</updated>
-    </task>
     <task id="LOCAL-00078" summary="fix bugs :">
       <created>1429446233024</created>
       <option name="number" value="00078" />
@@ -867,7 +857,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432650191022</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="crypt">
+      <created>1432822085686</created>
+      <option name="number" value="00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1432822085686</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -932,7 +928,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="fix bugs:templenotexist" />
     <MESSAGE value="fix bugs: chinese?" />
     <MESSAGE value="fix bugs:  get_goods_by_catgory" />
     <MESSAGE value="fix bugs:  get_good_by_id" />
@@ -957,14 +952,15 @@
     <MESSAGE value="favorite" />
     <MESSAGE value="home" />
     <MESSAGE value="search" />
-    <option name="LAST_COMMIT_MESSAGE" value="search" />
+    <MESSAGE value="crypt" />
+    <option name="LAST_COMMIT_MESSAGE" value="crypt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/main/views.py</url>
-          <line>1113</line>
+          <line>1118</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
@@ -1363,8 +1359,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.845041" vertical-offset="7545" max-vertical-offset="19575">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.75929976" vertical-offset="10378" max-vertical-offset="19650">
+          <caret line="715" column="46" selection-start-line="715" selection-start-column="46" selection-end-line="715" selection-end-column="46" />
           <folding>
             <element signature="e#15#26#0" expanded="true" />
           </folding>
